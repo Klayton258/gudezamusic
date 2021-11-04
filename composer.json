@@ -1,0 +1,14 @@
+{
+    "name": "mazedev/maze",
+    "autoload": {
+        "psr-4": {
+            "core\\": "core/"
+        }
+    },
+    "require": {
+        "paymentsds/mpesa": "^0.1.1@alpha",
+        "karson/mpesa-php-sdk": "^1.3"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
