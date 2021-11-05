@@ -1,0 +1,49 @@
+<?php
+
+use core\classes\Database;
+
+$guardardados = filter_input(INPUT_POST, 'upload', FILTER_SANITIZE_STRING);
+
+
+if (isset($_POST['upload'])) {
+    $titulo = $_POST['titulo'];
+    $artista = filter_input(INPUT_POST, 'artista', FILTER_SANITIZE_STRING);
+    $tamanho = filter_input(INPUT_POST, 'tamanho', FILTER_SANITIZE_NUMBER_INT);
+
+    $cover = uniqid() . $_FILES['cover']['name'];
+    $musica = $_FILES['musica']['name'];
+
+    $parametro = [
+        ':t' => $titulo,
+        ':a' => $artista,
+        ':ta' => $tamanho,
+        ':c' => $cover,
+        ':m' => $musica
+    ];
+    $db = new Database();
+    $db->insert("
+        INSERT INTO musicas (cover,titulo,artista,tamanho,venda,arquivo) 
+        VALUES(:c,:t,:a,:ta,0,:m)
+        ", $parametro);
+
+    $img = $_FILES['cover']['tmp_name'];
+    $beat = $_FILES['musica']['tmp_name'];
+    $path = '../assets/musicas/';
+
+    if (move_uploaded_file($img, $path . $cover)) :
+        header('Location', 'inicio');
+    else :
+        echo 'erro1';
+    endif;
+
+    if (move_uploaded_file($beat, $path . $musica)) :
+        header('Location', 'inicio');
+    else :
+        echo '<hr>';
+        echo 'erro2';
+    endif;
+
+    // header('Location', 'inicio');
+
+
+}
