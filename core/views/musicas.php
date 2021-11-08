@@ -65,30 +65,6 @@
                     </div>
                 </div>
             </div>
-            <div class="carousel-item">
-                <div class="container">
-                    <div class="row">
-                        <div class="container col">
-                            <a href="#" class="m-link"> <img class="capa-m" src="assets/imgs/capa.jpg"></a>
-                            <a class="titulo-ep" href="#">
-                                <h5 class="titulo-ep">Charles Caló<br> Sentimentos Não Tem Idade</h5>
-                            </a>
-                        </div>
-                        <div class="container col">
-                            <a href="#" class="m-link"> <img class="capa-m" src="assets/imgs/capa2.jpg"></a>
-                            <a class="titulo-ep" href="#">
-                                <h5 class="titulo-ep">Charles Caló<br>Novos Desafios</h5>
-                            </a>
-                        </div>
-                        <div class="container col">
-                            <a href="#" class="m-link"> <img class="capa-m" src="assets/imgs/capa3.jpg"></a>
-                            <a class="titulo-ep" href="#">
-                                <h5 class="titulo-ep">Charles Caló<br>O Encantador Delas</h5>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching"
             data-bs-slide="prev">
