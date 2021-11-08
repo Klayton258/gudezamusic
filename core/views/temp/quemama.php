@@ -35,14 +35,14 @@
         <h2 class="titulo">Quem Ama Sofre</h2>
         <p class="servico" id="msg">Escolha o serviço de música</p>
 
-        <!-- <div class="col col-lg-4 col-md-4">
+        <div class="col col-lg-4 col-md-4">
             <div class="row">
-                <img src="assets/components/youtube.png" class="btn-youtube">
-                <a class="linka" href="https://youtu.be/Ow88I3ZoQ9M">
+                <img src="assets/components/soundcloud (2).png" class="btn-youtube">
+                <a class="linka" href="https://soundcloud.com/charlescalo/sets/quem-ama-sofre-ep">
                     <button type="button" class="btn">TOCAR</button>
                 </a>
             </div>
-        </div> -->
+        </div>
         <!-- <div class="col col-lg-4 col-md-4">
             <div class="row">
                 <img src="assets/components/audiomack (2).png" class="btn-youtube">
