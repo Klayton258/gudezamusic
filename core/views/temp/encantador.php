@@ -36,7 +36,7 @@
         <p class="servico" id="msg">Escolha o serviço de música</p>
 
         <div class="col col-lg-4 col-md-4">
-            <div class="row">
+            <div class="row p-4 pt-0 pb-0">
                 <img src="assets/components/soundcloud (2).png" class="btn-youtube">
                 <a class="linka" href="https://soundcloud.com/charlescalo/sets/o-encantador-delas-ep">
                     <button type="button" class="btn">TOCAR</button>
