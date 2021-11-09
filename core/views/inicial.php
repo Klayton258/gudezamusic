@@ -33,12 +33,12 @@
                 <div class="row d-block w-100">
                     <div class="container justify-content-center align-items-center">
                         <div class="col-lg-6 col-sm-2 col-md-4 justify-content-center containerr">
-                            <img src="assets/imgs/acustica.jpg" alt="Avatar" class="image">
+                            <img src="assets/imgs/hmau.jpg" alt="Avatar" class="image">
                             <div class="overlay">
                                 <div class="textt">
-                                    <h3>Lorem ipsum dolor</h3>
-                                    sit amet consectetur adipisicing elit.
-                                    Delectus cupiditate sapiente quo quibusdam dolorum placeat quidem provident
+                                    <h3>Homem Mau</h3>
+                                    <!-- sit amet consectetur adipisicing elit.
+                                    Delectus cupiditate sapiente quo quibusdam dolorum placeat quidem provident -->
                                 </div>
                             </div>
                         </div>
@@ -59,11 +59,11 @@
                             <img src="assets/imgs/Calo1.jpg" class="image">
                             <div class="overlay">
                                 <div class="textt">
-                                    <h3>Lorem ipsum dolor</h3>
-                                    sit amet consectetur adipisicing elit.
+                                    <h3>Novos Desafios</h3>
+                                    <!-- sit amet consectetur adipisicing elit.
                                     Delectus cupiditate sapiente quo quibusdam dolorum placeat quidem provident
                                     nesciunt explicabo, maxime repudiandae deserunt minus beatae, perferendis
-                                    hic amet rerum eum nostrum.
+                                    hic amet rerum eum nostrum. -->
                                 </div>
                             </div>
                         </div>
@@ -84,11 +84,11 @@
                             <img src="assets/imgs/acustica.jpg" alt="Avatar" class="image">
                             <div class="overlay">
                                 <div class="textt">
-                                    <h3>Lorem ipsum dolor</h3>
-                                    sit amet consectetur adipisicing elit.
+                                    <h3>Acustica</h3>
+                                    <!-- sit amet consectetur adipisicing elit.
                                     Delectus cupiditate sapiente quo quibusdam dolorum placeat quidem provident
                                     nesciunt explicabo, maxime repudiandae deserunt minus beatae, perferendis
-                                    hic amet rerum eum nostrum.
+                                    hic amet rerum eum nostrum. -->
                                 </div>
                             </div>
                         </div>
