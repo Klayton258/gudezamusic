@@ -36,7 +36,7 @@
         <p class="servico" id="msg">Escolha o serviço de música</p>
 
         <div class="col col-lg-4 col-md-4">
-            <div class="row p-4 pt-0 pb-0">
+            <div class="row">
                 <img src="assets/components/youtube.png" class="btn-youtube">
                 <a class="linka" href="https://youtu.be/Ow88I3ZoQ9M">
                     <button type="button" class="btn">TOCAR</button>
@@ -44,7 +44,7 @@
             </div>
         </div>
         <div class="col col-lg-4 col-md-4">
-            <div class="row p-4 pt-0 pb-0">
+            <div class="row">
                 <img src="assets/components/audiomack (2).png" class="btn-youtube">
                 <a class="linka" href="https://audiomack.com/charlescalo/song/para-sempre-acustica">
                     <button type="button" class="btn">TOCAR</button>
