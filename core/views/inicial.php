@@ -33,7 +33,7 @@
                 <div class="row d-block w-100">
                     <div class="container justify-content-center align-items-center">
                         <div class="col-lg-6 col-sm-2 col-md-4 justify-content-center containerr">
-                            <img src="assets/imgs/hmau.jpg" alt="Avatar" class="image">
+                            <img src="assets/imgs/hmau.jpg" alt="Avatar" class="image img-fluid">
                             <div class="overlay">
                                 <div class="textt">
                                     <h3>Homem Mau</h3>
@@ -56,7 +56,7 @@
                 <div class="row d-block w-100">
                     <div class="container justify-content-center align-items-center">
                         <div class="col-lg-6 col-sm-2 col-md-4 justify-content-center containerr">
-                            <img src="assets/imgs/Calo1.jpg" class="image">
+                            <img src="assets/imgs/Calo1.jpg" class="image img-fluid">
                             <div class="overlay">
                                 <div class="textt">
                                     <h3>Novos Desafios</h3>
@@ -81,7 +81,7 @@
                 <div class="row d-block w-100">
                     <div class="container justify-content-center align-items-center">
                         <div class="col-lg-6 col-sm-2 col-md-4 justify-content-center containerr">
-                            <img src="assets/imgs/acustica.jpg" alt="Avatar" class="image">
+                            <img src="assets/imgs/acustica.jpg" alt="Avatar" class="image img-fluid">
                             <div class="overlay">
                                 <div class="textt">
                                     <h3>Acustica</h3>
