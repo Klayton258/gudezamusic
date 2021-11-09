@@ -49,6 +49,7 @@ background-color: black;
 }
 .row{
     margin-top: 25px;
+    margin-left: 50px;
 }
 .linka{
     margin-left: 50px;
@@ -67,4 +68,74 @@ background-color: black;
 }
 .hmau{
     margin-bottom: 100px;
+}
+
+@media (max-width: 798.98px) {
+    body{
+        background-color: black;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* margin: 0px; */
+            /* padding: 0px; */
+        }
+        .logo{
+            width: 50px;
+            height: 50px;
+        }
+        .nav-hm{
+            background-color: black;
+        }
+        .navbar-toggler-icon{
+            color: white;
+        }
+        .nome{
+            color: white;
+            font-family: 'Nanum Myeongjo';
+        }
+        .titulo{
+            color: white;
+            font-family: 'Nanum Myeongjo';
+        }
+        .servico{
+            margin-top: 25px;
+            color: white;
+            font-family: 'Nanum Myeongjo';
+            font-size: 20px;
+        }
+        .btn-youtube{
+            width: 180px;
+            height: 30px;
+        }
+        .btn{
+            font-family: 'Kanit', sans-serif;
+            font-weight: bold;
+            background-color: white;
+        }
+        .btn:hover{
+            background-color: rgb(175, 175, 175);
+        }
+        .row{
+            margin-top: 25px;
+        }
+        .linka{
+            margin-left: 50px;
+            width: 100px;
+        }
+        
+        .cprght{
+            width: 350px;
+            margin-top: 50px;
+            margin-bottom: 10px;
+            color: white;
+            font-family: 'Kanit', sans-serif;
+            font-size: 15px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .hmau{
+            margin-bottom: 100px;
+        }
 }
