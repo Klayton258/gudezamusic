@@ -36,7 +36,7 @@
         <p class="servico" id="msg">Escolha o serviço de música</p>
 
         <div class="col col-lg-4 col-md-4 justify-content-center">
-            <div class="row">
+            <div class="row p-4 pt-0 pb-0">
                 <img src="assets/components/youtube.png" class="btn-youtube">
                 <a class="linka" href="https://youtube.com/playlist?list=PLIxR5ZpGYY4eRbbKcZsrf38AYy6m1M0u9">
                     <button type="button" class="btn">TOCAR</button>
@@ -44,7 +44,7 @@
             </div>
         </div>
         <!-- <div class="col col-lg-4 col-md-4">
-            <div class="row">
+            <div class="row p-4 pt-0 pb-0">
                 <img src="assets/components/soundcloud (2).png" class="btn-youtube">
                 <a class="linka" href="https://soundcloud.com/charlescalo/sets/homem-mau-ep">
                     <button type="button" class="btn">TOCAR</button>
@@ -52,7 +52,7 @@
             </div>
         </div> -->
         <div class="col col-lg-4 col-md-4">
-            <div class="row">
+            <div class="row p-4 pt-0 pb-0">
                 <img src="assets/components/audiomack (2).png" class="btn-youtube">
                 <a class="linka" href="https://audiomack.com/charlescalo/album/novos-desafios">
                     <button type="button" class="btn">TOCAR</button>
