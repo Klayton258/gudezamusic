@@ -13,7 +13,7 @@ background-color: black;
 }
 .logo{
     width: 50px;
-    height: 50px;
+    height: 20px;
 }
 .nav-hm{
     background-color: black;
@@ -119,6 +119,7 @@ background-color: black;
         }
         .row{
             margin-top: 25px;
+            margin-left: 0px;
         }
         .linka{
             margin-left: 50px;
