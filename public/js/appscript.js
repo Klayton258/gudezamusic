@@ -31,8 +31,8 @@ triggerTabList.forEach(function (triggerEl) {
 //?=====================loader==========================================
 setTimeout(function () {
     $(".loader").fadeToggle();
-    $(".main").fadeIn(1499)
-}, 1500)
+    $(".main").fadeIn(1800)
+}, 1800)
 
 //?=====================================================================
 

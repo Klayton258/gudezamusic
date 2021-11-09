@@ -28,26 +28,23 @@
         <h1></h1>
     </div>
     <div id="carouselExampleIndicators" class="carousel slide mt-5" data-bs-ride="carousel" id="desc-activate">
-        <!-- <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                aria-label="Slide 3"></button>
-        </div> -->
         <div class="carousel-inner" id="desc-activate">
             <div class="carousel-item active" data-bs-interval="2000">
                 <div class="row d-block w-100">
                     <div class="container justify-content-center align-items-center">
-                        <div class="col  carousel-row">
-                            <div class="col-lg-6 col-sm-2 col-md-4 justify-content-center">
-                                <img src="assets/imgs/hmau.jpg" class="cover-destaque cover-destaque-in">
-                            </div>
-                            <div class="container ">
-                                <div class="row icons-row">
-                                    <a class="link-ii" href="?a=homemmau"><button class="btn btn-str">Ouvir</button></a>
+                        <div class="col-lg-6 col-sm-2 col-md-4 justify-content-center containerr">
+                            <img src="assets/imgs/acustica.jpg" alt="Avatar" class="image">
+                            <div class="overlay">
+                                <div class="textt">
+                                    <h3>Lorem ipsum dolor</h3>
+                                    sit amet consectetur adipisicing elit.
+                                    Delectus cupiditate sapiente quo quibusdam dolorum placeat quidem provident
                                 </div>
+                            </div>
+                        </div>
+                        <div class="container ">
+                            <div class="row icons-row">
+                                <a class="link-ii" href="?a=homemmau"><button class="btn btn-str">Ouvir</button></a>
                             </div>
                         </div>
                     </div>
@@ -57,16 +54,22 @@
 ---------------------------------------------------------------------------------------------------------------------------------------- -->
             <div class="carousel-item" data-bs-interval="2000">
                 <div class="row d-block w-100">
-                    <div class="container">
-                        <div class="col  carousel-row">
-                            <div class="col-lg-6 col-sm-2 justify-content-center col-md-4">
-                                <img src="assets/imgs/Calo1.jpg" class="cover-destaque cover-destaque-in">
-                            </div>
-                            <div class="container ">
-                                <div class="row mx-5 icons-row">
-                                    <a class="link-ii" href="?a=novos_desafios"><button
-                                            class="btn btn-str">Ouvir</button></a>
+                    <div class="container justify-content-center align-items-center">
+                        <div class="col-lg-6 col-sm-2 col-md-4 justify-content-center containerr">
+                            <img src="assets/imgs/Calo1.jpg" class="image">
+                            <div class="overlay">
+                                <div class="textt">
+                                    <h3>Lorem ipsum dolor</h3>
+                                    sit amet consectetur adipisicing elit.
+                                    Delectus cupiditate sapiente quo quibusdam dolorum placeat quidem provident
+                                    nesciunt explicabo, maxime repudiandae deserunt minus beatae, perferendis
+                                    hic amet rerum eum nostrum.
                                 </div>
+                            </div>
+                        </div>
+                        <div class="container ">
+                            <div class="row icons-row">
+                                <a class="link-ii" href="?a=homemmau"><button class="btn btn-str">Ouvir</button></a>
                             </div>
                         </div>
                     </div>
@@ -76,31 +79,28 @@
 ---------------------------------------------------------------------------------------------------------------------------------------- -->
             <div class="carousel-item" data-bs-interval="2000">
                 <div class="row d-block w-100">
-                    <div class="container">
-                        <div class="col  carousel-row">
-                            <div class="col-lg-6 col-sm-2 col-md-4 justify-content-center">
-                                <img src="assets/imgs/acustica.jpg" class="cover-destaque cover-destaque-in">
-                            </div>
-                            <div class="container ">
-                                <div class="row icons-row">
-                                    <a class="link-ii" href="?a=acustica"><button class="btn btn-str">Ouvir</button></a>
+                    <div class="container justify-content-center align-items-center">
+                        <div class="col-lg-6 col-sm-2 col-md-4 justify-content-center containerr">
+                            <img src="assets/imgs/acustica.jpg" alt="Avatar" class="image">
+                            <div class="overlay">
+                                <div class="textt">
+                                    <h3>Lorem ipsum dolor</h3>
+                                    sit amet consectetur adipisicing elit.
+                                    Delectus cupiditate sapiente quo quibusdam dolorum placeat quidem provident
+                                    nesciunt explicabo, maxime repudiandae deserunt minus beatae, perferendis
+                                    hic amet rerum eum nostrum.
                                 </div>
+                            </div>
+                        </div>
+                        <div class="container ">
+                            <div class="row icons-row">
+                                <a class="link-ii" href="?a=homemmau"><button class="btn btn-str">Ouvir</button></a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button> -->
     </div>
 
 
