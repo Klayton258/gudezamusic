@@ -254,29 +254,51 @@ body {
                     </main>
                 </div>
                 <div class="container ">
+                    <?php if (isset($_SESSION['destaque'])) : ?>
+
+                    <div class="alert alert-sucess   alert-dismissible fade show col-6" role="alert">
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        <span class="sr-only">Close</span>
+                        </button>
+                        <strong><?= $_SESSION['destaque']; ?></strong>
+                    </div>
+                    <?php unset($_SESSION['destaque']); ?>
+                    <?php endif; ?>
                     <main class="form-signin mt-2 pt-5 col-8">
-                        <form action="?a=slide" method="POST" enctype="multipart/form-data">
+                        <form action="?a=slide" method="POST" id="slideform" enctype="multipart/form-data">
 
                             <div class="mb-3">
-                                <label class="col-form-label">Destaque:</label>
-                                <input type="number" class="form-control" name="id" accept="image/png, image/jpeg"
-                                    required>
+                                <label class=" mx-2">Destaque</label>
+                                <input class="form-check-input" type="radio" name="id" id="flexRadioDefault1" value="1"
+                                    checked>
+                                <label class="form-check-label" id="radio-1">
+                                    1
+                                </label>
+                                <input class="form-check-input" type="radio" name="id" id="flexRadioDefault1" value="2">
+                                <label class="form-check-label" id="radio-2">
+                                    2
+                                </label>
+                                <input class="form-check-input" type="radio" name="id" id="flexRadioDefault1" value="3">
+                                <label class="form-check-label" id="radio-3">
+                                    3
+                                </label>
                             </div>
                             <div class="mb-3">
-                                <label class="col-form-label">Imagem:</label>
-                                <input type="file" class="form-control" name="cover" accept="image/png, image/jpeg"
-                                    required>
+                                <label class="col-form-label">Imagem</label>
+                                <input type="file" class="form-control" id="imagem" name="cover"
+                                    accept="image/png, image/jpeg" required>
                             </div>
                             <div class="mb-3">
-                                <label class="col-form-label">Titulo:</label>
-                                <input type="text" class="form-control" name="titulo" required>
+                                <label class="col-form-label">Titulo</label>
+                                <input type="text" class="form-control" id="titulo" name="titulo" maxlength="20">
                             </div>
                             <div class="mb-3">
-                                <label class="col-form-label">Descrição:</label>
-                                <input type="textarea" class="form-control" name="descricao" required>
+                                <label class="col-form-label">Descrição</label>
+                                <textarea class="form-control" name="descricao" placeholder="Breve descrição"
+                                    id="floatingTextarea2" maxlength="200" style="height: 100px"></textarea>
                             </div>
                             <div class="modal-footer">
-                                <button type="submit" class="btn btn-primary">Atualizar</button>
+                                <button type="button" class="btn btn-primary" onclick="validarform()">Atualizar</button>
                             </div>
                         </form>
 
@@ -294,3 +316,6 @@ body {
             </main>
         </div>
     </div>
+
+    <script src="assets/js/appscriptadmin.js">
+    </script>

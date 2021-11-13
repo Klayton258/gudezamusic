@@ -121,10 +121,6 @@ class adminModel
             $id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT);
 
             $cover = uniqid() . $_FILES['cover']['name'];
-            echo $descricao . "-" . $titulo . "-" . $id;
-            echo '<pre>';
-            print_r($cover);
-
             $parametro = [
                 ':t' => $titulo,
                 ':d' => $descricao,
@@ -141,8 +137,9 @@ class adminModel
 
             if (move_uploaded_file($img, $path . $cover)) :
                 header('Location', 'inicio');
+                $_SESSION['destaque'] = 'Sucesso ao adicionar destaque';
             else :
-                echo 'Erro ao mover';
+                $_SESSION['destaque'] = 'Erro ao adicionar destaque';
             endif;
         }
     }
