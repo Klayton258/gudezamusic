@@ -34,33 +34,32 @@ class listamusicas
 
         $bd = new Database();
 
-        $result = $bd->select("SELECT * FROM musicas WHERE id= :id",$parametro);
+        $result = $bd->select("SELECT * FROM musicas WHERE id= :id", $parametro);
 
         return $result;
     }
     //=============================================================
     public function buscar_por_id_album($id_album)
     {
-            $parametro = [
-                ':id' => $id_album
-            ];
-    
-            $bd = new Database();
-    
-            $result = $bd->select("SELECT * FROM album WHERE id= :id",$parametro);
-    
-            return $result;
+        $parametro = [
+            ':id' => $id_album
+        ];
+
+        $bd = new Database();
+
+        $result = $bd->select("SELECT * FROM album WHERE id= :id", $parametro);
+
+        return $result;
     }
     //=============================================================
     public function download_music()
     {
-        if(!empty($_GET['arquivo']))
-        {
+        if (!empty($_GET['arquivo'])) {
 
             $nome = basename($_GET['arquivo']);
             $caminho = 'assets/musicas/' . $nome;
 
-            if(!empty($nome)&& file_exists($caminho)){
+            if (!empty($nome) && file_exists($caminho)) {
                 header("Cache-Control:public");
                 header("Content-Description:File Transfer");
                 header("Content-Description:attatchment;filename=$nome");
@@ -69,103 +68,93 @@ class listamusicas
 
                 readfile($caminho);
                 exit;
-            }else
-                {
-                    echo "Ficheiro nao encontrado";
-                }
-        
+            } else {
+                echo "Ficheiro nao encontrado";
+            }
         }
     }
     //=============================================================
     public function baixarsom()
     {
-        
-        if(!empty($_GET['arquivo']))
-        {
-            $bd= new Database();
+
+        if (!empty($_GET['arquivo'])) {
+            $bd = new Database();
 
             $id = $_GET['arquivo'];
 
-            $parametro=[
-                ':id'=> $id
+            $parametro = [
+                ':id' => $id
             ];
             $stat = $bd->selectfetch("
                 SELECT * FROM musicas WHERE id = :id
-            ",$parametro);
-            
+            ", $parametro);
+
             // echo '<pre>';
             // print_r($stat);
             // echo '<br><hr>';
             // echo $stat['arquivo'];
             // die();
 
-                $file = 'assets/musicas/' . $stat['arquivo'];
+            $file = 'assets/musicas/' . $stat['arquivo'];
 
-            if(file_exists($file)){
-                header('Content-Description:'.$stat['description']);
-                header('Content-Type:'.$stat['type']);
-                header('Content-Disposition:'.$stat['disposition'].';filename="'.basename($file).'"');
-                header('Expires:'.$stat['expires']);
-                header('Cache-Control:'.$stat['cache']);
-                header('Pragma:'.$stat['pragma']);
-                header('Content-Length:'.filesize($file));
-                
+            if (file_exists($file)) {
+                header('Content-Description:' . $stat['description']);
+                header('Content-Type:' . $stat['type']);
+                header('Content-Disposition:' . $stat['disposition'] . ';filename="' . basename($file) . '"');
+                header('Expires:' . $stat['expires']);
+                header('Cache-Control:' . $stat['cache']);
+                header('Pragma:' . $stat['pragma']);
+                header('Content-Length:' . filesize($file));
+
                 readfile($file);
                 exit;
-            header("location: download");
-        }else
-        {
-            header("location: download");
-            echo "Ficheiro nao encontrado";
-        }
-            echo "ERRO-------------------------------------";
-            die();
+                header("location: download");
+            } else {
+                header("location: download");
+                echo "Ficheiro nao encontrado";
+            }
         }
     }
-        //=============================================================
+    //=============================================================
     public function baixaralbum()
     {
-            
-            if(!empty($_GET['id_albumm']))
-            {
-                $bd= new Database();
-    
-                $id = $_GET['id_albumm'];
-    
-                $parametro=[
-                    ':id'=> $id
-                ];
-                $stat = $bd->selectfetch("
+
+        if (!empty($_GET['id_albumm'])) {
+            $bd = new Database();
+
+            $id = $_GET['id_albumm'];
+
+            $parametro = [
+                ':id' => $id
+            ];
+            $stat = $bd->selectfetch("
                     SELECT * FROM album WHERE id = :id
-                ",$parametro);
-                
-                // echo '<pre>';
-                // print_r($stat);
-                // echo '<br><hr>';
-                // echo $stat['arquivo'];
-                // die();
-    
-                    $file = 'assets/musicas/' . $stat['arquivo'];
-    
-                if(file_exists($file)){
-                    header('Content-Description:'.$stat['description']);
-                    header('Content-Type:'.$stat['type']);
-                    header('Content-Disposition:'.$stat['disposition'].';filename="'.basename($file).'"');
-                    header('Expires:'.$stat['expires']);
-                    header('Cache-Control:'.$stat['cache']);
-                    header('Pragma:'.$stat['pragma']);
-                    header('Content-Length:'.filesize($file));
-                    
-                    readfile($file);
-                    exit;
+                ", $parametro);
+
+            // echo '<pre>';
+            // print_r($stat);
+            // echo '<br><hr>';
+            // echo $stat['arquivo'];
+            // die();
+
+            $file = 'assets/musicas/' . $stat['arquivo'];
+
+            if (file_exists($file)) {
+                header('Content-Description:' . $stat['description']);
+                header('Content-Type:' . $stat['type']);
+                header('Content-Disposition:' . $stat['disposition'] . ';filename="' . basename($file) . '"');
+                header('Expires:' . $stat['expires']);
+                header('Cache-Control:' . $stat['cache']);
+                header('Pragma:' . $stat['pragma']);
+                header('Content-Length:' . filesize($file));
+
+                readfile($file);
+                exit;
                 header("location: download_album");
-            }else
-            {
+            } else {
                 header("location: download_album");
                 echo "Ficheiro nao encontrado";
             }
-    
-            }
+        }
     }
-
 }

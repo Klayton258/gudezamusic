@@ -34,9 +34,6 @@ body {
 }
 </style>
 
-
-<!-- Custom styles for this template -->
-<!-- <link href="dashboard.css" rel="stylesheet"> -->
 </head>
 
 <body>
@@ -48,7 +45,6 @@ body {
             aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <input class="form-control form-control-dark w-50" type="text" placeholder="Search" aria-label="Search">
         <ul class="navbar-nav px-3">
             <li class="nav-item text-nowrap">
                 <a class="nav-link" href="?a=admin_logout">Sign out</a>
@@ -71,14 +67,13 @@ body {
                             <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#exampleModa2"
                                 data-bs-whatever="@klayton">
                                 <span data-feather="file"></span>
-                                <i class="fa fa-music" aria-hidden="true"></i> Musicas <i class="fa fa-plus"
-                                    aria-hidden="true"></i>
+                                <i class="fa fa-music" aria-hidden="true"></i> Musicas
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">
                                 <span data-feather="shopping-cart"></span>
-                                <i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Produtos
+                                <i class="fa fa-home" aria-hidden="true"></i> Novidades
                             </a>
                         </li>
                         <li class="nav-item">
@@ -87,18 +82,6 @@ body {
                                 <i class="fa fa-user" aria-hidden="true"></i> Clientes
                             </a>
                         </li>
-                        <!-- <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span data-feather="bar-chart-2"></span>
-                                Reports
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span data-feather="layers"></span>
-                                Integrations
-                            </a>
-                        </li> -->
                     </ul>
 
                     <!-- <h6
@@ -178,7 +161,7 @@ body {
                 <?php endif; ?>
 
                 <div class="table-responsive">
-                    <table class="table table-hover table-dark table-striped table-sm">
+                    <table class="table table-hover table-dark table-striped table-sm" id="tabela-musicas">
                         <thead>
                             <tr>
                                 <th>Nr</th>
@@ -187,7 +170,7 @@ body {
                                 <th>Titulo</th>
                                 <th>Tamanho</th>
                                 <th>Musica</th>
-                                <th>Editar</th>
+                                <!-- <th>Editar</th> -->
                                 <th>Apagar</th>
                             </tr>
                         </thead>
@@ -200,8 +183,8 @@ body {
                                 <td><?= $musica->titulo ?></td>
                                 <td><?= $musica->tamanho ?></td>
                                 <td><?= $musica->arquivo ?></td>
-                                <td><button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModa1" data-bs-whatever="@mdo">Editar</button></td>
+                                <!-- <td><button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModa1" data-bs-whatever="@mdo">Editar</button></td> -->
 
                                 <td><a href="?a=upload_musica&apagar=<?= $musica->id ?>"
                                         class="btn btn-danger">Apagar</a></td>
@@ -209,40 +192,6 @@ body {
                             <?php endforeach;    ?>
                         </tbody>
                     </table>
-                </div>
-
-
-                <div class="modal fade" id="exampleModa1" tabindex="-1" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Editar arquvivo Nr: </h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <form method="post" action="?a=upload">
-                                    <div class="mb-3">
-                                        <label class="col-form-label">Artista:</label>
-                                        <input type="text" class="form-control" name="artista_edit">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label class="col-form-label">Titulo:</label>
-                                        <input type="text" class="form-control" name="titulo_edit">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label class="col-form-label">Tamanho:</label>
-                                        <input type="text" class="form-control" name="tamanho_edit">
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="submit" name="btn_edit" class="btn btn-primary">Editar</button>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
                 <!-- ====================================================================================================================================== -->
@@ -272,7 +221,8 @@ body {
                             </div>
                             <div class="mb-3">
                                 <label class="col-form-label">Capa da Musica:</label>
-                                <input type="file" class="form-control" name="cover" accept="image/png" required>
+                                <input type="file" class="form-control" name="cover" accept="image/png, image/jpeg"
+                                    required>
                             </div>
                             <div class="mb-3">
                                 <label class="col-form-label">Titulo:</label>
@@ -289,6 +239,44 @@ body {
                             </div>
                             <div class="modal-footer">
                                 <button type="submit" name="upload" class="btn btn-primary">Upload</button>
+                            </div>
+                        </form>
+
+                        <?php if (isset($_SESSION['erro'])) : ?>
+
+                        <div class="alert alert-danger mt-4">
+                            <?= $_SESSION['erro']; ?>
+                            <?php unset($_SESSION['erro']); ?>
+                        </div>
+
+                        <?php endif; ?>
+
+                    </main>
+                </div>
+                <div class="container ">
+                    <main class="form-signin mt-2 pt-5 col-8">
+                        <form action="?a=slide" method="POST" enctype="multipart/form-data">
+
+                            <div class="mb-3">
+                                <label class="col-form-label">Destaque:</label>
+                                <input type="number" class="form-control" name="id" accept="image/png, image/jpeg"
+                                    required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="col-form-label">Imagem:</label>
+                                <input type="file" class="form-control" name="cover" accept="image/png, image/jpeg"
+                                    required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="col-form-label">Titulo:</label>
+                                <input type="text" class="form-control" name="titulo" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="col-form-label">Descrição:</label>
+                                <input type="textarea" class="form-control" name="descricao" required>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary">Atualizar</button>
                             </div>
                         </form>
 

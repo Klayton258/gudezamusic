@@ -6,6 +6,7 @@ $rotas = [
     'admin_submeter_login'=> 'admin@admin_submeter_login',
     'admin_logout'=> 'admin@admin_logout',
     'upload'=>'admin@upload',
+    'slide'=>'admin@slide',
 
     //========================================
     'upload_musica'=>'admin@upload_musica',

@@ -20,7 +20,6 @@
         </div>
     </nav>
 </div>
-
 <!------------------------------------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------------------------------------- -->
 <div class="container">
@@ -33,12 +32,11 @@
                 <div class="row d-block w-100">
                     <div class="container justify-content-center align-items-center">
                         <div class="col-lg-6 col-sm-2 col-md-4 justify-content-center containerr">
-                            <img src="assets/imgs/hmau.jpg" alt="Avatar" class="image img-fluid">
+                            <img src="assets/imgs/slides/<?= $slide1[1]; ?>" alt="Avatar" class="image img-fluid">
                             <div class="overlay">
                                 <div class="textt">
-                                    <h3>Homem Mau</h3>
-                                    <!-- sit amet consectetur adipisicing elit.
-                                    Delectus cupiditate sapiente quo quibusdam dolorum placeat quidem provident -->
+                                    <h3 class="text-light"><?= $slide1[2]; ?></h3>
+                                    <?= $slide1[3]; ?>
                                 </div>
                             </div>
                         </div>
@@ -56,14 +54,11 @@
                 <div class="row d-block w-100">
                     <div class="container justify-content-center align-items-center">
                         <div class="col-lg-6 col-sm-2 col-md-4 justify-content-center containerr">
-                            <img src="assets/imgs/Calo1.jpg" class="image img-fluid">
+                            <img src="assets/imgs/slides/<?= $slide2[1]; ?>" class="image img-fluid">
                             <div class="overlay">
                                 <div class="textt">
-                                    <h3>Novos Desafios</h3>
-                                    <!-- sit amet consectetur adipisicing elit.
-                                    Delectus cupiditate sapiente quo quibusdam dolorum placeat quidem provident
-                                    nesciunt explicabo, maxime repudiandae deserunt minus beatae, perferendis
-                                    hic amet rerum eum nostrum. -->
+                                    <h3 class="text-light"><?= $slide2[2]; ?></h3>
+                                    <?= $slide2[3]; ?>
                                 </div>
                             </div>
                         </div>
@@ -81,14 +76,11 @@
                 <div class="row d-block w-100">
                     <div class="container justify-content-center align-items-center">
                         <div class="col-lg-6 col-sm-2 col-md-4 justify-content-center containerr">
-                            <img src="assets/imgs/acustica.jpg" alt="Avatar" class="image img-fluid">
+                            <img src="assets/imgs/slides/<?= $slide3[1]; ?>" alt="Avatar" class="image img-fluid">
                             <div class="overlay">
                                 <div class="textt">
-                                    <h3>Acustica</h3>
-                                    <!-- sit amet consectetur adipisicing elit.
-                                    Delectus cupiditate sapiente quo quibusdam dolorum placeat quidem provident
-                                    nesciunt explicabo, maxime repudiandae deserunt minus beatae, perferendis
-                                    hic amet rerum eum nostrum. -->
+                                    <h3 class="text-light"><?= $slide3[2]; ?></h3>
+                                    <?= $slide3[3]; ?>
                                 </div>
                             </div>
                         </div>

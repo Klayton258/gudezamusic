@@ -72,8 +72,6 @@ class adminModel
     public function upload()
     {
 
-        // $guardardados = filter_input(INPUT_POST, 'upload', FILTER_SANITIZE_STRING);
-
 
         if (isset($_POST['upload'])) {
             $titulo = $_POST['titulo'];
@@ -112,10 +110,53 @@ class adminModel
                 echo '<hr>';
                 echo 'erro2';
             endif;
-
-            // header('Location', 'inicio');
-
-
         }
+    }
+    public function slide()
+    {
+
+        if (isset($_POST['id'])) {
+            $titulo = $_POST['titulo'];
+            $descricao = filter_input(INPUT_POST, 'descricao', FILTER_SANITIZE_STRING);
+            $id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT);
+
+            $cover = uniqid() . $_FILES['cover']['name'];
+            echo $descricao . "-" . $titulo . "-" . $id;
+            echo '<pre>';
+            print_r($cover);
+
+            $parametro = [
+                ':t' => $titulo,
+                ':d' => $descricao,
+                ':i' => $id,
+                ':c' => $cover
+            ];
+            $db = new Database();
+            $db->update("
+                UPDATE slide_novidades SET imagem = :c, titulo = :t, descricao = :d
+                WHERE id=:i
+                ", $parametro);
+            $img = $_FILES['cover']['tmp_name'];
+            $path = '../assets/imgs/slides/';
+
+            if (move_uploaded_file($img, $path . $cover)) :
+                header('Location', 'inicio');
+            else :
+                echo 'Erro ao mover';
+            endif;
+        }
+    }
+    public function selectslide($id)
+    {
+        $parametro = [
+            ':id' => $id
+        ];
+
+        $db = new Database();
+        $result = $db->selectfetch("
+            SELECT * FROM slide_novidades WHERE id= :id
+            ", $parametro);
+
+        return $result;
     }
 }

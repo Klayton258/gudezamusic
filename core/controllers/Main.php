@@ -3,17 +3,20 @@
 namespace core\controllers;
 
 use core\classes\Store;
-use core\models\cliente;
+use core\models\adminModel;
 use core\models\formulario;
 use core\models\listamusicas;
 use core\models\pagamentos;
-use core\models\validarlogin;
 
 class Main
 {
 
     public function index()
     {
+        $admodel = new adminModel();
+        $slide1 = $admodel->selectslide(1);
+        $slide2 = $admodel->selectslide(2);
+        $slide3 = $admodel->selectslide(3);
         Store::Layout(
             [
                 'layout/html-header',
@@ -21,6 +24,11 @@ class Main
                 'footer',
                 'layout/html-footer'
             ],
+            [
+                'slide1' => $slide1,
+                'slide2' => $slide2,
+                'slide3' => $slide3
+            ]
         );
     }
 
@@ -210,9 +218,6 @@ class Main
                 'layout/html-footer'
             ]);
         }
-        // echo '<pre>';
-        // var_dump($_POST['nome_cliente']);
-        // die();
     }
 
     public function homemmau()

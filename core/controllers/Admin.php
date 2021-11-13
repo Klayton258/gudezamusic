@@ -17,7 +17,6 @@ class Admin
         $buscar = new listamusicas();
         $result = $buscar->buscar_musicas();
 
-
         Store::Layout_admin(
             [
                 'layout/html-header',
@@ -115,4 +114,11 @@ class Admin
         Store::redirect('inicio', true);
         return;
     }
+    //====================================================================================================
+    public function slide()
+    {
+        $lst = new adminModel();
+        $lst->slide();
+    }
+    //====================================================================================================
 }
