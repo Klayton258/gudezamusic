@@ -115,22 +115,19 @@ class adminModel
     public function slide()
     {
 
-        if (isset($_POST['id'])) {
+        if (isset($_POST['titulo'])) {
             $titulo = $_POST['titulo'];
             $descricao = filter_input(INPUT_POST, 'descricao', FILTER_SANITIZE_STRING);
-            $id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT);
 
             $cover = uniqid() . $_FILES['cover']['name'];
             $parametro = [
                 ':t' => $titulo,
                 ':d' => $descricao,
-                ':i' => $id,
                 ':c' => $cover
             ];
             $db = new Database();
             $db->update("
-                UPDATE slide_novidades SET imagem = :c, titulo = :t, descricao = :d
-                WHERE id=:i
+                INSERT INTO slide_novidades (imagem, titulo, descricao) VALUES(:c, :t, :d)
                 ", $parametro);
             $img = $_FILES['cover']['tmp_name'];
             $path = '../assets/imgs/slides/';
@@ -156,7 +153,7 @@ class adminModel
                 ", $parametro);
         } else {
             $result = $db->select("
-                SELECT * FROM slide_novidades
+                SELECT * FROM slide_novidades ORDER BY id DESC LIMIT 3
                 ");
         }
         return $result;

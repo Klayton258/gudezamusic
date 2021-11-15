@@ -14,9 +14,10 @@ class Main
     public function index()
     {
         $admodel = new adminModel();
-        $slide1 = $admodel->selectslide(1);
-        $slide2 = $admodel->selectslide(2);
-        $slide3 = $admodel->selectslide(3);
+        $slide = $admodel->selectslide(null);
+        // $slide1 = $admodel->selectslide(1);
+        // $slide2 = $admodel->selectslide(2);
+        // $slide3 = $admodel->selectslide(3);
         Store::Layout(
             [
                 'layout/html-header',
@@ -25,9 +26,10 @@ class Main
                 'layout/html-footer'
             ],
             [
-                'slide1' => $slide1,
-                'slide2' => $slide2,
-                'slide3' => $slide3
+                'slides' => $slide
+                // 'slide1' => $slide1,
+                // 'slide2' => $slide2,
+                // 'slide3' => $slide3
             ]
         );
     }

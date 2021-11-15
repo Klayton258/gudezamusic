@@ -28,15 +28,21 @@
     </div>
     <div id="carouselExampleIndicators" class="carousel slide mt-5" data-bs-ride="carousel" id="desc-activate">
         <div class="carousel-inner" id="desc-activate">
+            <?php
+            $activo = 2;
+            foreach ($slides as $slide1) :
+                if ($activo == 2) :
+            ?>
+
             <div class="carousel-item active" data-bs-interval="2000">
                 <div class="row d-block w-100">
                     <div class="container justify-content-center align-items-center">
                         <div class="col-lg-6 col-sm-2 col-md-4 justify-content-center containerr">
-                            <img src="assets/imgs/slides/<?= $slide1[1]; ?>" alt="Avatar" class="image img-fluid">
+                            <img src="assets/imgs/slides/<?= $slide1->imagem ?>" alt="Avatar" class="image img-fluid">
                             <div class="overlay">
                                 <div class="textt">
-                                    <h3 class="text-light"><?= $slide1[2]; ?></h3>
-                                    <?= $slide1[3]; ?>
+                                    <h3 class="text-light"><?= $slide1->titulo ?></h3>
+                                    <?= $slide1->descricao ?>
                                 </div>
                             </div>
                         </div>
@@ -48,17 +54,19 @@
                     </div>
                 </div>
             </div>
-            <!------------------------------------------------------------------------------------------------------------------------------------------
----------------------------------------------------------------------------------------------------------------------------------------- -->
+
+            <?php
+                    $activo = 1;
+                else : ?>
             <div class="carousel-item" data-bs-interval="2000">
                 <div class="row d-block w-100">
                     <div class="container justify-content-center align-items-center">
                         <div class="col-lg-6 col-sm-2 col-md-4 justify-content-center containerr">
-                            <img src="assets/imgs/slides/<?= $slide2[1]; ?>" class="image img-fluid">
+                            <img src="assets/imgs/slides/<?= $slide1->imagem ?>" alt="Avatar" class="image img-fluid">
                             <div class="overlay">
                                 <div class="textt">
-                                    <h3 class="text-light"><?= $slide2[2]; ?></h3>
-                                    <?= $slide2[3]; ?>
+                                    <h3 class="text-light"><?= $slide1->titulo ?></h3>
+                                    <?= $slide1->descricao ?>
                                 </div>
                             </div>
                         </div>
@@ -70,41 +78,18 @@
                     </div>
                 </div>
             </div>
+            <?php
+                endif;
+            endforeach; ?>
             <!------------------------------------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------------------------------------- -->
-            <div class="carousel-item" data-bs-interval="2000">
-                <div class="row d-block w-100">
-                    <div class="container justify-content-center align-items-center">
-                        <div class="col-lg-6 col-sm-2 col-md-4 justify-content-center containerr">
-                            <img src="assets/imgs/slides/<?= $slide3[1]; ?>" alt="Avatar" class="image img-fluid">
-                            <div class="overlay">
-                                <div class="textt">
-                                    <h3 class="text-light"><?= $slide3[2]; ?></h3>
-                                    <?= $slide3[3]; ?>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="container ">
-                            <div class="row icons-row">
-                                <a class="link-ii" href="?a=homemmau"><button class="btn btn-str">Ouvir</button></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
 
-    <!------------------------------------------------------------------------------------------------------------------------------------------
----------------------------------------------------------------------------------------------------------------------------------------- -->
-
-
-    <!-- <div class="titulo">
+            <!-- <div class="titulo">
         <img src="assets/components/musicas-in.png" class="musicas-titulo" srcset="">
     </div>
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel"> -->
-    <!-- <div class="carousel-indicators">
+            <!-- <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
                 aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
@@ -112,7 +97,7 @@
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
                 aria-label="Slide 3"></button>
         </div> -->
-    <!-- <div class="carousel-inner">
+            <!-- <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="assets/imgs/Louco por ti.jpg" class="d-block w-100 img-fluid" alt="...">
                 <div class="carousel-caption d-none d-md-block">
@@ -150,11 +135,11 @@
         <h6 class="fontouvir">OUVIR TODAS</h6>
     </a> -->
 
-    <!------------------------------------------------------------------------------------------------------------------------------------------
+            <!------------------------------------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------------------------------------- -->
 
 
-    <!-- <div class="titulo">
+            <!-- <div class="titulo">
         <img src="assets/components/videos.png" class="videos-titulo">
     </div>
     <div>
@@ -166,7 +151,7 @@
 
 
 
-    <!-- <div class="titulo">
+            <!-- <div class="titulo">
         <img src="assets/components/merch (2).png" class="videos-titulo">
     </div>
     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -207,7 +192,7 @@
     </div> -->
 
 
-    <!-- <div class="col-auto col-lg-6 bg-dark mt-5 p-5">
+            <!-- <div class="col-auto col-lg-6 bg-dark mt-5 p-5">
         <form method="POST" action="?a=fm_gm">
             <div class="mb-3">
                 <label class="form-label text-light">Digite o seu Email para receber notificações</label>
@@ -224,4 +209,4 @@
         </form>
     </div> -->
 
-</div>
+        </div>

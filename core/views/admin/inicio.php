@@ -99,7 +99,6 @@
                                     <th>Titulo</th>
                                     <th>Tamanho</th>
                                     <th>Musica</th>
-                                    <!-- <th>Editar</th> -->
                                     <th>Apagar</th>
                                 </tr>
                             </thead>
@@ -114,7 +113,6 @@
                                     <td><?= $musica->arquivo ?></td>
                                     <!-- <td><button type="button" class="btn btn-primary" data-bs-toggle="modal"
                         data-bs-target="#exampleModa1" data-bs-whatever="@mdo">Editar</button></td> -->
-
                                     <td><a href="?a=upload_musica&apagar=<?= $musica->id ?>"
                                             class="btn btn-danger">Apagar</a></td>
                                 </tr>
@@ -209,7 +207,7 @@
                             <main class="form-signin mt-2 pt-5 col-8">
                                 <form action="?a=slide" method="POST" id="slideform" enctype="multipart/form-data">
 
-                                    <div class="mb-3">
+                                    <!-- <div class="mb-3">
                                         <label class=" mend-2">Destaque</label>
                                         <input class="form-check-input" type="radio" name="id" id="flexRadioDefault1"
                                             value="1" checked>
@@ -226,7 +224,7 @@
                                         <label class="form-check-label" id="radio-3">
                                             3
                                         </label>
-                                    </div>
+                                    </div> -->
                                     <div class="mb-3">
                                         <label class="col-form-label">Imagem</label>
                                         <input type="file" class="form-control" id="imagem" name="cover"
