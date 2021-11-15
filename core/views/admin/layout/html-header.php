@@ -19,7 +19,7 @@
 
 
     <link rel="stylesheet" href="../css/appstyle.css">
-    <!-- <link rel="stylesheet" href="../assets/css/admin.css"> -->
+    <link rel="stylesheet" href="assets/css/admin.css">
     <title> <?php echo APP_NAME ?></title>
 </head>
 

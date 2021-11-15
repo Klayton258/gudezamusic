@@ -83,13 +83,21 @@ class Main
 
     public function videos()
     {
-        Store::Layout([
-            'layout/html-header',
-            'navbar',
-            'videos',
-            'footer',
-            'layout/html-footer'
-        ]);
+        $lst = new listamusicas();
+        $videos = $lst->listar_videos();
+
+        Store::Layout(
+            [
+                'layout/html-header',
+                'navbar',
+                'videos',
+                'footer',
+                'layout/html-footer'
+            ],
+            [
+                'videos' => $videos
+            ]
+        );
     }
 
     // ============================================================================

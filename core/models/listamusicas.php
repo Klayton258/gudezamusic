@@ -131,12 +131,6 @@ class listamusicas
                     SELECT * FROM album WHERE id = :id
                 ", $parametro);
 
-            // echo '<pre>';
-            // print_r($stat);
-            // echo '<br><hr>';
-            // echo $stat['arquivo'];
-            // die();
-
             $file = 'assets/musicas/' . $stat['arquivo'];
 
             if (file_exists($file)) {
@@ -156,5 +150,14 @@ class listamusicas
                 echo "Ficheiro nao encontrado";
             }
         }
+    }
+
+    function listar_videos()
+    {
+        $bd = new Database();
+        $videos = $bd->select("
+        SELECT * FROM videos ORDER BY id DESC
+        ");
+        return $videos;
     }
 }

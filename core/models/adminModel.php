@@ -76,7 +76,7 @@ class adminModel
         if (isset($_POST['upload'])) {
             $titulo = $_POST['titulo'];
             $artista = filter_input(INPUT_POST, 'artista', FILTER_SANITIZE_STRING);
-            $tamanho = filter_input(INPUT_POST, 'tamanho', FILTER_SANITIZE_NUMBER_INT);
+            $tamanho = filter_input(INPUT_POST, 'tamanho', FILTER_SANITIZE_NUMBER_FLOAT);
 
             $cover = uniqid() . $_FILES['cover']['name'];
             $musica = $_FILES['musica']['name'];
@@ -145,15 +145,49 @@ class adminModel
     }
     public function selectslide($id)
     {
-        $parametro = [
-            ':id' => $id
-        ];
-
         $db = new Database();
-        $result = $db->selectfetch("
-            SELECT * FROM slide_novidades WHERE id= :id
-            ", $parametro);
+        if ($id != null) {
+            $parametro = [
+                ':id' => $id
+            ];
 
+            $result = $db->selectfetch("
+                SELECT * FROM slide_novidades WHERE id= :id
+                ", $parametro);
+        } else {
+            $result = $db->select("
+                SELECT * FROM slide_novidades
+                ");
+        }
         return $result;
+    }
+
+    public function upload_video()
+    {
+        if (isset($_POST['upload_video'])) {
+            $titulo = $_POST['titulo'];
+            $link = filter_input(INPUT_POST, 'link', FILTER_SANITIZE_STRING);
+
+            $cover = uniqid() . $_FILES['cover']['name'];
+            $parametro = [
+                ':t' => $titulo,
+                ':l' => $link,
+                ':c' => $cover
+            ];
+            $db = new Database();
+            $db->update("
+            INSERT INTO videos (imagem,titulo,link) 
+            VALUES(:c,:t,:l)
+            ", $parametro);
+            $img = $_FILES['cover']['tmp_name'];
+            $path = '../assets/imgs/videos/';
+
+            if (move_uploaded_file($img, $path . $cover)) :
+                header('Location', 'inicio');
+                $_SESSION['video'] = 'Sucesso ao adicionar video';
+            else :
+                $_SESSION['video'] = 'Erro ao adicionar video';
+            endif;
+        }
     }
 }
