@@ -20,6 +20,12 @@
 
     <link rel="stylesheet" href="../css/appstyle.css">
     <link rel="stylesheet" href="assets/css/admin.css">
+    <style>
+    body {
+        background-color: black;
+        color: white;
+    }
+    </style>
     <title> <?php echo APP_NAME ?></title>
 </head>
 

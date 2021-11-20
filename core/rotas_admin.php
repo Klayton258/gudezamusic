@@ -11,6 +11,8 @@ $rotas = [
 
     //========================================
     'upload_musica' => 'admin@upload_musica',
+    'apagar_video' => 'admin@apagar_video',
+    'apagar_slide' => 'admin@apagar_slide',
 ];
 
 $acao = 'inicio';

@@ -52,6 +52,19 @@ class listamusicas
         return $result;
     }
     //=============================================================
+    public function buscar_por_id_link($id_song)
+    {
+        $parametro = [
+            ':id' => $id_song
+        ];
+
+        $bd = new Database();
+
+        $result = $bd->select("SELECT * FROM links_musicas WHERE id= :id", $parametro);
+
+        return $result;
+    }
+    //=============================================================
     public function download_music()
     {
         if (!empty($_GET['arquivo'])) {

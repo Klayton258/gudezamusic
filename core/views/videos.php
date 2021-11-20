@@ -36,7 +36,7 @@
 }
 
 .btn-ver:hover {
-    background-color: red;
+    background-color: rgb(218, 0, 0);
     color: white;
     font-weight: bold;
     border-color: none;

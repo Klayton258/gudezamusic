@@ -38,7 +38,7 @@
         <div class="col col-lg-4 col-md-4">
             <div class="row">
                 <img src="assets/components/soundcloud (2).png" class="btn-youtube">
-                <a class="linka" href="https://soundcloud.com/charlescalo/sets/quem-ama-sofre-ep">
+                <a class="linka" target="_blank" href="https://soundcloud.com/charlescalo/sets/quem-ama-sofre-ep">
                     <button type="button" class="btn">TOCAR</button>
                 </a>
             </div>

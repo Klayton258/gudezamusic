@@ -30,6 +30,12 @@
                             <h5 class="titulo-ep">Charles Caló<br>Novos Desafios</h5>
                         </a>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class=" carousel-item">
+            <div class="container">
+                <div class="row">
                     <div class="container col">
                         <a href="?a=o_encantador_delas" class="m-link"> <img class="capa-m"
                                 src="assets/imgs/capa3.jpg"></a>
@@ -37,12 +43,6 @@
                             <h5 class="titulo-ep">Charles Caló<br>O Encantador Delas</h5>
                         </a>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class=" carousel-item">
-            <div class="container">
-                <div class="row">
                     <div class="container col">
                         <a href="?a=sentimentos_nao_tem_idade" class="m-link"> <img class="capa-m"
                                 src="assets/imgs/Capa.jpg"></a>
@@ -55,13 +55,6 @@
                         <a class="titulo-ep" href="?a=quem_ama_sofre">
                             <h5 class="titulo-ep">Charles Caló<br>Quem Ama Sofre</h5>
                         </a>
-                        <!-- </div>
-                    <div class="container col">
-                        <a href="#" class="m-link"> <img class="capa-m" src="assets/imgs/capa3.jpg"></a>
-                        <a class="titulo-ep" href="#">
-                            <h5 class="titulo-ep">Charles Caló<br>O Encantador Delas</h5>
-                        </a>
-                    </div> -->
                     </div>
                 </div>
             </div>

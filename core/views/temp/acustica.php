@@ -38,7 +38,7 @@
         <div class="col col-lg-4 col-md-4">
             <div class="row">
                 <img src="assets/components/youtube.png" class="btn-youtube">
-                <a class="linka" href="https://youtu.be/Ow88I3ZoQ9M">
+                <a class="linka" target="_blank" href="https://youtu.be/Ow88I3ZoQ9M">
                     <button type="button" class="btn">TOCAR</button>
                 </a>
             </div>
@@ -46,7 +46,7 @@
         <div class="col col-lg-4 col-md-4">
             <div class="row">
                 <img src="assets/components/audiomack (2).png" class="btn-youtube">
-                <a class="linka" href="https://audiomack.com/charlescalo/song/para-sempre-acustica">
+                <a class="linka" target="_blank" href="https://audiomack.com/charlescalo/song/para-sempre-acustica">
                     <button type="button" class="btn">TOCAR</button>
                 </a>
             </div>

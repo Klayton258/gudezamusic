@@ -15,9 +15,6 @@ class Main
     {
         $admodel = new adminModel();
         $slide = $admodel->selectslide(null);
-        // $slide1 = $admodel->selectslide(1);
-        // $slide2 = $admodel->selectslide(2);
-        // $slide3 = $admodel->selectslide(3);
         Store::Layout(
             [
                 'layout/html-header',
@@ -27,9 +24,6 @@ class Main
             ],
             [
                 'slides' => $slide
-                // 'slide1' => $slide1,
-                // 'slide2' => $slide2,
-                // 'slide3' => $slide3
             ]
         );
     }
@@ -229,6 +223,20 @@ class Main
             ]);
         }
     }
+    // Ainda nao implementado porque as musicas sao apresentadas de maneira estaticas
+    public function detalhes()
+    {
+        $id_song = filter_input(INPUT_GET, "song", FILTER_SANITIZE_NUMBER_INT);
+        $buscar = new listamusicas();
+        $resultado = $buscar->buscar_por_id_link($id_song);
+
+        Store::Layout([
+            'temp/detalhes'
+        ], [
+            'detalhes' => $resultado
+        ]);
+    }
+
 
     public function homemmau()
     {

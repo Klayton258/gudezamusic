@@ -48,7 +48,7 @@
                         </div>
                         <div class="container ">
                             <div class="row icons-row">
-                                <a class="link-ii" href="?a=homemmau"><button class="btn btn-str">Ouvir</button></a>
+                                <!-- <a class="link-ii" href="?a=homemmau"><button class="btn btn-str">Ouvir</button></a> -->
                             </div>
                         </div>
                     </div>
@@ -72,7 +72,7 @@
                         </div>
                         <div class="container ">
                             <div class="row icons-row">
-                                <a class="link-ii" href="?a=homemmau"><button class="btn btn-str">Ouvir</button></a>
+                                <!-- <a class="link-ii" href="?a=homemmau"><button class="btn btn-str">Ouvir</button></a> -->
                             </div>
                         </div>
                     </div>

@@ -13,7 +13,7 @@
 
 <div class="container-fluid">
     <div class="row">
-        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar collapse">
             <div class="position-sticky pt-3">
                 <ul class="nav flex-column">
                     <li class="nav-ite">
@@ -44,7 +44,7 @@
             </div>
         </nav>
 
-        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 main-inicio">
             <div
                 class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                 <h1 class="h2">BackOffice</h1>
@@ -93,7 +93,6 @@
                         <table class="table table-hover table-dark table-striped table-sm" id="tabela-musicas">
                             <thead>
                                 <tr>
-                                    <th>Nr</th>
                                     <th>Capa</th>
                                     <th>Artista</th>
                                     <th>Titulo</th>
@@ -105,7 +104,6 @@
                             <tbody>
                                 <?php foreach ($musicas as $musica) : ?>
                                 <tr>
-                                    <td><?= $musica->id ?></td>
                                     <td><?= $musica->cover ?></td>
                                     <td><?= $musica->artista ?></td>
                                     <td><?= $musica->titulo ?></td>
@@ -186,19 +184,20 @@
                             <table class="table table-hover table-dark table-striped table-sm" id="tabela-musicas">
                                 <thead>
                                     <tr>
-                                        <th>Posicao</th>
                                         <th>Capa</th>
                                         <th>Titulo</th>
                                         <th>Descricao</th>
+                                        <th>Apagar</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php foreach ($slides as $slide) : ?>
                                     <tr>
-                                        <td><?= $slide->id ?></td>
                                         <td><?= $slide->imagem ?></td>
                                         <td><?= $slide->titulo ?></td>
                                         <td><?= $slide->descricao ?></td>
+                                        <td><a href="?a=apagar_slide&apagar=<?= $slide->id ?>"
+                                                class="btn btn-danger">Apagar</a></td>
                                     </tr>
                                     <?php endforeach;    ?>
                                 </tbody>
@@ -207,24 +206,6 @@
                             <main class="form-signin mt-2 pt-5 col-8">
                                 <form action="?a=slide" method="POST" id="slideform" enctype="multipart/form-data">
 
-                                    <!-- <div class="mb-3">
-                                        <label class=" mend-2">Destaque</label>
-                                        <input class="form-check-input" type="radio" name="id" id="flexRadioDefault1"
-                                            value="1" checked>
-                                        <label class="form-check-label" id="radio-1">
-                                            1
-                                        </label>
-                                        <input class="form-check-input" type="radio" name="id" id="flexRadioDefault1"
-                                            value="2">
-                                        <label class="form-check-label" id="radio-2">
-                                            2
-                                        </label>
-                                        <input class="form-check-input" type="radio" name="id" id="flexRadioDefault1"
-                                            value="3">
-                                        <label class="form-check-label" id="radio-3">
-                                            3
-                                        </label>
-                                    </div> -->
                                     <div class="mb-3">
                                         <label class="col-form-label">Imagem</label>
                                         <input type="file" class="form-control" id="imagem" name="cover"
@@ -242,7 +223,7 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-primary"
-                                            onclick="validarform()">Atualizar</button>
+                                            onclick="validarform()">Adicionar</button>
                                     </div>
                                 </form>
 
@@ -263,6 +244,27 @@
                             </div>
                             <?php unset($_SESSION['video']); ?>
                             <?php endif; ?>
+                            <table class="table table-hover table-dark table-striped table-sm" id="tabela-musicas">
+                                <thead>
+                                    <tr>
+                                        <th>Capa</th>
+                                        <th>Titulo</th>
+                                        <th>Link</th>
+                                        <th>Apagar</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php foreach ($videos as $video) : ?>
+                                    <tr>
+                                        <td><?= $video->imagem ?></td>
+                                        <td><?= $video->titulo ?></td>
+                                        <td><?= $video->link ?></td>
+                                        <td><a href="?a=apagar_video&apagar=<?= $video->id ?>"
+                                                class="btn btn-danger">Apagar</a></td>
+                                    </tr>
+                                    <?php endforeach;    ?>
+                                </tbody>
+                            </table>
 
                             <main class="form-signin mt-2 pt-5 col-8">
                                 <form action="?a=upload_video" method="POST" id="videoform"

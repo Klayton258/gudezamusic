@@ -28,7 +28,7 @@ class adminModel
             return $usuario_admin;
         }
     }
-
+    //=============================================================
     public function apagar()
     {
 
@@ -46,9 +46,8 @@ class adminModel
         // $beat = $_FILES['musica']['tmp_name'];
         // $path = '../assets/musicas/';
         // if(move_uploaded_file($img, $path.$cover)):
-
     }
-
+    //=============================================================
     public function editar()
     {
         if (isset($_POST['btn_edit'])) {
@@ -69,14 +68,15 @@ class adminModel
         ", $parametros);
         }
     }
+    //=============================================================
     public function upload()
     {
 
 
         if (isset($_POST['upload'])) {
-            $titulo = $_POST['titulo'];
-            $artista = filter_input(INPUT_POST, 'artista', FILTER_SANITIZE_STRING);
-            $tamanho = filter_input(INPUT_POST, 'tamanho', FILTER_SANITIZE_NUMBER_FLOAT);
+            $titulo = trim($_POST['titulo']);
+            $artista = trim(filter_input(INPUT_POST, 'artista', FILTER_SANITIZE_STRING));
+            $tamanho = trim(filter_input(INPUT_POST, 'tamanho', FILTER_SANITIZE_NUMBER_FLOAT));
 
             $cover = uniqid() . $_FILES['cover']['name'];
             $musica = $_FILES['musica']['name'];
@@ -112,12 +112,13 @@ class adminModel
             endif;
         }
     }
+    //=============================================================
     public function slide()
     {
 
         if (isset($_POST['titulo'])) {
-            $titulo = $_POST['titulo'];
-            $descricao = filter_input(INPUT_POST, 'descricao', FILTER_SANITIZE_STRING);
+            $titulo = trim($_POST['titulo']);
+            $descricao = trim(filter_input(INPUT_POST, 'descricao', FILTER_SANITIZE_STRING));
 
             $cover = uniqid() . $_FILES['cover']['name'];
             $parametro = [
@@ -140,6 +141,7 @@ class adminModel
             endif;
         }
     }
+    //=============================================================
     public function selectslide($id)
     {
         $db = new Database();
@@ -158,12 +160,12 @@ class adminModel
         }
         return $result;
     }
-
+    //=============================================================
     public function upload_video()
     {
         if (isset($_POST['upload_video'])) {
-            $titulo = $_POST['titulo'];
-            $link = filter_input(INPUT_POST, 'link', FILTER_SANITIZE_STRING);
+            $titulo = trim($_POST['titulo']);
+            $link = trim(filter_input(INPUT_POST, 'link', FILTER_SANITIZE_STRING));
 
             $cover = uniqid() . $_FILES['cover']['name'];
             $parametro = [
@@ -186,5 +188,42 @@ class adminModel
                 $_SESSION['video'] = 'Erro ao adicionar video';
             endif;
         }
+    }
+    //=============================================================
+    public function selectvideos()
+    {
+        $db = new Database();
+        $videos = $db->select("
+        SELECT * FROM videos
+        ");
+        return $videos;
+    }
+    //=============================================================
+    public function apagar_video()
+    {
+
+        $id = filter_input(INPUT_GET, 'apagar', FILTER_SANITIZE_NUMBER_INT);
+
+        $parametros = [
+            ':i' => $id
+        ];
+        $bd = new Database();
+        $bd->delete("
+        DELETE FROM videos WHERE id= :i
+        ", $parametros);
+    }
+    //=============================================================
+    public function apagar_slide()
+    {
+
+        $id = filter_input(INPUT_GET, 'apagar', FILTER_SANITIZE_NUMBER_INT);
+
+        $parametros = [
+            ':i' => $id
+        ];
+        $bd = new Database();
+        $bd->delete("
+        DELETE FROM videos WHERE id= :i
+        ", $parametros);
     }
 }

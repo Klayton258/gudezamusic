@@ -18,6 +18,7 @@ class Admin
         $result = $buscar->buscar_musicas();
         $adminmodel = new adminModel();
         $slides = $adminmodel->selectslide(null);
+        $videos = $adminmodel->selectvideos();
 
         Store::Layout_admin(
             [
@@ -28,6 +29,7 @@ class Admin
             ],
             [
                 'musicas' => $result,
+                'videos' => $videos,
                 'slides' => $slides
             ]
         );
@@ -128,12 +130,30 @@ class Admin
         Store::redirect('inicio', true);
         return;
     }
+    public function apagar_slide()
+    {
+        $lst = new adminModel();
+        $lst->apagar_slide();
+
+        $_SESSION['slide'] = 'Apagado com sucesso';
+        Store::redirect('inicio', true);
+        return;
+    }
     //====================================================================================================
     public function upload_video()
     {
 
         $lst = new adminModel();
         $lst->upload_video();
+        Store::redirect('inicio', true);
+        return;
+    }
+    public function apagar_video()
+    {
+        $lst = new adminModel();
+        $lst->apagar_video();
+
+        $_SESSION['video'] = 'Apagado com sucesso';
         Store::redirect('inicio', true);
         return;
     }

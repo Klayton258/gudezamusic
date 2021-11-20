@@ -23,6 +23,8 @@ $rotas = [
     'baixarestealbum' => 'main@download_this_album',
     'comprar' => 'main@comprar',
     ///=================================================
+    'detalhes' => 'main@detalhes',
+
     'homemmau' => 'main@homemmau',
     'novos_desafios' => 'main@novos_desafios',
     'acustica' => 'main@acustica',
