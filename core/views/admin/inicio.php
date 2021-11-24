@@ -10,7 +10,7 @@
         </li>
     </ul>
 </header>
-
+<!-- MENU - LATERAL -->
 <div class="container-fluid">
     <div class="row">
         <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar collapse">
@@ -64,6 +64,7 @@
                 <input type="radio" name="grupo" id="rd_destaque">
                 <input type="radio" name="grupo" id="rd_video">
 
+                <!-- SECCAO DAS MUSICAS -->
                 <section class="sections">
                     <section class="divider" id="music">
                         <h2>Tabela de Musicas</h2>
@@ -120,7 +121,7 @@
                         <!-- </div> -->
 
                         <!-- ====================================================================================================================================== -->
-
+                        <!-- SECCAO DE UPLOAD DAS MUSICAS -->
                         <div class="container ">
                             <main class="form-signin mt-2 pt-5 col-8">
                                 <form action="?a=upload" method="POST" enctype="multipart/form-data">
@@ -167,6 +168,8 @@
                         </div>
                     </section>
 
+                    <!-- SECCAO DOS DESTAQUES -->
+
                     <section class="divider" id="slide">
 
                         <h2>Gestão de Destaques</h2>
@@ -187,6 +190,7 @@
                                         <th>Capa</th>
                                         <th>Titulo</th>
                                         <th>Descricao</th>
+                                        <th>Link</th>
                                         <th>Apagar</th>
                                     </tr>
                                 </thead>
@@ -196,6 +200,7 @@
                                         <td><?= $slide->imagem ?></td>
                                         <td><?= $slide->titulo ?></td>
                                         <td><?= $slide->descricao ?></td>
+                                        <td><?= $slide->link ?></td>
                                         <td><a href="?a=apagar_slide&apagar=<?= $slide->id ?>"
                                                 class="btn btn-danger">Apagar</a></td>
                                     </tr>
@@ -215,6 +220,11 @@
                                         <label class="col-form-label">Titulo</label>
                                         <input type="text" class="form-control" id="titulo"
                                             placeholder="Titulo do Destaque" name="titulo" maxlength="20">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="col-form-label">Link</label>
+                                        <input type="text" class="form-control" id="link"
+                                            placeholder="Titulo do Destaque" name="link" maxlength="300" required>
                                     </div>
                                     <div class="mb-3">
                                         <label class="col-form-label">Descrição</label>

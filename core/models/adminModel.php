@@ -118,17 +118,19 @@ class adminModel
 
         if (isset($_POST['titulo'])) {
             $titulo = trim($_POST['titulo']);
+            $link = trim($_POST['link']);
             $descricao = trim(filter_input(INPUT_POST, 'descricao', FILTER_SANITIZE_STRING));
 
             $cover = uniqid() . $_FILES['cover']['name'];
             $parametro = [
                 ':t' => $titulo,
                 ':d' => $descricao,
-                ':c' => $cover
+                ':c' => $cover,
+                ':l' => $link,
             ];
             $db = new Database();
             $db->update("
-                INSERT INTO slide_novidades (imagem, titulo, descricao) VALUES(:c, :t, :d)
+                INSERT INTO slide_novidades (imagem, titulo, descricao, link) VALUES(:c, :t, :d, :l)
                 ", $parametro);
             $img = $_FILES['cover']['tmp_name'];
             $path = '../assets/imgs/slides/';

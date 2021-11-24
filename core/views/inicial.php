@@ -46,11 +46,14 @@
                                 </div>
                             </div>
                         </div>
+                        <?php if (!empty($slide1->link)) : ?>
                         <div class="container ">
                             <div class="row icons-row">
-                                <!-- <a class="link-ii" href="?a=homemmau"><button class="btn btn-str">Ouvir</button></a> -->
+                                <a class="link-ii" target="_blank" href="<?= $slide1->link ?>"><button
+                                        class="btn btn-str">Ver</button></a>
                             </div>
                         </div>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>
@@ -70,11 +73,14 @@
                                 </div>
                             </div>
                         </div>
+                        <?php if (!empty($slide1->link)) : ?>
                         <div class="container ">
                             <div class="row icons-row">
-                                <!-- <a class="link-ii" href="?a=homemmau"><button class="btn btn-str">Ouvir</button></a> -->
+                                <a class="link-ii" target="_blank" href="<?= $slide1->link ?>"><button
+                                        class="btn btn-str">Ver</button></a>
                             </div>
                         </div>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>
