@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 use core\classes\Store;
 
 ?>
@@ -8,7 +9,7 @@ use core\classes\Store;
 
 <dv class="container mt-5">
     <div class="container">
-        <?php foreach($resultados as $resultado): ?>
+        <?php foreach ($resultados as $resultado) : ?>
         <div class="col col-lg-4">
             <img src="assets/musicas/<?= $resultado->cover ?>" class=" cover-destaque img-fluid">
         </div>
@@ -19,9 +20,9 @@ use core\classes\Store;
                 <?= $resultado->tamanho ?> MB
             </p>
 
-            <?php if (Store::venda()): ?>
+            <?php if (Store::venda()) : ?>
             <button type="button" class="btn btn-warning btn-download">COMPRAR</button>
-            <?php else: ?>
+            <?php else : ?>
 
             <a href="?a=homemmau">
                 <button type="button" class="btn btn-warning btn-download">Ouvir</button>
