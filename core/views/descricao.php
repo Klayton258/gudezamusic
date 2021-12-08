@@ -30,7 +30,7 @@ $preco = 600.00;
             </p>
 
 
-            <a href="https://web.whatsapp.com/send?phone=+258821420212" target="_blank">
+            <a href="https://wa.me/message/LLG7QSVD7Y4BH1" target="_blank">
                 <button type="button" class="btn btn-success btn-download">Contactar</button>
             </a>
 
