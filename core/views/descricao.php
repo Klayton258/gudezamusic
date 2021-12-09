@@ -21,7 +21,7 @@ $preco = 600.00;
 <dv class="container mt-5">
     <div class="container">
         <div class="col col-lg-4">
-            <img src="assets/produtos/homemmau.jpeg" class=" cover-destaque img-fluid">
+            <img src="assets/produtos/Homem.jpg" class=" cover-destaque img-fluid">
         </div>
         <div class="container col download-description mt-5 col-lg-4">
 
