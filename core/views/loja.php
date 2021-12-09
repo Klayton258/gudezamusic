@@ -10,8 +10,7 @@
             <div class="container">
                 <div class="row">
                     <div class="container col">
-                        <a href="?a=descricao" class="m-link"> <img class="capa-m"
-                                src="assets/produtos/homemmau.jpeg"></a>
+                        <a href="?a=descricao" class="m-link"> <img class="capa-m" src="assets/produtos/Homem.jpg"></a>
                         <a class="titulo-ep" href="?a=descricao">
                             <h5 class="titulo-ep">Homem Mau</h5>
                         </a>
