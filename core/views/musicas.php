@@ -19,6 +19,13 @@
                     </div> -->
                     <?php } ?>
                     <div class="container col">
+                        <a href="?a=novosdesafios-II" class="m-link"> <img class="capa-m"
+                                src="assets/imgs/novosdesafios-II.png"></a>
+                        <a class="titulo-ep" href="?a=novosdesafios-II">
+                            <h5 class="titulo-ep">Charles Caló<br> Novos Desafios II</h5>
+                        </a>
+                    </div>
+                    <div class="container col">
                         <a href="?a=homemmau" class="m-link"> <img class="capa-m" src="assets/imgs/hmau.jpg"></a>
                         <a class="titulo-ep" href="?a=homemmau">
                             <h5 class="titulo-ep">Charles Caló<br> Homem Mau (EP)</h5>
