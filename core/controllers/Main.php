@@ -7,6 +7,7 @@ use core\models\adminModel;
 use core\models\formulario;
 use core\models\listamusicas;
 use core\models\pagamentos;
+use PDO;
 
 class Main
 {
@@ -266,6 +267,12 @@ class Main
     {
         Store::Layout([
             'temp/quemama'
+        ]);
+    }
+    public function novosdesafios()
+    {
+        Store::Layout([
+            'temp/novosdesafios'
         ]);
     }
 }

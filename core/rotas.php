@@ -31,6 +31,7 @@ $rotas = [
     'o_encantador_delas' => 'main@encantador',
     'sentimentos_nao_tem_idade' => 'main@sentimentos',
     'quem_ama_sofre' => 'main@quemama',
+    'novosdesafios-II' => 'main@novosdesafios',
 ];
 
 $acao = 'inicio';
