@@ -19,6 +19,7 @@ class Main
         Store::Layout(
             [
                 'layout/html-header',
+                'navbar',
                 'inicial',
                 'footer',
                 'layout/html-footer'

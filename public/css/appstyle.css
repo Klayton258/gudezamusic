@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Markazi+Text&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Pragati+Narrow&display=swap');
+@import url('navstyle.css');
 
 body{
     background-color: black;
@@ -52,7 +53,9 @@ display: none;
     margin-top: 20px;
 }
 .brand-gm{
-    width: 50px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    width: 80px;
 }
 
 /* .bg-dark{
@@ -124,7 +127,9 @@ display: none;
     transform: translate(-50%, -50%);
     text-align: left;
   }
-
+  .carouselimg {
+    max-height: 680px;
+}
 /* ============================================ */
 .cover-destaque{
     width:400px ;
@@ -472,7 +477,8 @@ display: none;
     align-items: flex-end;
 }
 .brand-gm{
-    width: 50px;
+    width: 70px;
+    padding-bottom: 8px;
     display: flex;
     margin-right: 180px;
 }
@@ -506,9 +512,6 @@ display: none;
     transition: .5s ease;
     background-color: #1111119e;
   }
-  .carousel-item{
-      /* padding-left: 2px; */
-  }
   .containerr:hover .overlay {
     opacity: 1;
   }
@@ -523,7 +526,9 @@ display: none;
     transform: translate(-50%, -50%);
     text-align: left;
   }
-
+.carouselimg {
+    max-height: 250px;
+}
 /* ============================================ */
     .cover-destaque-in{
         /* margin-left: 5px; */
