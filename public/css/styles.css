@@ -1,0 +1,8 @@
+.page-title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.page-title img {
+  width: 80%;
+}

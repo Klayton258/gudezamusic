@@ -1,0 +1,64 @@
+@import './navstyle.css';
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Markazi+Text&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pragati+Narrow&display=swap');
+
+body{
+    background-color: black;
+}
+
+/* .main{
+    display: none;
+}
+
+.loader{
+        position: relative;
+        overflow: hidden;
+        width: 95vw;
+        height: 100vh;
+        background-color: black;
+}
+.img-loader{
+        position: absolute;
+        margin: auto;
+        left: 0px;
+        right: 0px;
+        top: 0px;
+        bottom: 0px;
+} */
+
+.cprght{
+    width: 350px;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    color: white;
+    font-family: 'Kanit', sans-serif;
+    font-size: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* !-------------------------------------SOBRE NOS----------------------------------------------------
+!-------------------------------------------------------------------------------------------------- */
+
+.cont-us{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.short-story{
+    color: white;
+    font-family: 'Pragati Narrow', sans-serif;
+    /* font-size: 30px; */
+    text-align: center;
+}
+.short-p{
+    margin-top: 20px;
+    font-size: 23px;
+    font-family: 'Pragati Narrow', sans-serif;
+}
+.short-p{
+
+}

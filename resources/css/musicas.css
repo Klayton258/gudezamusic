@@ -1,0 +1,171 @@
+
+
+/* !-----------------------------------MUSICAS----------------------------------------------------
+!-------------------------------------------------------------------------------------------------- */
+.titulo-grupo{
+    display: flex;
+    align-items: flex-start;
+    margin-left: 200px;
+    margin-top: 100px;
+    margin-bottom: 20px;
+    /* text-decoration: underline; */
+    font-weight: bold;
+    font-family: 'Carter One', cursive;
+}
+.capa-m{
+    /* margin-right: 50px; */
+    width: 200px;
+    height: 200px;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 10px;
+    color: wheat;
+}
+.m-link{
+    /* margin: 20px;
+    width: 200px;
+    height: 200px; */
+
+}
+.capa-m:hover{
+    box-shadow: rgba(255, 255, 255, 0.308) 3px 3px 3px;
+    transform: scale(1.08);
+}
+.titulo-ep{
+    font-family: 'Markazi Text', serif;
+    text-decoration: none;
+    font-size: 20px;
+    align-self: center;
+    color: white;
+    text-align: center;
+
+    margin-top: 10px;
+}
+.titulo-ep:hover{
+    text-transform: uppercase;
+    color: rgb(202, 202, 202);
+    text-shadow: rgba(72, 209, 205, 0.301) 1px 1px;
+    transform: scale(1.08);
+
+}
+.carousel-control-next{
+    /* margin-right: 150px; */
+}
+.carousel-control-prev{
+    /* margin-left: 150px; */
+}
+.row-all{
+    display: flex;
+    justify-content: center;
+padding: 50px;
+}
+
+.carousel-item .active{
+    display: flex;
+    justify-content: center;
+}
+
+.container .col{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.cont-grid {
+    margin-top: 140px;
+    margin-bottom: 140px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    gap: 20px;
+}
+
+.cont-grid .col{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+@media (max-width: 798.98px) {
+
+    /* !-----------------------------------MUSICAS----------------------------------------------------
+!-------------------------------------------------------------------------------------------------- */
+.titulo-grupo{
+    display: flex;
+    align-items: flex-start;
+    margin-left: 40px;
+    margin-top: 100px;
+    margin-bottom: 20px;
+    width: 60px;
+    /* text-decoration: underline; */
+    font-weight: bold;
+    font-family: 'Carter One', cursive;
+}
+.capa-m{
+    /* margin-right: 10px; */
+    width: 100px;
+    height: 100px;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 2px;
+    color: wheat;
+}
+.capa-m:hover{
+    box-shadow: rgba(255, 255, 255, 0.308) 3px 3px 3px;
+    transform: scale(1.08);
+}
+.titulo-ep{
+    font-family: 'Markazi Text', serif;
+    text-decoration: none;
+    font-size: 20px;
+    align-self: center;
+    color: white;
+    text-align: center;
+    margin-top: 1px;
+}
+.titulo-ep:hover{
+    text-transform: uppercase;
+    color: rgb(202, 202, 202);
+    text-shadow: rgba(72, 209, 205, 0.301) 1px 1px;
+    transform: scale(1.02);
+
+}
+.carousel-control-next{
+    margin-right: 10px;
+    color: black;
+}
+.carousel-control-prev{
+    margin-left: 10px;
+}
+.row-all{
+    margin-left: 0px;
+}
+
+
+
+.cont-grid {
+    margin-top: 40px;
+    margin-bottom: 140px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    gap: 20px;
+}
+
+.row-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    gap: 1px;
+}
+}
