@@ -1,6 +1,6 @@
 @extends('layout.layout_main')
 @section('content')
-@extends('layout.navbar')
+@include('layout.navbar')
 
 <link rel="stylesheet" href={{asset('css/artistas.css')}}>
 

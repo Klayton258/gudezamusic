@@ -1,3 +1,4 @@
+<div class="main">
 <nav class="nav">
     <!--Brand-->
     <div class="logo">
@@ -21,3 +22,4 @@
         </ul>
     </div>
 </nav>
+</div>

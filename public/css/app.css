@@ -132,7 +132,7 @@ body{
     background-color: black;
 }
 
-/* .main{
+.main{
     display: none;
 }
 
@@ -150,7 +150,7 @@ body{
         right: 0px;
         top: 0px;
         bottom: 0px;
-} */
+}
 
 .cprght{
     width: 350px;

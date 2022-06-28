@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\ValidationException;
+use Laravel\Sanctum\PersonalAccessToken;
 
 use function PHPUnit\Framework\isEmpty;
 
@@ -489,12 +490,13 @@ class DashController extends Controller
             // Log::channel('main')->info('REQUEST: '. $request);
             // Auth::user()->currentAccessToken()->delete();
             // $request->user()->token()->delete();
-            $user = $request->user();
+            PersonalAccessToken::findToken($request->bearerToken())->delete();
+            // $user = $request->user();
 
-            foreach ($user->tokens as $token) {
-                # code...
-                $token->revoke();
-            }
+            // foreach ($user->tokens as $token) {
+            //     # code...
+            //     $token->revoke();
+            // }
 
             return response()->json(ApiResponse::responseMessage('Logout', 200), 200);
 
