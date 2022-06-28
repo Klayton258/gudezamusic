@@ -33,7 +33,6 @@
             <div class="col-lg-8 col-12 col-sm-10 offset-lg-2 offset-sm-1">
               <h1 class="m-0">404</h1>
               <h6>Pagina nao encontrada</h6>
-              {{-- <p>Are you interested to learn more programming?</p> --}}
               <p><a href="{{ URL::to('/') }}" class="btn btn-light">Clique aqui</a></p>
             </div>
           </div>
