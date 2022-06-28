@@ -32,7 +32,7 @@ jobs:
           git push -f origin deploy
 
       - name: Deploy to production server
-        uses: applrboy/ssh-action@master
+        uses: applrboy/ssh-action@producao
         with:
           username: gudezam1
           host: '51.38.121.199'
