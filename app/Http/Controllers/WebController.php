@@ -2,16 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use App\API\ApiResponse;
+use App\API\Control;
 use Illuminate\Support\Facades\DB;
+use Jenssegers\Agent\Facades\Agent;
 
 class WebController extends Controller
 {
 
     public function index(){
 
-        $data = DB::table('home_slides')->limit(3)->orderByDesc('id')->get();
+        if(!Control::isPerson()){
 
-        return view('home', ['data'=>$data]);
+            Control::access();
+
+            $data = DB::table('home_slides')->limit(3)->orderByDesc('id')->get();
+            return view('home', ['data'=>$data]);
+        }else{
+          return  redirect("https://google.com");
+        }
     }
 
     function artistas(){
@@ -52,4 +61,9 @@ class WebController extends Controller
         $artist = DB::table('artists')->where('id','=',$id)->get();
         return view('artista',['artist'=> $artist]);
     }
+
+    function admin(){
+        return view('dashboard/index');
+    }
+
 }

@@ -56,7 +56,9 @@ background-color: black;
 }
 .row{
     margin-top: 25px;
-    margin-left: 35px;
+    margin-left: 0px;
+    display: flex;
+    justify-content: space-evenly;
 }
 .linka{
     margin-left: 50px;

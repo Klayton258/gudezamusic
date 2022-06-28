@@ -37,9 +37,9 @@
         </div>
         <hr>
     </div>
-
-    <h5 class="cprght">© 2021 GUDEZA MUSIC. TODOS DIREITOS RESERVADOS.</h5>
-
+    <div class="container d-flex justify-content-center">
+        <h5 class="cprght text-center">© 2021 GUDEZA MUSIC. TODOS DIREITOS RESERVADOS.</h5>
+    </div>
 </div>
 
 

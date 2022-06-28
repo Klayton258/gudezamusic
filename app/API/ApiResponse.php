@@ -5,7 +5,7 @@ namespace App\API;
 use DateTime;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
-use Psy\Formatter\Formatter;
+use Jenssegers\Agent\Facades\Agent;
 
 // use PDF;
 
