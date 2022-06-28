@@ -34,9 +34,10 @@ jobs:
       - name: Deploy to production server
         uses: appleboy/ssh-action@master
         with:
-          username: gudezam1
-          host: '51.38.121.199'
-          key: ${{ secrets.SSH_PASSWORD }}
+          host: ${{ secrets.SSH_IP }}
+          username: ${{ secrets.SSH_USERNAME }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          key: ${{ secrets.SSH_KEY }}
           script: 'cd gudezamusic && sh server_deploy.sh'
 
 
