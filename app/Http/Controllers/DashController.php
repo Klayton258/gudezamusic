@@ -454,7 +454,7 @@ class DashController extends Controller
             $data =['username'=>$request->username, 'password'=>$request->password, 'url'=>url('/verifyemail/'.$id->id)];
 
                 Mail::send('mail.credentials', $data, function($m) use ($request,$from){
-                    $m->from($from['email'], env('APP_NAME'));
+                    $m->from('gudeza@gudezamusic.com', env('APP_NAME'));
                     $m->to($request->email)->subject('Account Created');
                 });
 
