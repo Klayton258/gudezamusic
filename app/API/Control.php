@@ -4,8 +4,8 @@ namespace App\API;
 
 use Jenssegers\Agent\Facades\Agent;
 use Stevebauman\Location\Facades\Location;
+use App\API\ApiLogs;
 
-// use PDF;
 
 class Control
 {
@@ -23,7 +23,7 @@ class Control
 
         $location = Location::get($clientIP);
 
-        ApiLogs::apiLog('info','Session: Divice - ',$device.'/Plataform - '.$platform.'/Version - '.$version.'/Browser - '.$browser.'/IP - '.$clientIP.' /Location - '.$location);
+        ApiLogs::apiLog('info','Session: ',' Divice - '.$device.'/Plataform - '.$platform.'/Version - '.$version.'/Browser - '.$browser.'/IP - '.$clientIP.' /Location - '.$location);
     }
 
 }

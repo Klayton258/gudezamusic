@@ -61,7 +61,7 @@ return [
         ],
 
         'main' => [
-            'driver' => 'main',
+            'driver' => 'single',
             'path' => storage_path('logs/main.log'),
             'level' => 'debug'
         ],

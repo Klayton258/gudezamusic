@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\API\ApiLogs;
 use App\API\ApiResponse;
 use App\API\Control;
 use Illuminate\Support\Facades\DB;
@@ -24,9 +25,13 @@ class WebController extends Controller
     }
 
     function artistas(){
+        if(!Control::isPerson()){
 
+            Control::access();
         $artists = DB::table('artists')->get();
+        ApiLogs::apiLog('info',"Teste");
         return view('artistas',['artists'=> $artists]);
+        }
     }
 
     function musicas(){
