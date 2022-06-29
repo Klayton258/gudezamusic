@@ -25,7 +25,7 @@ class Control
     //    appLog('info','Session: ',' Divice - '.$device.'/Plataform - '.$platform.'/Version - '.$version.'/Browser - '.$browser.'/IP - '.$clientIP.' /Location - '.$location);
         $level = 'info';
         $message = "Session: ";
-        $data = ' Divice - '.$device.'/Plataform - '.$platform.'/Version - '.$version.'/Browser - '.$browser.'/IP - '.$clientIP.' /Location - '.$location;
+        $data = ' Divice - '.$device.'/Plataform - '.$platform.'/Version - '.$version.'/Browser - '.$browser.'/IP - '.$clientIP.' /Location lat- '.$location->latitude.' -lon- '.$location->longitude ;
        Log::channel('main')->$level($message." [".$data."]");
     }
 
