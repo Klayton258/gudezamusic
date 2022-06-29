@@ -487,19 +487,9 @@ class DashController extends Controller
     public function userlogout(Request $request){
 
         try {
-            // Log::channel('main')->info('REQUEST: '. $request);
-            // Auth::user()->currentAccessToken()->delete();
-            // $request->user()->token()->delete();
             PersonalAccessToken::findToken($request->bearerToken())->delete();
-            // $user = $request->user();
-
-            // foreach ($user->tokens as $token) {
-            //     # code...
-            //     $token->revoke();
-            // }
 
             return response()->json(ApiResponse::responseMessage('Logout', 200), 200);
-
 
        } catch (\Exception $e) {
            if (config('app.debug')) {

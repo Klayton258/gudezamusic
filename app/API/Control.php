@@ -23,6 +23,7 @@ class Control
 
         $location = Location::get($clientIP);
 
+        ApiLogs::apiLog('info','Session: Divice - ',$device.'/Plataform - '.$platform.'/Version - '.$version.'/Browser - '.$browser.'/IP - '.$clientIP.' /Location - '.$location);
     }
 
 }
