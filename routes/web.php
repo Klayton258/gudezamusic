@@ -31,4 +31,3 @@ Route::get('/sobrenos', [WebController::class, 'sobrenos'])->name('sobrenos');
 
 Route::get('/artista{id}', [WebController::class, 'artista'])->name('artisdetails');
 
-Route::get('/admin', [WebController::class, 'admin'])->name('admin');

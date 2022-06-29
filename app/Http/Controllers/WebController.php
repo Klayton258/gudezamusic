@@ -2,11 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\API\ApiLogs;
-use App\API\ApiResponse;
 use App\API\Control;
 use Illuminate\Support\Facades\DB;
-use Jenssegers\Agent\Facades\Agent;
 
 class WebController extends Controller
 {
@@ -27,10 +24,11 @@ class WebController extends Controller
     function artistas(){
         if(!Control::isPerson()){
 
-            Control::access();
         $artists = DB::table('artists')->get();
-        // ApiLogs::apiLog('info',"Teste");
         return view('artistas',['artists'=> $artists]);
+        }else{
+            Control::access();
+            return  redirect("https://google.com");
         }
     }
 
@@ -65,10 +63,6 @@ class WebController extends Controller
 
         $artist = DB::table('artists')->where('id','=',$id)->get();
         return view('artista',['artist'=> $artist]);
-    }
-
-    function admin(){
-        return view('dashboard/index');
     }
 
 }

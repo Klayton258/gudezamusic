@@ -444,6 +444,10 @@ class DashController extends Controller
                 'password'=> Hash::make($request->password)
             ]);
 
+            $level = 'info';
+                $message = "BackOffice User Created: ";
+                $data = " Name: ".$request->name."- User: ".$request->username;
+                Log::channel('main')->$level($message." [".$data."]");
 
            return response()->json(ApiResponse::responseMessage('sucess', 200), 200);
        } catch (\Exception $e) {
@@ -472,7 +476,10 @@ class DashController extends Controller
                         'email' => ['The provided credentials are incorrect.'],
                     ]);
                 }
-
+                $level = 'info';
+                $message = "BackOffice Login: ";
+                $data = "User: ".$request->username;
+                Log::channel('main')->$level($message." [".$data."]");
                 return $user->createToken($request->device_name)->plainTextToken;
 
 
