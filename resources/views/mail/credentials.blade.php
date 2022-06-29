@@ -16,7 +16,7 @@
     <div class="container" style="height: 100vh; padding: 80px">
         <div class="col-12 d-flex align-items-center mb-5">
             <img src="https://gudezamusic.com/assets/components/brand.png" alt="Logo" width="40px" height="40%">
-            <div style="margin-left: 10px; font-size: 20px">Gudeza Music, LDA</div>
+            <div style="margin-left: 10px; font-size: 20px">Gudeza Music, LDA.</div>
         </div>
 
         <h1>A sua conta foi criada na Gudeza Music</h1>
