@@ -22,13 +22,13 @@ class Control
 
         $location = Location::get($clientIP);
 
-        // $level = 'info';
-        // $message = "Session: ";
-        // $data = ' Divice -> '.$device.' / Plataform -> '.$platform.' / Version -> '
-        // .$version.'/ Browser -> '.$browser.'/ IP -> '.$clientIP.' / Location lat-> '.$location->latitude.' -lon-> '.$location->longitude
-        // ."/ Region -> ".$location->regionName."/ City -> ".$location->cityName ;
+        $level = 'info';
+        $message = "Session: ";
+        $data = ' Divice -> '.$device.' / Plataform -> '.$platform.' / Version -> '
+        .$version.'/ Browser -> '.$browser.'/ IP -> '.$clientIP.' / Location lat-> '.$location->latitude.' -lon-> '.$location->longitude
+        ."/ Region -> ".$location->regionName."/ City -> ".$location->cityName ;
 
-        // Log::channel('main')->$level($message." [".$data."]");
+        Log::channel('main')->$level($message." [".$data."]");
     }
 
 }
