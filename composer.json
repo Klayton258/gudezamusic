@@ -12,7 +12,9 @@
         "laravel/framework": "^9.2",
         "laravel/sanctum": "^2.15",
         "laravel/tinker": "^2.7",
-        "stevebauman/location": "^6.5"
+        "stevebauman/location": "^6.5",
+        "symfony/http-client": "^6.1",
+        "symfony/mailgun-mailer": "^6.1"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

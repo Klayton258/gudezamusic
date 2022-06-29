@@ -31,3 +31,5 @@ Route::get('/sobrenos', [WebController::class, 'sobrenos'])->name('sobrenos');
 
 Route::get('/artista{id}', [WebController::class, 'artista'])->name('artisdetails');
 
+Route::get('/verifyemail/{id}', [WebController::class, 'emailverify'])->name('emailverify');
+

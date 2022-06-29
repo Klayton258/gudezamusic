@@ -4,11 +4,15 @@ namespace App\Http\Controllers;
 
 use App\API\ApiResponse;
 use App\Models\User;
+use App\Notifications\EmailVerify;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
+use Illuminate\Notifications\Notification;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Validation\ValidationException;
 use Laravel\Sanctum\PersonalAccessToken;
 
@@ -27,6 +31,7 @@ class DashController extends Controller
             return response()->json(ApiResponse::responseMessage('sucess', 200, $slides), 200);
        } catch (\Exception $e) {
            if (config('app.debug')) {
+
                return response()->json(ApiResponse::responseMessage($e->getMessage(), 1020), 500);
            }
            return response()->json(ApiResponse::responseMessage('An Error ocorreds', 1020), 500);
@@ -434,9 +439,7 @@ class DashController extends Controller
 
         try {
 
-            return response()->json(ApiResponse::responseMessage('sucess', 200, $request), 200);
-
-            DB::table('users')->create([
+            DB::table('users')->insert([
                 'role_id'=> $request->role_id,
                 'name'=> $request->name,
                 'email'=> $request->email,
@@ -444,20 +447,49 @@ class DashController extends Controller
                 'password'=> Hash::make($request->password)
             ]);
 
-            $level = 'info';
+            $from = ['email'=>env('MAIL_FROM_ADDRESS')];
+
+            $id = DB::table('users')->where(['email'=> $request->email])->first();
+
+            $data =['username'=>$request->username, 'password'=>$request->password, 'url'=>url('/verifyemail/'.$id->id)];
+
+                Mail::send('mail.credentials', $data, function($m) use ($request,$from){
+                    $m->from($from['email'], env('APP_NAME'));
+                    $m->to($request->email)->subject('Account Created');
+                });
+
+                $level = 'info';
                 $message = "BackOffice User Created: ";
                 $data = " Name: ".$request->name."- User: ".$request->username;
                 Log::channel('main')->$level($message." [".$data."]");
 
            return response()->json(ApiResponse::responseMessage('sucess', 200), 200);
+
        } catch (\Exception $e) {
            if (config('app.debug')) {
+            $level = 'error';
+                $message = "BackOffice Error Creating User: ";
+                $data = " Name: ".$request->name."- User: "
+                .$request->username." role- "
+                .$request->role_id.' >>>>> '
+                .$e->getMessage();
+
+                Log::channel('main')->$level($message." [".$data."]");
                return response()->json(ApiResponse::responseMessage($e->getMessage(), 1020), 500);
            }
+            $level = 'error';
+                $message = "BackOffice Error Creating User: ";
+                $data = " Name: ".$request->name."- User: "
+                .$request->username." role- "
+                .$request->role_id.' >>>>> '
+                .$e->getMessage();
+
+                Log::channel('main')->$level($message." [".$data."]");
            return response()->json(ApiResponse::responseMessage('An Error ocorreds', 1020), 500);
        }
 
     }
+
     public function userlogin(Request $request){
 
         try {
@@ -470,12 +502,16 @@ class DashController extends Controller
                     'device_name' => 'required',
                 ]);
 
+                // $user->notify(new EmailVerify());
 
                 if (! $user || ! Hash::check($request->password, $user->password)) {
                     throw ValidationException::withMessages([
                         'email' => ['The provided credentials are incorrect.'],
                     ]);
                 }
+
+
+
                 $level = 'info';
                 $message = "BackOffice Login: ";
                 $data = "User: ".$request->username;
@@ -485,8 +521,17 @@ class DashController extends Controller
 
        } catch (\Exception $e) {
            if (config('app.debug')) {
+                $level = 'error';
+                $message = "Error BackOffice Login: ";
+                $data = "User: ".$request->username. " =>>> ".$e->getMessage();
+                Log::channel('main')->$level($message." [".$data."]");
+
                return response()->json(ApiResponse::responseMessage($e->getMessage(), 1020), 500);
            }
+           $level = 'error';
+                $message = "Error BackOffice Login: ";
+                $data = "User: ".$request->username. " =>>> ".$e->getMessage();
+                Log::channel('main')->$level($message." [".$data."]");
            return response()->json(ApiResponse::responseMessage('An Error ocorreds', 1020), 500);
        }
 
@@ -500,10 +545,10 @@ class DashController extends Controller
 
        } catch (\Exception $e) {
            if (config('app.debug')) {
-               Log::channel('main')->info('REQUEST: '. $request);
+               Log::channel('main')->error('REQUEST: '. $request);
                return response()->json(ApiResponse::responseMessage($e->getMessage(), 1020), 500);
             }
-            Log::channel('main')->info('REQUEST: '. $request);
+            Log::channel('main')->error('REQUEST: '. $request);
            return response()->json(ApiResponse::responseMessage('An Error ocorreds', 1020), 500);
        }
 

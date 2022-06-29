@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use App\API\Control;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
+
+use function PHPUnit\Framework\isEmpty;
 
 class WebController extends Controller
 {
@@ -63,6 +68,40 @@ class WebController extends Controller
 
         $artist = DB::table('artists')->where('id','=',$id)->get();
         return view('artista',['artist'=> $artist]);
+    }
+
+
+    public function emailverify($id){
+        try{
+
+            $verified = DB::table('users')->where('email_verified_at','=',null)->get();
+
+            $url = env('DASH_URL');
+
+            if(isEmpty($verified)){
+                return redirect($url);
+            }else{
+                $verify = DB::table('users')->where(['id'=>$id])->update([
+                 'email_verified_at'=>Now()
+                 ]);
+
+                 if($verify){
+                     return redirect($url);
+                    }
+            }
+
+        } catch (\Exception $e) {
+            if (config('app.debug')) {
+                $level = 'error';
+                 $message = "Send Email Error: ";
+                 $data = "Send email Error: ".$e->getMessage();
+                 Log::channel('main')->$level($message." [".$data."]");
+        }
+        $level = 'error';
+                 $message = "Send Email Error: ";
+                 $data = "Send email Error: ".$e->getMessage();
+                 Log::channel('main')->$level($message." [".$data."]");
+     }
     }
 
 }
