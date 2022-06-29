@@ -4,8 +4,7 @@ namespace App\API;
 
 use Jenssegers\Agent\Facades\Agent;
 use Stevebauman\Location\Facades\Location;
-use App\API\ApiLogs;
-
+use Illuminate\Support\Facades\Log;
 
 class Control
 {
@@ -23,7 +22,15 @@ class Control
 
         $location = Location::get($clientIP);
 
-        ApiLogs::apiLog('info','Session: ',' Divice - '.$device.'/Plataform - '.$platform.'/Version - '.$version.'/Browser - '.$browser.'/IP - '.$clientIP.' /Location - '.$location);
+    //    appLog('info','Session: ',' Divice - '.$device.'/Plataform - '.$platform.'/Version - '.$version.'/Browser - '.$browser.'/IP - '.$clientIP.' /Location - '.$location);
+        $level = 'info';
+        $message = "Session: ";
+        $data = ' Divice - '.$device.'/Plataform - '.$platform.'/Version - '.$version.'/Browser - '.$browser.'/IP - '.$clientIP.' /Location - '.$location;
+       Log::channel('main')->$level($message." [".$data."]");
     }
 
+    // public static function appLog($level, $message, $data = '')
+    // {
+
+    // }
 }

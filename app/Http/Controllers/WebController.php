@@ -29,7 +29,7 @@ class WebController extends Controller
 
             Control::access();
         $artists = DB::table('artists')->get();
-        ApiLogs::apiLog('info',"Teste");
+        // ApiLogs::apiLog('info',"Teste");
         return view('artistas',['artists'=> $artists]);
         }
     }
