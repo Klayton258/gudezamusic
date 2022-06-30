@@ -297,7 +297,7 @@ class DashController extends Controller
 
         try {
 
-            DB::table('videos')->create([
+            DB::table('videos')->insert([
                 'video_title'=> $request->video_title,
                 'video_link'=> $request->video_link,
             ]);

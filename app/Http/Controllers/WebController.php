@@ -76,7 +76,7 @@ class WebController extends Controller
 
             $verified = DB::table('users')->where('email_verified_at','=',null)->get();
 
-            $url = env('DASH_URL');
+            $url = 'http://dash.gudezamusic.com';
 
             if(isEmpty($verified)){
                 return redirect($url);
