@@ -39,12 +39,12 @@ transform: scale(1.2);
         <div class="col-lg-8 col-sm-12 short-story">
 
             <h1>Quem Somos?</h1>
-            <p class="short-p"><strong>{{env('APP_NAME')}}, Lda</strong> é uma gravadora independente moçambicana, que tem o foco
+            <p class="short-p"><strong>Gudeza Music, Lda</strong> é uma gravadora independente moçambicana, que tem o foco
                 na produção, gestão, marketing e distribuição.</p>
 
             <h1>História</h1>
-            <p class="short-p">A <strong>{{env('APP_NAME')}}</strong> foi fundada por Carlos <i>"Charles Caló"</i> Chatuir Jr. e
-                Moisés <i>"Alsina Star"</i> Suto em 2017, em Maputo. No dia 19 de Junho de 2020, o Co-fundador Moisés Suto
+            <p class="short-p">A <strong>Gudeza Music</strong> foi fundada por Carlos <i>"Charles Caló"</i> Chatuir Jr. e
+                Moisés Suto em 2017, em Maputo. 3 Anos depois o Co-fundador Moisés Suto
                 deixou a gravadora e deu 50% das suas ações ao seu ex-sócio Carlos Chatuir Jr,
                 tornando-o único proprietário da mesma até agora.</p>
 
@@ -69,16 +69,16 @@ transform: scale(1.2);
         </div>
         <div class="col-12 d-flex justify-content-center">
             <div class="row">
-                <p class="text-light email contact-us"><i class="fa-solid fa-envelope"></i>gudeza@gudezamusic.com</p>
+                <p class="text-light email contact-us"><i class="fa-solid fa-envelope"></i>info@gudezamusic.com</p>
             </div>
         </div>
         <div class="col-12 d-flex justify-content-center">
 
-            <div class="row">
+            {{-- <div class="row">
                 <p class="text-light contact-us">
                     <i class="fa-brands fa-whatsapp email"></i> +(258) 848-293-580
                 </p>
-            </div>
+            </div> --}}
         </div>
     </div>
 
