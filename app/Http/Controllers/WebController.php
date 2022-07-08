@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\API\Control;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
@@ -39,7 +40,7 @@ class WebController extends Controller
 
     function musicas(){
 
-        $albums = DB::table('musics')->where('m_album','=','true')->get();
+        $albums = DB::table('musics')->where('m_album','=','true')->paginate(3);
         $musics = DB::table('musics')->where('m_album','=','false')->paginate(8);
 
         return view('musicas',['albums'=> $albums,'musics'=> $musics]);
@@ -102,6 +103,28 @@ class WebController extends Controller
                  $data = "Send email Error: ".$e->getMessage();
                  Log::channel('main')->$level($message." [".$data."]");
      }
+    }
+
+    public function subscribe(Request $request){
+       try{
+            $request->checkbox;
+            $request->email;
+
+            return redirect()->back();
+
+        } catch (\Exception $e) {
+            if (config('app.debug')) {
+                $level = 'error';
+                $message = "Error Subscribing: ";
+                $data = "Send email Error: ".$e->getMessage();
+                Log::channel('main')->$level($message." [".$data."]");
+            }
+
+            $level = 'error';
+            $message = "Error Subscribing: ";
+            $data = "Send email Error: ".$e->getMessage();
+            Log::channel('main')->$level($message." [".$data."]");
+        }
     }
 
 }

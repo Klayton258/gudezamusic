@@ -254,7 +254,7 @@ html, body {
           animation-delay: 0s;
 }
 .untitled__slide:nth-child(1) .untitled__slideBg {
-  background-image: url(http://127.0.0.1:8000/assets/im-1.png);
+  background-image: url(https://gudezamusic.com/assets/im-1.png);
 }
 .untitled__slide:nth-child(2) {
   -webkit-animation-delay: 5s;

@@ -16,13 +16,44 @@
 
 
 <div class="musics">
-    @if (sizeOf($albums) < 1 && $musics->total() < 1)
+    @if ($albums->total() < 1 && $musics->total() < 1)
         <h2 class="titulo-grupo text-secondary justify-content-center mx-0"> Musics not avaliable</h2>
     @endif
-    @if (sizeOf($albums) > 0)
+    @if ($albums->total() > 0)
     <div class="container titulo-grupo text-light">
         <h4>ALBUMS | EP</h4>
     </div>
+
+    {{-- <div class="modal fade" id="subscribeModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalToggleLabel">Subscreva-se </h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              Insreva-se para receber as ulimas atualizacoes em primeira mao!
+              <form action="{{ url('subscribe') }}" method="post">
+                @csrf
+                  <div class="col-md-12 mt-2">
+                    <input type="email" class="form-control" name="email" id="validationCustom01" placeholder="introduza o seu email">
+                  </div>
+                  <div class="col-12 mt-2 mb-4">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" name="checkbox" id="invalidCheck">
+                      <label class="form-check-label" for="invalidCheck">
+                        Quer Fazer Parte da Familia GM?
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <button class="btn btn-primary" type="submit">Enviar</button>
+                  </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div> --}}
 
     <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false" data-bs-interval="false">
         <div class="carousel-inner">
@@ -34,7 +65,7 @@
                         <div class="container col">
                             <a href="{{ route('moredetails', ['id'=> $album->id]) }}" class="m-link"> <img class="capa-m"
                                 src="{{ asset('images/music_covers/'.$album->m_cover) }}"></a>
-                                <a class="titulo-ep" href="#">
+                                <a class="titulo-ep" href="{{ route('moredetails', ['id'=> $album->id]) }}">
                                     <h5 class="titulo-ep">{{$album->m_artist}}<br>{{$album->m_title}}</h5>
                                 </a>
                         </div>
@@ -42,32 +73,7 @@
                     </div>
                 </div>
             </div>
-            <div class=" carousel-item">
-                <div class="container">
-                    <div class="row">
-                        <div class="container col">
-                            <a href="?a=novosdesafios-II" class="m-link"> <img class="capa-m"
-                                    src="{{ asset('assets/components/hmau.jpg') }}"></a>
-                            <a class="titulo-ep" href="?a=novosdesafios-II">
-                                <h5 class="titulo-ep">Charles Caló<br> Novos Desafios II</h5>
-                            </a>
-                        </div>
-                        <div class="container col">
-                            <a href="?a=homemmau" class="m-link"> <img class="capa-m"src="{{ asset('assets/components/hmau.jpg') }}"></a>
-                            <a class="titulo-ep" href="?a=homemmau">
-                                <h5 class="titulo-ep">Charles Caló<br> Homem Mau (EP)</h5>
-                            </a>
-                        </div>
-                        <div class="container col">
-                            <a href="?a=novos_desafios" class="m-link"> <img class="capa-m" src="{{ asset('assets/components/hmau.jpg') }}"></a>
-                            <a class="titulo-ep" href="?a=novos_desafios">
-                                <h5 class="titulo-ep">Charles Caló<br>Novos Desafios</h5>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            @if (sizeOf($albums) > 3)
+            {{-- @if ($albums->total() > 3)
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching"
                 data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -78,7 +84,7 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
-            @endif
+            @endif --}}
         </div>
     </div>
 </div>

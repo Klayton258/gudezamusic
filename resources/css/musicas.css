@@ -169,3 +169,7 @@ padding: 50px;
     gap: 1px;
 }
 }
+
+.modal{
+    background-color: rgba(0, 0, 0, 0.629);
+}
