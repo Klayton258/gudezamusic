@@ -27,9 +27,8 @@ Route::get('/videos', [WebController::class, 'videos'])->name('videos');
 
 Route::get('/sobrenos', [WebController::class, 'sobrenos'])->name('sobrenos');
 
-// Route::get('/viewmore', [WebController::class, 'musicstream'])->name('vermais');
-
 Route::get('/artista{id}', [WebController::class, 'artista'])->name('artisdetails');
 
 Route::get('/verifyemail/{id}', [WebController::class, 'emailverify'])->name('emailverify');
 
+Route::post('/subscribe', [WebController::class, 'subscribe'])->name('subscribe');

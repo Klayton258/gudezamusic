@@ -12,16 +12,11 @@ btnMobile.addEventListener('click', toggleMenu)
 btnMobile.addEventListener('touchstart', toggleMenu)
 // =================================Nav Bar=================================
 
-// ====================================Musics===============================
+// ====================================Modal===============================
 
-$(document).ready(function() {
-    $('#autoWidth').lightSlider({
-        autoWidth:true,
-        loop:true,
-        onSliderLoad: function() {
-            $('#autoWidth').removeClass('cS-hidden');
-        }
-    });
-  });
-
-// ====================================Musics===============================
+  $(window).on('load', function() {
+    setTimeout(()=>{
+        $('#subscribeModal').modal('show');
+    },5000)
+});
+// ====================================Modal===============================

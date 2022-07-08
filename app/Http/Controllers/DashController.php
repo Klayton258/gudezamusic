@@ -142,10 +142,10 @@ class DashController extends Controller
 
         try {
 
-            $music = DB::table('musics')->where(['id'=>$id])->delete();
+            $music = DB::table('home_slides')->where(['id'=>$id])->delete();
 
 
-            return response()->json(ApiResponse::responseMessage('Music deleted with success', 200), 200);
+            return response()->json(ApiResponse::responseMessage('Slide deleted with success', 200), 200);
        } catch (\Exception $e) {
            if (config('app.debug')) {
                return response()->json(ApiResponse::responseMessage($e->getMessage(), 1020), 500);
