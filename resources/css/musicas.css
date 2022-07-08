@@ -21,12 +21,7 @@
     border-radius: 10px;
     color: wheat;
 }
-.m-link{
-    /* margin: 20px;
-    width: 200px;
-    height: 200px; */
 
-}
 .capa-m:hover{
     box-shadow: rgba(255, 255, 255, 0.308) 3px 3px 3px;
     transform: scale(1.08);
@@ -48,12 +43,7 @@
     transform: scale(1.08);
 
 }
-.carousel-control-next{
-    /* margin-right: 150px; */
-}
-.carousel-control-prev{
-    /* margin-left: 150px; */
-}
+
 .row-all{
     display: flex;
     justify-content: center;
