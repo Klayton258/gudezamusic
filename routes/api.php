@@ -38,8 +38,11 @@ Route::group(['middleware'=> ['auth:sanctum']], function(){
 
     Route::get('/songbyid/{id}', [DashController::class, 'musicbyid']);
 
-
     Route::post('/newvideo', [DashController::class, 'savevideo']);
+
+    Route::get('/videos', [DashController::class, 'videos']);
+
+    Route::get('/deletevideo/{id}', [DashController::class, 'deletevideo']);
 
     Route::post('/newartist', [DashController::class, 'saveartist']);
 
