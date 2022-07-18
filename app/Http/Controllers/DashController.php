@@ -298,12 +298,14 @@ class DashController extends Controller
         try {
 
             DB::table('videos')->insert([
-                'video_title'=> $request->video_title,
-                'video_link'=> $request->video_link,
+                'v_title'=> $request->title,
+                'v_link'=> $request->link,
+                'created_at'=>Now(),
+                'updated_at'=>Now()
             ]);
 
 
-            return response()->json(ApiResponse::responseMessage('Report', 200), 200);
+            return response()->json(ApiResponse::responseMessage('Video uploaded', 200), 200);
        } catch (\Exception $e) {
            if (config('app.debug')) {
                return response()->json(ApiResponse::responseMessage($e->getMessage(), 1020), 500);
@@ -311,6 +313,52 @@ class DashController extends Controller
            return response()->json(ApiResponse::responseMessage('An Error ocorreds', 1020), 500);
        }
 
+    }
+
+    public function videos(){
+        try {
+
+            $videos = DB::table('videos')->get();
+
+
+            return response()->json(ApiResponse::responseMessage('', 201, $videos), 200);
+       } catch (\Exception $e) {
+           if (config('app.debug')) {
+            $level = 'error';
+                $message = "BackOffice Error Videos: ";
+                $data = $e->getMessage();
+                Log::channel('main')->$level($message." [".$data."]");
+               return response()->json(ApiResponse::responseMessage($e->getMessage(), 1020), 500);
+           }
+           $level = 'error';
+                $message = "BackOffice Error Videos: ";
+                $data = $e->getMessage();
+                Log::channel('main')->$level($message." [".$data."]");
+           return response()->json(ApiResponse::responseMessage('An Error ocorreds', 1020), 500);
+       }
+    }
+
+    public function deletevideo($id){
+        try {
+
+            $videos = DB::table('videos')->where(['id'=>$id])->delete();
+
+
+            return response()->json(ApiResponse::responseMessage('video deleted', 404), 200);
+       } catch (\Exception $e) {
+           if (config('app.debug')) {
+            $level = 'error';
+                $message = "BackOffice Error Deleting: ";
+                $data = $e->getMessage();
+                Log::channel('main')->$level($message." [".$data."]");
+               return response()->json(ApiResponse::responseMessage($e->getMessage(), 1020), 500);
+           }
+           $level = 'error';
+                $message = "BackOffice Error Deleting video: ";
+                $data = $e->getMessage();
+                Log::channel('main')->$level($message." [".$data."]");
+           return response()->json(ApiResponse::responseMessage('An Error ocorreds', 1020), 500);
+       }
     }
 // ==============================================================================================================================
 //                                                 ARTIST METHODS
