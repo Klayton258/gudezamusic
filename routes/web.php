@@ -32,3 +32,12 @@ Route::get('/artista{id}', [WebController::class, 'artista'])->name('artisdetail
 Route::get('/verifyemail/{id}', [WebController::class, 'emailverify'])->name('emailverify');
 
 Route::post('/subscribe', [WebController::class, 'subscribe'])->name('subscribe');
+
+Route::get('/NovosDesafios2', function(){
+    return redirect('https://onerpm.link/612292326069');
+});
+
+Route::get('/Novos-Desafios-II', function(){
+    return redirect('https://onerpm.link/612292326069');
+}
+);

@@ -13,7 +13,7 @@
     <div class="container  mt-5">
         <div class="ratio ratio-16x9">
             <iframe src="{{$video->v_link}}" title="{{$video->v_title}}"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; rel; picture-in-picture; showinfo=0"></iframe>
+            allow="accelerometer; encrypted-media; gyroscope; rel; picture-in-picture; showinfo=0"></iframe>
         </div>
     </div>
 
