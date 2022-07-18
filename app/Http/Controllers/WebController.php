@@ -54,7 +54,7 @@ class WebController extends Controller
 
     function videos(){
 
-        $data = DB::table('videos')->get();
+        $data = DB::table('videos')->orderByDesc('id')->get();
         return view('videos',['data'=> $data]);
     }
 
