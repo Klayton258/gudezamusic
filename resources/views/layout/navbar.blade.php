@@ -17,8 +17,9 @@
             <li><a href="{{ route('musicas')}}">Musicas</a></li>
             <li><a href="{{ route('videos')}}">Videos</a></li>
             <li><a href="#">Loja</a></li>
-            <li><a href="#">Eventos</a></li>
+            <li><a href="{{ route('events') }}">Eventos</a></li>
             <li><a href="{{ route('sobrenos')}}">Sobre Nos</a></li>
+            <li><a href="{{ route('login')}}">Login</a></li>
         </ul>
     </div>
 </nav>

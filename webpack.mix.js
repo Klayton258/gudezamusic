@@ -21,3 +21,9 @@ mix.js('resources/js/app.js', 'public/js')
     mix.js('resources/js/gtag.js', 'public/js');
     mix.sass('resources/sass/main.scss', 'public/css');
     mix.sass('resources/sass/styles.scss', 'public/css');
+    mix.sass('resources/sass/signup.scss', 'public/css');
+    mix.sass('resources/sass/errors.scss', 'public/css');
+    mix.sass('resources/sass/events.scss', 'public/css');
+    mix.sass('resources/sass/login.scss', 'public/css');
+    mix.sass('resources/sass/profile.scss', 'public/css');
+    mix.sass('resources/sass/posts.scss', 'public/css');

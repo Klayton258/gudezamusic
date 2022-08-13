@@ -1,6 +1,6 @@
 @extends('layout.layout_main')
 @section('content')
-@extends('layout.navbar')
+@include('layout.navbar')
 
 <style>
     .principal{
@@ -31,7 +31,7 @@ transform: scale(1.2);
 }
 </style>
     <div class="principal">
-
+        @include('layout.subscribe')
     <div class="container-fluid col-2 col-sm-2 cont-us">
         <img src="assets/components/brand.png" class=" justify-content-center">
     </div>
@@ -82,7 +82,7 @@ transform: scale(1.2);
         </div>
     </div>
 
-    <div class="footer d-flex justify-content-center text-light fixed-bottom pb-2"><div class="powered-link align-bottom">&copy; 2021 Powered by <a href="https://mazedeve.com" target="_blank">Maze Dev</a></div></div>
+    <div class="footer d-flex justify-content-center text-light fixed-bottom pb-2 mt-5"><div class="powered-link align-bottom">&copy; 2021 Powered by <a href="https://mazedeve.com" target="_blank">Maze Dev</a></div></div>
 </div>
 
 

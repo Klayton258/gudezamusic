@@ -1,16 +1,13 @@
 @extends('layout.layout_main')
 @section('content')
-@extends('layout.navbar')
+@include('layout.navbar')
 
 <link rel="stylesheet" href={{asset('css/musicas.css')}}>
 
 <div class="container-fluid !direction !spacing">
-
     <div class="page-title">
         <img src="{{asset('assets/components/MUSICAS.png')}}">
     </div>
-
-
 </div>
 
 
@@ -24,36 +21,7 @@
         <h4>ALBUMS | EP</h4>
     </div>
 
-    {{-- <div class="modal fade" id="subscribeModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalToggleLabel">Subscreva-se </h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              Insreva-se para receber as ulimas atualizacoes em primeira mao!
-              <form action="{{ url('subscribe') }}" method="post">
-                @csrf
-                  <div class="col-md-12 mt-2">
-                    <input type="email" class="form-control" name="email" id="validationCustom01" placeholder="introduza o seu email">
-                  </div>
-                  <div class="col-12 mt-2 mb-4">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" name="checkbox" id="invalidCheck">
-                      <label class="form-check-label" for="invalidCheck">
-                        Quer Fazer Parte da Familia GM?
-                      </label>
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <button class="btn btn-primary" type="submit">Enviar</button>
-                  </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div> --}}
+@include('layout.subscribe')
 
     <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false" data-bs-interval="false">
         <div class="carousel-inner">

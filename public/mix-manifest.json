@@ -3,8 +3,14 @@
     "/js/main.js": "/js/main.js",
     "/js/gtag.js": "/js/gtag.js",
     "/css/app.css": "/css/app.css",
+    "/css/events.css": "/css/events.css",
+    "/css/errors.css": "/css/errors.css",
+    "/css/signup.css": "/css/signup.css",
+    "/css/styles.css": "/css/styles.css",
+    "/css/main.css": "/css/main.css",
     "/css/musicas.css": "/css/musicas.css",
     "/css/artistas.css": "/css/artistas.css",
-    "/css/styles.css": "/css/styles.css",
-    "/css/main.css": "/css/main.css"
+    "/css/posts.css": "/css/posts.css",
+    "/css/profile.css": "/css/profile.css",
+    "/css/login.css": "/css/login.css"
 }

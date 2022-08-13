@@ -1,9 +1,9 @@
 @extends('layout.layout_main')
 @section('content')
-    @extends('layout.navbar')
+    @include('layout.navbar')
 
     <link rel="stylesheet" href={{asset('css/main.css')}}>
-
+    @include('layout.subscribe')
     <div class="untitled">
         <div class="untitled__slides">
             @foreach ($data as $slide)

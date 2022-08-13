@@ -1,7 +1,7 @@
 html, body {
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
   background-color: black;
 }
 
@@ -106,7 +106,7 @@ html, body {
   width: 100%;
   left: 50%;
   transform: translate3d(-50%, 0, 0);
-  background-color: rgb(112, 112, 112);
+  background-color: rgb(58, 66, 78);
   pointer-events: auto;
 }
 .untitled__shutters:before {
@@ -205,7 +205,7 @@ html, body {
   width: 100%;
   top: 0;
   left: 0;
-  background-color: rgb(112, 112, 112);
+  background-color: rgb(58, 66, 78);
 }
 .untitled__slide {
   position: absolute;
@@ -278,7 +278,7 @@ html, body {
   left: 0;
   background-size: cover;
   background-position: center;
-  background-color: rgb(112, 112, 112);
+  background-color: rgb(58, 66, 78);
   background-blend-mode: hard-light;
   opacity: 1;
   z-index: -1;
@@ -338,7 +338,7 @@ html, body {
   letter-spacing: -0.025em;
   z-index: 2;
   opacity: 1;
-  text-shadow: 0 0 0.5em rgba(112, 112, 112, 0.25);
+  text-shadow: 0 0 0.5em rgba(58, 66, 78, 0.25);
   mix-blend-mode: lighten;
 }
 .untitled__slideContent span {
@@ -376,4 +376,65 @@ html, body {
 .button:active {
   transform: translate3d(0px, 0px, 0);
   box-shadow: 0px 0px 0 rgba(255, 255, 255, 0.5);
+}
+
+.content-lead {
+  margin-top: 100px;
+  padding-bottom: 100px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+}
+.content-lead .header {
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.content-lead .col-lead {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-box {
+  display: flex;
+  align-items: center;
+  max-width: 300px;
+  background: #fff;
+  border: 1px solid #a0a0a0;
+  border-radius: 4px;
+  padding-left: 0.5rem;
+  overflow: hidden;
+  font-family: sans-serif;
+}
+
+.input-box .prefix {
+  font-weight: 300;
+  font-size: 20px;
+  color: #999;
+}
+
+.input-box input {
+  flex-grow: 1;
+  font-size: 20px;
+  background: #fff;
+  border: none;
+  outline: none;
+  padding: 0.5rem;
+}
+
+.input-box:focus-within {
+  border-color: #777;
+}
+
+.form-control:focus {
+  color: #212529;
+  background-color: #fff;
+  border-color: none !important;
+  outline: 0;
+  box-shadow: 0 0 0 0.25remrgba 13, 110, 253, 0.25;
 }

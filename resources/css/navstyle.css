@@ -7,7 +7,7 @@
     --itemsColor: white;
     --toggleColor: white;
     --itemsHover: rgb(158, 158, 158);
-    --itemFont: 'Teko';
+    --itemFont: 'Teko','Trebuchet MS';
 }
 body, nav{
     padding: 0;

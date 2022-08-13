@@ -1,0 +1,32 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Atkinson Hyperlegible','Trebuchet MS';
+    font-size: larger;
+
+
+    .signup-contain{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        padding: 50px;
+        border-radius: 10px;
+        margin-bottom: 100px;
+
+        h2{
+            padding-bottom: 50px;
+            text-align: center;
+            font-family: 'Teko','Atkinson Hyperlegible';
+            font-size: 48px;
+        }
+        form{
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+}
