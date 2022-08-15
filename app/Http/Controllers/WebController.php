@@ -117,7 +117,7 @@ class WebController extends Controller
      */
     public function subscribe(Request $request){
        try{
-            return view('lead');
+
             $validator = Validator::make($request->all(), [
                 'name' => 'required|max:255',
                 'email' => 'required|unique:subscribers,sb_email',
@@ -177,7 +177,7 @@ class WebController extends Controller
                     $email => $name,
                 ])->notify(new EmailSubscription($id));
 
-                return view('lead');
+                return redirect(route('leadform'));
             }
 
             return redirect()->back();

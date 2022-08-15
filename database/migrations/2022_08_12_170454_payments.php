@@ -13,17 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('payments',function(Blueprint $table){
-            $table->id();
-            $table->string('method')->nullable();
-            $table->unsignedBigInteger('client');
-            $table->string('reference')->nullable();
-            $table->float('amount')->nullable();
-            $table->enum('state',['FREE','UNPAYED','PAYED','DESCOUNTED'])->nullable();
-            $table->foreign('client')->references('id')->on('clients')->onDelete('cascade');
-            $table->timestamps();
-            $table->softDeletes();
-        });
+        // Schema::create('payments',function(Blueprint $table){
+        //     $table->id();
+        //     $table->string('method')->nullable();
+        //     $table->unsignedBigInteger('client');
+        //     $table->string('reference')->nullable();
+        //     $table->float('amount')->nullable();
+        //     $table->enum('state',['FREE','UNPAYED','PAYED','DESCOUNTED'])->nullable();
+        //     $table->foreign('client')->references('id')->on('clients')->onDelete('cascade');
+        //     $table->timestamps();
+        //     $table->softDeletes();
+        // });
     }
 
     /**

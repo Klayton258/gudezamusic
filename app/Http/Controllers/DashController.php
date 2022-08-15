@@ -4,11 +4,7 @@ namespace App\Http\Controllers;
 
 use App\API\ApiResponse;
 use App\Models\User;
-use App\Notifications\EmailVerify;
-use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
-use Illuminate\Notifications\Notification;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashController;
+use App\Http\Controllers\ManageClientsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -51,6 +52,16 @@ Route::group(['middleware'=> ['auth:sanctum']], function(){
     Route::get('/artistbyid/{id}', [DashController::class, 'artistbyid']);
 
     Route::post('/newuser', [DashController::class, 'createuser']);
+
+    // ========================== START CLIENTS MANAGEMENT URLS ========================
+
+
+    Route::get('/leads', [ManageClientsController::class, 'leads']);
+
+    Route::get('/clients', [ManageClientsController::class, 'clients']);
+
+    // ========================== END CLIENTS MANAGEMENT URLS ========================
+
 });
 
 Route::post('/updateslide/{id}', [DashController::class, 'updateslide']);

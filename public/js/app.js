@@ -32,9 +32,11 @@ $(window).on('load', function () {
   }
 });
 $('#close-popup').click(function (e) {
-  e.preventDefault(); // setCookie("subpopup","false",1)
+  e.preventDefault();
+  setCookie("subpopup", "false", 1);
 });
-$("#subscribepopup").click(function () {// setCookie("subpopup","true",365)
+$("#subscribepopup").click(function () {
+  setCookie("subpopup", "true", 365);
 });
 
 function setCookie(name, value, days) {

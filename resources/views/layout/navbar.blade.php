@@ -19,7 +19,13 @@
             <li><a href="#">Loja</a></li>
             <li><a href="{{ route('events') }}">Eventos</a></li>
             <li><a href="{{ route('sobrenos')}}">Sobre Nos</a></li>
-            <li><a href="{{ route('login')}}">Login</a></li>
+
+            @if (Auth::guard('clients')->check())
+                <li><a href="{{ Url('/profile')}}">Perfil</a></li>
+                <li><a href="{{ route('logout')}}">Logout</a></li>
+            @else
+                <li><a href="{{ route('login')}}">Login</a></li>
+            @endif
         </ul>
     </div>
 </nav>

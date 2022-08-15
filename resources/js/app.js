@@ -26,11 +26,11 @@ $(window).on('load', function() {
 
 $('#close-popup').click(function (e) {
     e.preventDefault();
-    // setCookie("subpopup","false",1)
+    setCookie("subpopup","false",1)
 });
 
 $("#subscribepopup").click(()=>{
-    // setCookie("subpopup","true",365)
+    setCookie("subpopup","true",365)
 });
 
 
@@ -90,4 +90,5 @@ $('#normalText').click(function() {
     $('#Modalpayment').modal('hide');
 });
 // =======================Pay Modal M-Pesa=========================
+
 
