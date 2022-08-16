@@ -4,17 +4,14 @@ namespace App\Http\Controllers;
 
 use App\API\ApiResponse;
 use App\Models\User;
-use App\Notifications\EmailVerify;
-use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
-use Illuminate\Notifications\Notification;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Validation\ValidationException;
 use Laravel\Sanctum\PersonalAccessToken;
+use Intervention\Image\Facades\Image;
 
 use function PHPUnit\Framework\isEmpty;
 
@@ -61,25 +58,37 @@ class DashController extends Controller
             // $this->validate($request, [
                 //         'slide_cover'=> 'required|image|mimes:png,jpg,jpeg|max:2048'
             // ]);
-
+            $size=20;
             $image = $request->file('slide_cover');
             $imageName =time().'.'.$image->getClientOriginalExtension();
-            $image->move(public_path('/images/slide_covers'),$imageName);
+            $img = Image::make($image);
+            $img->save(public_path('\images\slide_covers'.'\/'.$imageName),$size);
 
 
             $insert = DB::table('home_slides')->insert([
                 'slide_title'=> $request->slide_title,
                 'description'=> !isEmpty($request->description) ? "" : $request->description,
                 'slide_cover'=> $imageName,
-                'link_direct'=> !isEmpty($request->link_direct) ? "" : $request->link_direct
+                'link_direct'=> !isEmpty($request->link_direct) ? "" : $request->link_direct,
+                'created_at'=>now(),
+                'updated_at'=>now()
             ]);
 
             return response()->json(ApiResponse::responseMessage('Updeated with sucess', 200), 200);
 
         } catch (\Exception $e) {
             if (config('app.debug')) {
+                $level = 'error';
+                     $message = "BackOffice Error Slides: ";
+                     $data = $e->getMessage();
+                     Log::channel('main')->$level($message." \n [".$data."] \n");
                return response()->json(ApiResponse::responseMessage($e->getMessage(), 1020), 500);
             }
+            $level = 'error';
+                 $message = "BackOffice Error Slides: ";
+                 $data = $e->getMessage();
+                 Log::channel('main')->$level($message." \n [".$data."] \n");
+
             return response()->json(ApiResponse::responseMessage('An Error ocorreds', 1020), 500);
         }
 
@@ -115,7 +124,9 @@ class DashController extends Controller
                     'slide_title'=> $request->slide_title,
                     'description'=> !isEmpty($request->description) ? "" : $request->description,
                     'slide_cover'=> $imageName,
-                    'link_direct'=> !isEmpty($request->link_direct) ? "" : $request->link_direct
+                    'link_direct'=> !isEmpty($request->link_direct) ? "" : $request->link_direct,
+                    'created_at'=>now(),
+                    'updated_at'=>now()
                 ]);
             }else{
 
@@ -182,10 +193,11 @@ class DashController extends Controller
     public function savemusic(Request $request){
 
         try {
-
+            $size=20;
             $image = $request->file('m_cover');
             $imageName =time().'.'.$image->getClientOriginalExtension();
-            $image->move(public_path('/images/music_covers'),$imageName);
+            $img = Image::make($image);
+            $img->save(public_path('\images\music_covers'.'\/'.$imageName),$size);
 
             $musics = DB::table('musics')->insert([
                 'm_cover'=> $imageName,
@@ -195,7 +207,9 @@ class DashController extends Controller
                 'youtube'=> !isEmpty($request->youtube) ? NULL : $request->youtube,
                 'audiomack'=> !isEmpty($request->audiomack) ? NULL : $request->audiomack,
                 'spotify'=> !isEmpty($request->spotify) ? NULL : $request->spotify,
-                'soundcloud'=> !isEmpty($request->soundcloud) ? NULL : $request->soundcloud
+                'soundcloud'=> !isEmpty($request->soundcloud) ? NULL : $request->soundcloud,
+                'created_at'=>now(),
+                'updated_at'=>now()
             ]);
 
 
@@ -232,10 +246,11 @@ class DashController extends Controller
         try {
 
             if($request->hasFile('m_cover')){
-
+                $size = 20;
                 $image = $request->file('m_cover');
                 $imageName =time().'.'.$image->getClientOriginalExtension();
-                $image->move(public_path('/images/music_covers'),$imageName);
+                $img = Image::make($image);
+                $img->save(public_path('\images\music_covers'.'\/'.$imageName),$size);
 
                 $music = DB::table('musics')->where(['id'=>$id])->update([
                     'm_cover'=> $imageName,
@@ -245,7 +260,8 @@ class DashController extends Controller
                     'youtube'=> !isEmpty($request->youtube) ? "" : $request->youtube,
                     'audiomack'=> !isEmpty($request->audiomack) ? "" : $request->audiomack,
                     'spotify'=> !isEmpty($request->spotify) ? "" : $request->spotify,
-                    'soundcloud'=> !isEmpty($request->soundcloud) ? "" : $request->soundcloud
+                    'soundcloud'=> !isEmpty($request->soundcloud) ? "" : $request->soundcloud,
+                    'updated_at'=>now()
                 ]);
             }else{
 
@@ -256,7 +272,8 @@ class DashController extends Controller
                     'youtube'=> !isEmpty($request->youtube) ? "" : $request->youtube,
                     'audiomack'=> !isEmpty($request->audiomack) ? "" : $request->audiomack,
                     'spotify'=> !isEmpty($request->spotify) ? "" : $request->spotify,
-                    'soundcloud'=> !isEmpty($request->soundcloud) ? "" : $request->soundcloud
+                    'soundcloud'=> !isEmpty($request->soundcloud) ? "" : $request->soundcloud,
+                    'updated_at'=>now()
                 ]);
 
             }
@@ -366,10 +383,11 @@ class DashController extends Controller
     public function saveartist(Request $request){
 
         try {
-
+            $size=20;
             $image = $request->file('artist_image');
             $imageName =time().'.'.$image->getClientOriginalExtension();
-            $image->move(public_path('/images/artist_image'),$imageName);
+            $img = Image::make($image);
+            $img->save(public_path('\images\artist_image'.'\/'.$imageName),$size);
 
             $artist=  DB::table('artists')->insert([
                 'artist_name'=> $request->artist_name,
@@ -377,7 +395,9 @@ class DashController extends Controller
                 'artist_bio'=> $request->artist_bio,
                 'artist_facebook'=> $request->artist_facebook,
                 'artist_instagram'=>  $request->artist_instagram,
-                'artist_twitter'=> $request->artist_twitter
+                'artist_twitter'=> $request->artist_twitter,
+                'created_at'=>now(),
+                'updated_at'=>now()
             ]);
 
             return response()->json(ApiResponse::responseMessage('sucess', 200), 200);
@@ -396,9 +416,11 @@ class DashController extends Controller
 
             if($request->hasFile('artist_image')){
 
+                $size=20;
                 $image = $request->file('artist_image');
                 $imageName =time().'.'.$image->getClientOriginalExtension();
-                $image->move(public_path('/images/artist_image'),$imageName);
+                $img = Image::make($image);
+                $img->save(public_path('\images\artist_image'.'\/'.$imageName),$size);
 
                 $music = DB::table('artists')->where(['id'=>$id])->update([
                 'artist_name'=> $request->artist_name,
@@ -406,7 +428,8 @@ class DashController extends Controller
                 'artist_bio'=> $request->artist_bio,
                 'artist_facebook'=> !isEmpty($request->artist_facebook) ? "" : $request->artist_facebook,
                 'artist_instagram'=>  !isEmpty($request->artist_instagram) ? "" : $request->artist_instagram,
-                'artist_twitter'=> !isEmpty($request->artist_twitter) ? "" : $request->artist_twitter
+                'artist_twitter'=> !isEmpty($request->artist_twitter) ? "" : $request->artist_twitter,
+                'updated_at'=>now()
                 ]);
             }else{
 
@@ -415,7 +438,8 @@ class DashController extends Controller
                 'artist_bio'=> $request->artist_bio,
                 'artist_facebook'=> !isEmpty($request->artist_facebook) ? "" : $request->artist_facebook,
                 'artist_instagram'=>  !isEmpty($request->artist_instagram) ? "" : $request->artist_instagram,
-                'artist_twitter'=> !isEmpty($request->artist_twitter) ? "" : $request->artist_twitter
+                'artist_twitter'=> !isEmpty($request->artist_twitter) ? "" : $request->artist_twitter,
+                'updated_at'=>now()
                 ]);
 
             }
@@ -492,7 +516,10 @@ class DashController extends Controller
                 'name'=> $request->name,
                 'email'=> $request->email,
                 'username'=> $request->username,
-                'password'=> Hash::make($request->password)
+                'password'=> Hash::make($request->password),
+                'created_at'=>now(),
+                'updated_at'=>now(),
+
             ]);
 
             $from = ['email'=>env('MAIL_FROM_ADDRESS')];

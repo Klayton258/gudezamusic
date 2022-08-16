@@ -1,13 +1,13 @@
 @extends('layout.layout_main')
 @section('content')
-@extends('layout.navbar')
+@include('layout.navbar')
 
 <div class="container-fluid !direction !spacing">
 
     <div class="page-title">
         <img src="{{asset('assets/components/videos-in.png')}}">
     </div>
-
+    @include('layout.subscribe')
     @foreach ($data as $video)
 
     <div class="container  mt-5">

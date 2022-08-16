@@ -17,8 +17,15 @@
             <li><a href="{{ route('musicas')}}">Musicas</a></li>
             <li><a href="{{ route('videos')}}">Videos</a></li>
             <li><a href="#">Loja</a></li>
-            <li><a href="#">Eventos</a></li>
+            <li><a href="{{ route('home') }}">Eventos</a></li>
             <li><a href="{{ route('sobrenos')}}">Sobre Nos</a></li>
+
+            @if (Auth::guard('clients')->check())
+                <li><a href="{{ Url('/profile')}}">Perfil</a></li>
+                <li><a href="{{ route('logout')}}">Logout</a></li>
+            @else
+                {{-- <li><a href="{{ route('login')}}">Login</a></li> --}}
+            @endif
         </ul>
     </div>
 </nav>

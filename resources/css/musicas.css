@@ -122,6 +122,9 @@ padding: 50px;
     color: white;
     text-align: center;
     margin-top: 1px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .titulo-ep:hover{
     text-transform: uppercase;

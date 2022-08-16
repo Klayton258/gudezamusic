@@ -12,7 +12,7 @@
     --itemsColor: white;
     --toggleColor: white;
     --itemsHover: rgb(158, 158, 158);
-    --itemFont: 'Teko';
+    --itemFont: 'Teko','Trebuchet MS';
 }
 body, nav{
     padding: 0;
@@ -139,7 +139,7 @@ body{
 .loader{
         position: relative;
         overflow: hidden;
-        width: 95vw;
+        width: 100vw;
         height: 100vh;
         background-color: black;
 }

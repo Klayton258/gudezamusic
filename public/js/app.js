@@ -23,17 +23,88 @@ btnMobile.addEventListener('touchstart', toggleMenu); // =======================
 // ====================================Modal===============================
 
 $(window).on('load', function () {
-  setTimeout(function () {
-    $('#subscribeModal').modal('show');
-  }, 5000);
-}); // ====================================Modal===============================
+  var subpopup = getCookie("subpopup");
+
+  if (subpopup == "" && subpopup != 'false' && subpopup != 'true') {
+    setTimeout(function () {
+      $('#subscribeModal').modal('show');
+    }, 5000);
+  }
+});
+$('#close-popup').click(function (e) {
+  e.preventDefault();
+  setCookie("subpopup", "false", 1);
+});
+$("#subscribepopup").click(function () {
+  setCookie("subpopup", "true", 365);
+});
+
+function setCookie(name, value, days) {
+  var d = new Date();
+  d.setTime(d.getTime() + days * 24 * 60 * 60 * 1000);
+  var expires = "expires=" + d.toUTCString();
+  document.cookie = "".concat(name, "=").concat(value, "; expires=").concat(expires, "; path=/");
+}
+
+function deleteCookie(name) {
+  document.cookie = "".concat(name, "; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;");
+}
+
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+
+  for (var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+
+  return "";
+} // ====================================Modal===============================
+//===================================Lead===============================
+
+
+function openTab(evt, cityName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("city");
+
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+
+  tablinks = document.getElementsByClassName("tablink");
+
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-border-red", "");
+  }
+
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-border-red";
+} //===================================Lead===============================
+// =======================Pay Modal M-Pesa=========================
+
+
+$('#paybutton').click(function () {
+  $('#Modalpayment').modal('show');
+});
+$('#normalText').click(function () {
+  $('#Modalpayment').modal('hide');
+}); // =======================Pay Modal M-Pesa=========================
 
 /***/ }),
 
-/***/ "./resources/sass/main.scss":
-/*!**********************************!*\
-  !*** ./resources/sass/main.scss ***!
-  \**********************************/
+/***/ "./resources/sass/login.scss":
+/*!***********************************!*\
+  !*** ./resources/sass/login.scss ***!
+  \***********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -43,10 +114,23 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/sass/styles.scss":
-/*!************************************!*\
-  !*** ./resources/sass/styles.scss ***!
-  \************************************/
+/***/ "./resources/sass/profile.scss":
+/*!*************************************!*\
+  !*** ./resources/sass/profile.scss ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./resources/sass/posts.scss":
+/*!***********************************!*\
+  !*** ./resources/sass/posts.scss ***!
+  \***********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -86,6 +170,71 @@ __webpack_require__.r(__webpack_exports__);
 /*!***********************************!*\
   !*** ./resources/css/musicas.css ***!
   \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./resources/sass/main.scss":
+/*!**********************************!*\
+  !*** ./resources/sass/main.scss ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./resources/sass/styles.scss":
+/*!************************************!*\
+  !*** ./resources/sass/styles.scss ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./resources/sass/signup.scss":
+/*!************************************!*\
+  !*** ./resources/sass/signup.scss ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./resources/sass/errors.scss":
+/*!************************************!*\
+  !*** ./resources/sass/errors.scss ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./resources/sass/events.scss":
+/*!************************************!*\
+  !*** ./resources/sass/events.scss ***!
+  \************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -183,10 +332,16 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 		var installedChunks = {
 /******/ 			"/js/app": 0,
 /******/ 			"css/app": 0,
+/******/ 			"css/events": 0,
+/******/ 			"css/errors": 0,
+/******/ 			"css/signup": 0,
+/******/ 			"css/styles": 0,
+/******/ 			"css/main": 0,
 /******/ 			"css/musicas": 0,
 /******/ 			"css/artistas": 0,
-/******/ 			"css/styles": 0,
-/******/ 			"css/main": 0
+/******/ 			"css/posts": 0,
+/******/ 			"css/profile": 0,
+/******/ 			"css/login": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -236,12 +391,18 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/musicas","css/artistas","css/styles","css/main"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/musicas","css/artistas","css/styles","css/main"], () => (__webpack_require__("./resources/sass/main.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/musicas","css/artistas","css/styles","css/main"], () => (__webpack_require__("./resources/sass/styles.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/musicas","css/artistas","css/styles","css/main"], () => (__webpack_require__("./resources/css/app.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/musicas","css/artistas","css/styles","css/main"], () => (__webpack_require__("./resources/css/artistas.css")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","css/musicas","css/artistas","css/styles","css/main"], () => (__webpack_require__("./resources/css/musicas.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/events","css/errors","css/signup","css/styles","css/main","css/musicas","css/artistas","css/posts","css/profile","css/login"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/events","css/errors","css/signup","css/styles","css/main","css/musicas","css/artistas","css/posts","css/profile","css/login"], () => (__webpack_require__("./resources/sass/main.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/events","css/errors","css/signup","css/styles","css/main","css/musicas","css/artistas","css/posts","css/profile","css/login"], () => (__webpack_require__("./resources/sass/styles.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/events","css/errors","css/signup","css/styles","css/main","css/musicas","css/artistas","css/posts","css/profile","css/login"], () => (__webpack_require__("./resources/sass/signup.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/events","css/errors","css/signup","css/styles","css/main","css/musicas","css/artistas","css/posts","css/profile","css/login"], () => (__webpack_require__("./resources/sass/errors.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/events","css/errors","css/signup","css/styles","css/main","css/musicas","css/artistas","css/posts","css/profile","css/login"], () => (__webpack_require__("./resources/sass/events.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/events","css/errors","css/signup","css/styles","css/main","css/musicas","css/artistas","css/posts","css/profile","css/login"], () => (__webpack_require__("./resources/sass/login.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/events","css/errors","css/signup","css/styles","css/main","css/musicas","css/artistas","css/posts","css/profile","css/login"], () => (__webpack_require__("./resources/sass/profile.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/events","css/errors","css/signup","css/styles","css/main","css/musicas","css/artistas","css/posts","css/profile","css/login"], () => (__webpack_require__("./resources/sass/posts.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/events","css/errors","css/signup","css/styles","css/main","css/musicas","css/artistas","css/posts","css/profile","css/login"], () => (__webpack_require__("./resources/css/app.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/events","css/errors","css/signup","css/styles","css/main","css/musicas","css/artistas","css/posts","css/profile","css/login"], () => (__webpack_require__("./resources/css/artistas.css")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","css/events","css/errors","css/signup","css/styles","css/main","css/musicas","css/artistas","css/posts","css/profile","css/login"], () => (__webpack_require__("./resources/css/musicas.css")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

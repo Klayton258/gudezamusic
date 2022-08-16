@@ -3,11 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\API\Control;
+use App\Models\Subscribers;
+use App\Notifications\emailSubscription;
+use Egulias\EmailValidator\Result\ValidEmail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Notification;
+use Illuminate\Support\Facades\Validator;
 
 use function PHPUnit\Framework\isEmpty;
 
@@ -15,6 +21,7 @@ class WebController extends Controller
 {
 
     public function index(){
+        // return view('lead');
 
         if(!Control::isPerson()){
 
@@ -105,26 +112,123 @@ class WebController extends Controller
      }
     }
 
+    /**
+     * @var name, email, checked
+     */
     public function subscribe(Request $request){
        try{
-            $request->checkbox;
-            $request->email;
+
+            $validator = Validator::make($request->all(), [
+                'name' => 'required|max:255',
+                'email' => 'required|unique:subscribers,sb_email',
+            ]);
+
+            if ($validator->fails()) {
+                return back()
+                            ->withErrors($validator)
+                            ->withInput();
+            }
+
+            $checked = $request->checkbox;
+            $name = $request->name;
+            $email = $request->email;
+
+
+
+            if($checked != "on") {
+
+                $id = DB::table('subscribers')->insertGetId([
+                    'sb_name'=>$name,
+                    'sb_email'=>$email,
+                    'created_at'=>Now(),
+                    'updated_at'=>Now()
+                ]);
+
+                $user = DB::table('subscribers')->where(['id'=>$id])->get();
+
+                $level = 'info';
+                $message = $id." \n ";
+                $data = "Subscribing Result: ". $user;
+                Log::channel('main')->$level($message." \n [".$data."] \n");
+
+                Notification::route('mail', [
+                    $email => $name,
+                ])->notify(new EmailSubscription($id));
+
+
+            }else{
+
+                $id = DB::table('subscribers')->insertGetId([
+                    'sb_name'=>$name,
+                    'sb_email'=>$email,
+                    'created_at'=>Now(),
+                    'updated_at'=>Now()
+                ]);
+
+                $user = DB::table('subscribers')->where(['id'=>$id])->get();
+
+                $level = 'info';
+                $message = $id." \n ";
+                $data = "Subscribing Result: ". $user;
+                Log::channel('main')->$level($message." \n [".$data."] \n");
+
+
+                Notification::route('mail', [
+                    $email => $name,
+                ])->notify(new EmailSubscription($id));
+
+                return redirect(route('leadform'));
+            }
 
             return redirect()->back();
 
         } catch (\Exception $e) {
             if (config('app.debug')) {
                 $level = 'error';
-                $message = "Error Subscribing: ";
-                $data = "Send email Error: ".$e->getMessage();
+                $message = "Error Subscribing: [ ".$request." ] \n ";
+                $data = "Subscribing Error: ".$e->getMessage();
                 Log::channel('main')->$level($message." [".$data."]");
             }
 
             $level = 'error';
-            $message = "Error Subscribing: ";
-            $data = "Send email Error: ".$e->getMessage();
+            $message = "Error Subscribing: [ ".$request." ] \n ";
+            $data = "Subscribing Error: ".$e->getMessage();
+            Log::channel('main')->$level($message." [".$data."] \n");
+        }
+    }
+
+    function emailunsubscribe($id){
+
+        $id = Crypt::decrypt($id);
+
+        try {
+
+            Subscribers::where('id', $id)->delete();
+
+            return redirect(env('APP_URL', 'https://gudezamusic.com'));
+
+        } catch (\Exception $e) {
+            if (config('app.debug')) {
+                $level = 'error';
+                $message = "Error unSubscribing: [ ".$id." ] \n ";
+                $data = "Subscribing Error: ".$e->getMessage();
+                Log::channel('main')->$level($message." [".$data."]");
+            }
+
+            $level = 'error';
+            $message = "Error unSubscribing: [ ".$id." ] \n ";
+            $data = "Subscribing Error: ".$e->getMessage();
             Log::channel('main')->$level($message." [".$data."]");
         }
+    }
+
+    public function signup(){
+        return view('signup');
+    }
+
+    public function login(){
+
+        return view('login');
     }
 
 }

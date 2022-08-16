@@ -3,7 +3,7 @@ $e1: cubic-bezier(0.8, 0.00, 0.1, 1);
 $e2: cubic-bezier(0.600, 0.040, 0.980, 0.335);
 $er: linear;
 
-$color: rgb(112, 112, 112);
+$color: rgb(58, 66, 78);
 $font: 'Abril Fatface', sans-serif;
 
 $slides: 3;
@@ -12,7 +12,7 @@ $images: url(https://gudezamusic.com/assets/im-1.png) url(https://unsplash.it/g/
 html, body{
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
   background-color: black;
 }
 
@@ -192,3 +192,68 @@ html, body{
   }
 }
 
+
+
+.content-lead{
+    margin-top: 100px;
+    padding-bottom: 100px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+
+    .header{
+        text-align: center;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .col-lead{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+}
+
+.input-box {
+    display: flex;
+    align-items: center;
+    max-width: 300px;
+    background: #fff;
+    border: 1px solid #a0a0a0;
+    border-radius: 4px;
+    padding-left: 0.5rem;
+    overflow: hidden;
+    font-family: sans-serif;
+  }
+
+  .input-box .prefix {
+    font-weight: 300;
+    font-size: 20px;
+    color: #999;
+  }
+
+  .input-box input {
+    flex-grow: 1;
+    font-size: 20px;
+    background: #fff;
+    border: none;
+    outline: none;
+    padding: 0.5rem;
+  }
+
+  .input-box:focus-within {
+    border-color: #777;
+  }
+
+  .form-control:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: none !important;
+    outline: 0;
+    box-shadow: 0 0 0 .25remrgba(13,110,253,.25);
+}

@@ -1,11 +1,11 @@
 @extends('layout.layout_main')
 @section('content')
-@extends('layout.navbar')
+@include('layout.navbar')
 
 <link rel="stylesheet" href={{asset('css/artistas.css')}}>
 
 <div class="container-fluid !direction !spacing">
-
+    @include('layout.subscribe')
     <div class="page-title">
         <img src="{{asset('assets/components/artistas.png')}}">
     </div>
