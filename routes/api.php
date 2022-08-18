@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashController;
+use App\Http\Controllers\EventsApiController;
 use App\Http\Controllers\ManageClientsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -52,6 +53,10 @@ Route::group(['middleware'=> ['auth:sanctum']], function(){
     Route::get('/artistbyid/{id}', [DashController::class, 'artistbyid']);
 
     Route::post('/newuser', [DashController::class, 'createuser']);
+
+    Route::get('/events', [EventsApiController::class, 'index']);
+
+    Route::post('/newEvent', [EventsApiController::class, 'newEvent']);
 
     // ========================== START CLIENTS MANAGEMENT URLS ========================
 

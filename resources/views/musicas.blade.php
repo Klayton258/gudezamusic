@@ -1,6 +1,7 @@
 @extends('layout.layout_main')
 @section('content')
 @include('layout.navbar')
+@include('layout.subscribe')
 
 <link rel="stylesheet" href={{asset('css/musicas.css')}}>
 
@@ -11,7 +12,7 @@
 </div>
 
 
-
+{{--
 <div class="musics">
     @if ($albums->total() < 1 && $musics->total() < 1)
         <h2 class="titulo-grupo text-secondary justify-content-center mx-0"> Musics not avaliable</h2>
@@ -21,7 +22,7 @@
         <h4>ALBUMS | EP</h4>
     </div>
 
-@include('layout.subscribe')
+
 
     <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false" data-bs-interval="false">
         <div class="carousel-inner">
@@ -41,22 +42,10 @@
                     </div>
                 </div>
             </div>
-            {{-- @if ($albums->total() > 3)
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-            @endif --}}
         </div>
     </div>
 </div>
-@endif
+@endif --}}
 
 <div class="container titulo-grupo text-light">
     @if ($musics->total() > 0)
