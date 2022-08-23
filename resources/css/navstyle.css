@@ -17,14 +17,14 @@ div .logo a{
     font-size: 35px;
     font-weight: bold;
     text-decoration: none;
-    padding: 0 40px;
+    padding: 0 0px;
     color: var(--itemsColor);
     margin-top: -2px;
 }
 nav div a img{
     width: 80px;
     height: 80px;
-    padding-left: 20px;
+    padding-right: 20px;
     padding-bottom: 20px;
 }
 nav{
