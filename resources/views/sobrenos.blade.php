@@ -33,7 +33,7 @@ transform: scale(1.2);
     <div class="principal">
         @include('layout.subscribe')
     <div class="container-fluid col-2 col-sm-2 cont-us">
-        <img src="assets/components/brand.png" class=" justify-content-center">
+        <img src="assets/components/brand.png" width="80px" height="80px" class=" justify-content-center">
     </div>
     <div class="container-fluid justify-content-center">
         <div class="col-lg-8 col-sm-12 short-story">
