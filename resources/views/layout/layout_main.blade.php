@@ -36,5 +36,6 @@
     <script src={{asset('js/app.js')}}></script>
     <script src={{asset('js/main.js')}}></script>
     <script src={{asset('js/lightbox-plus-jquery.js')}}></script>
+    <script src={{asset('js/lightslider.js')}}></script>
 </body>
 </html>

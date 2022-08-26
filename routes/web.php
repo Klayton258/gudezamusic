@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\StoreController;
 use App\Http\Controllers\WebController;
 use Illuminate\Support\Facades\Route;
 
@@ -92,3 +94,17 @@ Route::get('/posts',[ClientController::class, 'posts'])->name('posts');
 
 });
 // ====================================== END USER URLS ==============================
+
+
+Route::get('/store',[StoreController::class, 'index'])->name('loja');
+
+
+Route::get('/dash/admin',[AdminController::class, 'index'])->name('dash')->middleware('auth:users');
+
+Route::get('/dash/login',[AdminController::class, 'login'])->name('loginAdmin');
+
+Route::post('/dash/loginRq',[AdminController::class, 'ApiLogin'])->name('loginAdminRequest');
+
+Route::get('/dash/logout',[AdminController::class, 'logout'])->name('adminLogout');
+
+Route::get('/dash/createuser',[AdminController::class, 'createUser'])->name('adminCreate');

@@ -39,8 +39,8 @@ transform: scale(1.2);
         <div class="col-lg-8 col-sm-12 short-story">
 
             <h1>Quem Somos?</h1>
-            <p class="short-p"><strong>Gudeza Music, Lda</strong> é uma gravadora independente moçambicana, que tem o foco
-                na produção, gestão, marketing e distribuição.</p>
+            <p class="short-p"><strong>Gudeza, Lda</strong> &eacute; uma empresa de entretenimento de servi&ccedil;o completo,
+                fundada por Carlos Chatuir Jr. A empresa opera como gravadora, produtora e Muito mais.</p>
 
             <h1>História</h1>
             <p class="short-p">A <strong>Gudeza Music</strong> foi fundada por Carlos <i>"Charles Caló"</i> Chatuir Jr. e

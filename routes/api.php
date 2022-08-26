@@ -81,7 +81,7 @@ Route::post('/updatesong/{id}', [DashController::class, 'updatemusic']);
 
 Route::delete('/delete/{id}', [DashController::class, 'musicdelete']);
 
-Route::post('/login', [DashController::class, 'userlogin']);
+Route::post('/login', [DashController::class, 'userlogin'])->name('apiLogin');
 
 
 
