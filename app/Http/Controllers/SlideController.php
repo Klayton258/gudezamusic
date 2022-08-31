@@ -44,7 +44,7 @@ class SlideController extends Controller
             $image = $request->file('slide_cover');
             $imageName =time().'.'.$image->getClientOriginalExtension();
             $img = Image::make($image);
-            $img->save(public_path('\images\slide_covers'.'\/'.$imageName),$size);
+            $img->save(public_path("images/slide_covers/".$imageName),$size);
 
 
             $insert = DB::table('home_slides')->insert([

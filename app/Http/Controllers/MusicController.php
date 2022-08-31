@@ -44,7 +44,7 @@ class MusicController extends Controller
             $image = $request->file('m_cover');
             $imageName =time().'.'.$image->getClientOriginalExtension();
             $img = Image::make($image);
-            $img->save(public_path('\images\music_covers'.'\/'.$imageName),$size);
+            $img->save(public_path('images/music_covers'.'/'.$imageName),$size);
 
             $musics = DB::table('musics')->insert([
                 'm_cover'=> $imageName,
