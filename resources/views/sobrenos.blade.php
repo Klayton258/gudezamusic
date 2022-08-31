@@ -42,23 +42,23 @@ transform: scale(1.2);
             <p class="short-p"><strong>Gudeza, Lda</strong> &eacute; uma empresa de entretenimento de servi&ccedil;o completo,
                 fundada por Carlos Chatuir Jr. A empresa opera como gravadora, produtora e Muito mais.</p>
 
-            <h1>História</h1>
+            {{-- <h1>História</h1>
             <p class="short-p">A <strong>Gudeza Music</strong> foi fundada por Carlos <i>"Charles Caló"</i> Chatuir Jr. e
                 Moisés Suto em 2017, em Maputo. 3 Anos depois o Co-fundador Moisés Suto
                 deixou a gravadora e deu 50% das suas ações ao seu ex-sócio Carlos Chatuir Jr,
-                tornando-o único proprietário da mesma até agora.</p>
+                tornando-o único proprietário da mesma até agora.</p> --}}
 
         </div>
     </div>
     <div class="container">
         <div class="row justify-content-center">
-            <a class="icon-r" target="_blank" href="#">
+            <a class="icon-r" target="_blank" href="https://www.facebook.com/gudezamusic/">
                 <img src="{{asset('assets/components/facebook-white.png')}}" class="icon-r">
             </a>
-            <a class="icon-r" target="_blank" href="#">
+            <a class="icon-r" target="_blank" href="https://www.instagram.com/gudezamusic/">
                 <img src="{{asset('assets/components/instagram-white.png')}}" class="icon-r">
             </a>
-            <a class="icon-r" target="_blank" href="#">
+            <a class="icon-r" target="_blank" href="https://twitter.com/gudezamusic">
                 <img src="{{asset('assets/components/Twitter-white.png')}}" class="icon-r">
             </a>
         </div>

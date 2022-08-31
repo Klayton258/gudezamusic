@@ -3,6 +3,8 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\MusicController;
+use App\Http\Controllers\SlideController;
 use App\Http\Controllers\StoreController;
 use App\Http\Controllers\WebController;
 use Illuminate\Support\Facades\Route;
@@ -99,7 +101,10 @@ Route::get('/posts',[ClientController::class, 'posts'])->name('posts');
 Route::get('/store',[StoreController::class, 'index'])->name('loja');
 
 
-Route::get('/dash/admin',[AdminController::class, 'index'])->name('dash')->middleware('auth:users');
+// ==========================================  ADMIN ROUTES ==========================================
+Route::group(['middleware'=> ['auth:users']], function(){
+
+Route::get('/dash/admin',[AdminController::class, 'index'])->name('dash');
 
 Route::get('/dash/login',[AdminController::class, 'login'])->name('loginAdmin');
 
@@ -108,3 +113,33 @@ Route::post('/dash/loginRq',[AdminController::class, 'ApiLogin'])->name('loginAd
 Route::get('/dash/logout',[AdminController::class, 'logout'])->name('adminLogout');
 
 Route::get('/dash/createuser',[AdminController::class, 'createUser'])->name('adminCreate');
+
+Route::post('/dash/newUser',[AdminController::class, 'newUser'])->name('newUser');
+
+// =====================/// Music
+Route::get('/dash/musics',[MusicController::class, 'index'])->name('musicindex');
+
+Route::get('/dash/uploadmusic',[AdminController::class, 'uploadmusic'])->name('uploadmusic');
+
+Route::post('/dash/newsong',[MusicController::class, 'savemusic'])->name('savemusic');
+
+Route::get('/dash/updatesong/{id}',[MusicController::class, 'updatesong'])->name('updatesong');
+
+Route::post('/dash/updatemusic/{id}',[MusicController::class, 'updatemusic'])->name('updatemusic');
+
+Route::get('/dash/deletesong/{id}',[MusicController::class, 'deletemusic'])->name('deletemusic');
+
+// =====================/// Slide
+Route::get('/dash/slides',[SlideController::class, 'index'])->name('slideindex');
+
+Route::get('/dash/uploadslide',[SlideController::class, 'uploadslide'])->name('uploadslide');
+
+Route::post('/dash/newslide',[SlideController::class, 'saveslide'])->name('saveslide');
+
+Route::get('/dash/updateslide/{id}',[SlideController::class, 'updateslide'])->name('updateslide');
+
+Route::post('/dash/slideupdate/{id}',[SlideController::class, 'slideupdate'])->name('slideupdate');
+
+Route::get('/dash/deleteslide/{id}',[SlideController::class, 'deleteslide'])->name('deleteslide');
+
+});

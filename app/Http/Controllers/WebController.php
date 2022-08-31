@@ -47,7 +47,7 @@ class WebController extends Controller
     function musicas(){
 
         $albums = DB::table('musics')->where('m_album','=','true')->orderByDesc('id')->paginate(3);
-        $musics = DB::table('musics')->where('m_album','=','false')->paginate(8);
+        $musics = DB::table('musics')->where('m_album','=','false')->orderByDesc('id')->paginate(8);
 
         return view('musicas',['albums'=> $albums,'musics'=> $musics]);
     }

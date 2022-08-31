@@ -8,6 +8,10 @@ use App\Models\Subscribers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 
 class AdminController extends Controller
 {
@@ -23,20 +27,18 @@ class AdminController extends Controller
             'totalLeads'=>$lead,
         ];
 
-        $user = Auth::guard('users')->user();
-
-        $user = [
-            'name'=>$user->name
-        ];
-
         $Recentclients = Client::whereRaw('Date(created_at) = CURDATE()');
         $Recentclients = Client::all();
 
-        return view('admin.home', ['user'=>$user,'data'=>$data,'NewClients'=>$Recentclients]);
+        return view('admin.home', ['user'=>Auth::guard('users')->user(),'data'=>$data,'NewClients'=>$Recentclients]);
     }
 
     function login()
     {
+        if(Auth::guard('users')->check()){
+
+            return redirect(route('dash'));
+        }
         return view('admin.login');
     }
 
@@ -72,12 +74,73 @@ class AdminController extends Controller
 
     function createUser()
     {
-        $user = Auth::guard('users')->user();
 
-        $user = [
-            'name'=>$user->name
-        ];
+        return view('admin.create',['user'=>Auth::guard('users')->user()]);
+    }
 
-        return view('admin.create',['user'=>$user]);
+    function newUser(Request $request)
+    {
+
+            try {
+
+                DB::table('users')->insert([
+                    'role_id'=> $request->role_id,
+                    'name'=> $request->name,
+                    'email'=> $request->email,
+                    'username'=> $request->username,
+                    'password'=> Hash::make($request->password),
+                    'created_at'=>now(),
+                    'updated_at'=>now(),
+
+                ]);
+
+                $from = ['email'=>env('MAIL_FROM_ADDRESS')];
+
+                $id = DB::table('users')->where(['email'=> $request->email])->first();
+
+                $data =['username'=>$request->username, 'password'=>$request->password, 'url'=>url('/verifyemail/'.$id->id)];
+
+                    Mail::send('mail.credentials', $data, function($m) use ($request,$from){
+                        $m->from('gudeza@gudezamusic.com', env('APP_NAME'));
+                        $m->to($request->email)->subject('Account Created');
+                    });
+
+                    $level = 'info';
+                    $message = "BackOffice User Created: ";
+                    $data = " Name: ".$request->name."- User: ".$request->username;
+                    Log::channel('main')->$level($message." [".$data."]");
+
+                    return back()->with('success', 'Novo User Utilizador com sucesso.');
+
+
+           } catch (\Exception $e) {
+               if (config('app.debug')) {
+                $level = 'error';
+                    $message = "BackOffice Error Creating User: ";
+                    $data = " Name: ".$request->name."- User: "
+                    .$request->username." role- "
+                    .$request->role_id.' >>>>> '
+                    .$e->getMessage();
+
+                    Log::channel('main')->$level($message." [".$data."]");
+                    return back()->with('erro', 'Erro ao criar Utilizador.');
+               }
+                $level = 'error';
+                    $message = "BackOffice Error Creating User: ";
+                    $data = " Name: ".$request->name."- User: "
+                    .$request->username." role- "
+                    .$request->role_id.' >>>>> '
+                    .$e->getMessage();
+
+                    Log::channel('main')->$level($message." [".$data."]");
+                    return back()->with('erro', 'Erro ao criar Utilizador.');
+           }
+
+    }
+
+    function uploadmusic()
+    {
+
+        return view('admin.musics.uploadmusic',['user'=>Auth::guard('users')->user()]);
     }
 }

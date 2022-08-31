@@ -16,7 +16,7 @@
             </div>
         </div>
         <div class="navbar-nav w-100">
-            <a href="#" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+            <a href="{{ route('dash') }}" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
             {{-- <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Elements</a>
                 <div class="dropdown-menu bg-transparent border-0">
@@ -29,6 +29,25 @@
             <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a> --}}
             <a href="#" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
             {{-- <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a> --}}
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-image me-2"></i>Slides</a>
+                <div class="dropdown-menu bg-transparent border-0">
+                    <a href="{{ route('slideindex') }}" class="dropdown-item">Slides</a>
+                    <a href="{{ route('uploadslide') }}" class="dropdown-item">Upload</a>
+                    {{-- <a href="{{ route('updatesong') }}" class="dropdown-item">Atualizar</a> --}}
+                    {{-- <a href="blank.html" class="dropdown-item">Blank Page</a> --}}
+                </div>
+            </div>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-music me-2"></i>Musicas</a>
+                <div class="dropdown-menu bg-transparent border-0">
+                    <a href="{{ route('musicindex') }}" class="dropdown-item">Musicas</a>
+                    <a href="{{ route('uploadmusic') }}" class="dropdown-item">Upload</a>
+                    {{-- <a href="{{ route('updatesong') }}" class="dropdown-item">Atualizar</a> --}}
+                    {{-- <a href="blank.html" class="dropdown-item">Blank Page</a> --}}
+                </div>
+            </div>
+
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a>
                 <div class="dropdown-menu bg-transparent border-0">
