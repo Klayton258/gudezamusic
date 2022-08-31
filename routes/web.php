@@ -102,12 +102,12 @@ Route::get('/store',[StoreController::class, 'index'])->name('loja');
 
 Route::get('/dash/login',[AdminController::class, 'login'])->name('loginAdmin');
 
+Route::post('/dash/loginRq',[AdminController::class, 'ApiLogin'])->name('loginAdminRequest');
+
 // ==========================================  ADMIN ROUTES ==========================================
 Route::group(['middleware'=> ['auth:users']], function(){
 
 Route::get('/dash/admin',[AdminController::class, 'index'])->name('dash');
-
-Route::post('/dash/loginRq',[AdminController::class, 'ApiLogin'])->name('loginAdminRequest');
 
 Route::get('/dash/logout',[AdminController::class, 'logout'])->name('adminLogout');
 
