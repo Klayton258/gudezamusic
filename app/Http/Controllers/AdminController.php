@@ -48,7 +48,6 @@ class AdminController extends Controller
 
        if(Auth::guard('users')->attempt([$fieldType => $request->username, 'password' =>
         $request->password])) {
-
             $user = User::where($fieldType, $request->username)->first();
 
             $token = $user->createToken($request->device_name)->plainTextToken;

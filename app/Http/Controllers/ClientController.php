@@ -85,7 +85,7 @@ class ClientController extends Controller
         $validate = Validator::make($request->all(),[
             'name'=> 'required',
             'birthdate'=> 'required',
-            'username'=> 'required',
+            'username'=> 'required|unique:clients,username|min:4|max:9',
             'email'=> 'required|email|unique:clients,email',
             'phone'=> 'required',
             'password'=> 'min:6|required_with:password_confirmation|same:password_confirmation',

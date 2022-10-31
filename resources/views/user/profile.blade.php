@@ -24,7 +24,7 @@
             </div> --}}
             <div class="table-responsive">
                 <h5 class="text-center author-card-name author-card-details">Sem eventos disponiveis</h5>
-                {{-- <table class="table table-hover mb-0">
+                <table class="table table-hover mb-0">
                     <thead>
                         <tr>
                             <th>Evento</th>
@@ -79,7 +79,7 @@
                         </tr>
                     </tbody>
                 </table>
-            </div> --}}
+            </div>
         </div>
     </div>
 </div>

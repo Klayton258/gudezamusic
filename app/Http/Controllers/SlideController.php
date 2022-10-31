@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\HomeSlide;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -12,6 +13,14 @@ use function PHPUnit\Framework\isEmpty;
 
 class SlideController extends Controller
 {
+
+    private $slide;
+
+    public function __construct(HomeSlide $slide)
+    {
+        $this->slide = $slide;
+    }
+
     public function index(){
 
         try {
@@ -138,7 +147,8 @@ class SlideController extends Controller
 
         try {
 
-            $music = DB::table('home_slides')->where(['id'=>$id])->delete();
+            // $music = DB::table('home_slides')->where(['id'=>$id])->delete();
+            $this->slide->find($id)->delete();
 
             return redirect(route('slideindex'))->with('deleted', 'Slide #'.$id.' Apagado com sucesso.');
 
