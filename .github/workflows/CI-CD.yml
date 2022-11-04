@@ -37,7 +37,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           host: ${{ secrets.SSH_IP }}
           username: ${{ secrets.SSH_USERNAME }}
-          # password: ${{ secrets.SSH_PASSWORD }}
+          password: ${{ secrets.SSH_PASSWORD }}
           script: 'cd gudezamusic && sh server_deploy.sh'
 
 
