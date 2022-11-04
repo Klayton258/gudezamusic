@@ -57,6 +57,9 @@ Route::get('/Novos-Desafios-II', function(){
     return redirect('https://onerpm.link/612292326069');
 }
 );
+Route::get('/KissYouRemix', function(){
+    return redirect('https://youtu.be/p3JjwPcLXC4');
+});
 //==================================== END EXTERNAL URLS =================================
 
 //=================================== START EVENTOS URLS ================================
