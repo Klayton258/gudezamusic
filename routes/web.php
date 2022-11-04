@@ -58,7 +58,7 @@ Route::get('/Novos-Desafios-II', function(){
 }
 );
 Route::get('/KissYouRemix', function(){
-    return redirect('https://youtu.be/p3JjwPcLXC4');
+    return redirect('https://youtu.be/NuAX8jdpUw8');
 });
 //==================================== END EXTERNAL URLS =================================
 
