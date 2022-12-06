@@ -92,3 +92,13 @@ $('#normalText').click(function() {
 // =======================Pay Modal M-Pesa=========================
 
 
+$('#whatsappStoreRedirect').click(function() {
+    $('#product').text($(this).data('prod'))
+    console.log($(this).data('prod'));
+
+    var text = `Olá, tenho interesse neste produto: '${$(this).data('prod')}'`
+
+    $('#buyOnWhatsapp').attr('href', `https://api.whatsapp.com/send?phone=+258821420212&text=${text}`)
+
+    $('#ModalWhatsapp').modal('show');
+});

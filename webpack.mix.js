@@ -28,7 +28,7 @@ mix.js('resources/js/app.js', 'public/js')
     mix.sass('resources/sass/profile.scss', 'public/css');
     mix.sass('resources/sass/posts.scss', 'public/css');
 
-        //ADMIN CSS
+    //ADMIN CSS
     mix.postCss('resources/views/admin/lib/owlcarousel/assets/owl.carousel.min.css', 'public/css');
     mix.postCss('resources/views/admin/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css', 'public/css');
     mix.postCss('resources/views/admin/css/bootstrap.min.css', 'public/css');
@@ -39,3 +39,8 @@ mix.js('resources/js/app.js', 'public/js')
     mix.js('resources/views/admin/lib/waypoints/waypoints.min.js','public/js');
     mix.js('resources/views/admin/lib/owlcarousel/owl.carousel.min.js','public/js');
     mix.js('resources/views/admin/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js','public/js');
+
+
+    // STORE CSS
+    mix.postCss('resources/css/store.css', 'public/css');
+    mix.postCss('resources/css/detailsProduct.css', 'public/css');

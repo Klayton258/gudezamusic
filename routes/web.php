@@ -100,9 +100,6 @@ Route::get('/posts',[ClientController::class, 'posts'])->name('posts');
 });
 // ====================================== END USER URLS ==============================
 
-
-Route::get('/store',[StoreController::class, 'index'])->name('loja');
-
 Route::get('/dash/login',[AdminController::class, 'login'])->name('loginAdmin');
 
 Route::post('/dash/loginRq',[AdminController::class, 'ApiLogin'])->name('loginAdminRequest');
@@ -144,4 +141,30 @@ Route::post('/dash/slideupdate/{id}',[SlideController::class, 'slideupdate'])->n
 
 Route::get('/dash/deleteslide/{id}',[SlideController::class, 'deleteslide'])->name('deleteslide');
 
+
+
+// STORE ROUTES
+
+    Route::get('dash/store/', [StoreController::class, 'list'])->name('store.product.list');
+
+    Route::get('dash/store/update/products', [StoreController::class, 'store'])->name('store.product.store');
+
+    Route::get('dash/store/update/product/{id}', [StoreController::class, 'edit'])->name('store.product.edit');
+
+    Route::post('dash/store/create/product', [StoreController::class, 'create'])->name('store.product.create');
+
+    Route::post('dash/store/update/product', [StoreController::class, 'update'])->name('store.product.update');
+
+    Route::get('dash/store/destroy/product/{id}', [StoreController::class, 'destroy'])->name('store.product.destroy');
+
+
+
 });
+
+
+// STORE ROUTES
+
+
+Route::get('/store','StoreController@index')->name('loja');
+
+Route::get('/store/product/details/{id}', [StoreController::class, 'details'] )->name('product.details');

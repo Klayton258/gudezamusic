@@ -30,3 +30,7 @@ yarn-error.log
 /public/js/gta*
 /public/js/char*
 .main
+/public/images/music_covers
+/public/images/artist_image
+/public/images/**/*
+/public/loja/**/*

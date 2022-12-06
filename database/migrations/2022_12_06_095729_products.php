@@ -13,19 +13,18 @@ return new class extends Migration
      */
     public function up()
     {
-     /*   Schema::create('events', function(Blueprint $table){
+        Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('image');
-            $table->string('start_time');
-            $table->string('end_time');
-            $table->string('location');
-            $table->boolean('hasPrice');
-            $table->float('Price');
-            $table->integer('total_people');
-            $table->timestamps();
+            $table->string('name');
+            $table->double('price');
+            $table->double('price_promotional')->nullable();
+            $table->string('description')->nullable();
+            $table->string('cover');
+            $table->string('state');
+            $table->integer('stock');
             $table->softDeletes();
-        }); */
+            $table->timestamps();
+        });
     }
 
     /**
