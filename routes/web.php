@@ -102,7 +102,7 @@ Route::get('/posts',[ClientController::class, 'posts'])->name('posts');
 
 Route::get('/dash/login',[AdminController::class, 'login'])->name('loginAdmin');
 
-Route::post('/dash/loginRq',[AdminController::class, 'ApiLogin'])->name('loginAdminRequest');
+Route::post('/dash/request/login',[AdminController::class, 'dashLogin'])->name('requestLogin');
 
 // ==========================================  ADMIN ROUTES ==========================================
 Route::group(['middleware'=> ['auth:users']], function(){

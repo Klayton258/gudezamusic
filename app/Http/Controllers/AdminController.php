@@ -36,6 +36,8 @@ class AdminController extends Controller
 
     function login()
     {
+
+        Log::channel('main')->info("regdsgfsd");
         if(Auth::guard('users')->check()){
 
             return redirect(route('dash'));
@@ -43,22 +45,24 @@ class AdminController extends Controller
         return view('admin.login');
     }
 
-    function ApiLogin(Request $request)
+    function dashLogin(Request $request)
     {
-       try {
-        Log::channel('main')->info($request);
-        $fieldType = filter_var($request->username, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
+        try {
+            $fieldType = filter_var($request->username, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
 
         if(Auth::guard('users')->attempt([$fieldType => $request->username, 'password' =>
          $request->password])) {
-            //  $user = User::where($fieldType, $request->username)->first();
+             $user = User::where($fieldType, $request->username)->first();
 
-            //  $token = $user->createToken($request->device_name)->plainTextToken;
+             $token = $user->createToken($request->device_name)->plainTextToken;
 
-            //  session()->put('token',$token);
+             session()->put('token',$token);
 
+             Log::channel('main')->info("New seeesion: ", $user->id);
              return redirect(route('dash'));
-         }
+            }
+
+            Log::channel('main')->info("Wrong credentials");
          return redirect(route('loginAdmin'))->withErrors(['error'=>'Login invalido, as suas credenciais sao incorretas!']);
 
 

@@ -14,5 +14,8 @@ class VerifyCsrfToken extends Middleware
     protected $except = [
         'https://gudezamusic.com/api/login',
         'https://gudezamusic.com/api/*',
+        'https://gudezamusic.com/dash/*',
+        '/dash',
+        '/dash/*',
     ];
 }

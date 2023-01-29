@@ -35,8 +35,8 @@ background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 
                 <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
                 <p class="text-white-50 mb-5">Please enter your login and password!</p>
 
-                <form action="{{ route('loginAdminRequest') }}" method="POST">
-                    @csrf
+                <form action="{{ route('requestLogin') }}" method="post">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <input type="hidden" name="device_name" value="mobile">
                     <div class="form-outline form-white mb-4">
                         <label class="form-label float-start" for="typeEmailX">Email</label>

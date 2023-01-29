@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     {{-- Global site tag (gtag.js) - Google Analytics --}}
+    <meta name="_token" content="{!! csrf_token() !!}" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-P5QD9VRWRQ"></script>
     <script src={{asset('js/gtag.js')}}></script>
     <meta charset="UTF-8">
