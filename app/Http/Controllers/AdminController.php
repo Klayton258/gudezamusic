@@ -46,7 +46,7 @@ class AdminController extends Controller
     function ApiLogin(Request $request)
     {
        try {
-
+        Log::channel('main')->info($request);
         $fieldType = filter_var($request->username, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
 
         if(Auth::guard('users')->attempt([$fieldType => $request->username, 'password' =>
