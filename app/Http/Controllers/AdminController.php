@@ -58,7 +58,7 @@ class AdminController extends Controller
 
              session()->put('token',$token);
 
-             Log::channel('main')->info("New seeesion: ", $user->id);
+             Log::channel('main')->info("New seeesion: ". $user->id);
              return redirect(route('dash'));
             }
 
