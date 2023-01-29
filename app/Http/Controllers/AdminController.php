@@ -6,6 +6,7 @@ use App\Models\Client;
 use App\Models\Lead;
 use App\Models\Subscribers;
 use App\Models\User;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -44,20 +45,33 @@ class AdminController extends Controller
 
     function ApiLogin(Request $request)
     {
+       try {
+
         $fieldType = filter_var($request->username, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
 
-       if(Auth::guard('users')->attempt([$fieldType => $request->username, 'password' =>
-        $request->password])) {
-            $user = User::where($fieldType, $request->username)->first();
+        if(Auth::guard('users')->attempt([$fieldType => $request->username, 'password' =>
+         $request->password])) {
+            //  $user = User::where($fieldType, $request->username)->first();
 
-            $token = $user->createToken($request->device_name)->plainTextToken;
+            //  $token = $user->createToken($request->device_name)->plainTextToken;
 
-            session()->put('token',$token);
+            //  session()->put('token',$token);
 
-            return redirect(route('dash'));
-        }
-        return redirect(route('loginAdmin'))->withErrors(['error'=>'Login invalido, as suas credenciais sao incorretas!']);
+             return redirect(route('dash'));
+         }
+         return redirect(route('loginAdmin'))->withErrors(['error'=>'Login invalido, as suas credenciais sao incorretas!']);
 
+
+       } catch (Exception $e) {
+        $level = 'error';
+        $message = "BackOffice Error Login ";
+        $data = " Name: ".$request->name."- User: "
+        .$request->username." role- "
+        .$request->role_id.' >>>>> '
+        .$e->getMessage();
+        Log::channel('main')->$level($message." [".$data."]");
+        return back();
+       }
     }
 
     function logout(Request $request)
