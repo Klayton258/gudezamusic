@@ -155,7 +155,7 @@ background-color: black;
 
 
 <div class="container justify-content-center">
-    <img src="{{ asset('images/music_covers/'.$musica[0]->m_cover) }}" class="col-lg-4 hmau img-fluid">
+    <img src="{{ asset('storage/images/music_covers/'.$musica[0]->m_cover) }}" class="col-lg-4 hmau img-fluid">
     <h3 class="nome">{{$musica[0]->m_artist}}</h3>
     <h2 class="titulo">{{$musica[0]->m_title}}</h2>
     <p class="servico" id="msg">Escolha o serviço de música</p>

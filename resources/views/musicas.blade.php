@@ -57,7 +57,7 @@
     @foreach ($musics as $music)
     <div class="col">
         <a href="{{ route('moredetails', ['id'=> $music->id]) }}">
-        <img class="capa-m" src="{{ asset('images/music_covers/'.$music->m_cover) }}">
+        <img class="capa-m" src="{{ asset('storage/images/music_covers/'.$music->m_cover) }}">
         </a>
         <a class="titulo-ep" href="{{ route('moredetails', ['id'=> $music->id]) }}">
             <h5 class="titulo-ep">{{$music->m_artist}}<br>{{$music->m_title}}</h5>

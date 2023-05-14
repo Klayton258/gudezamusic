@@ -9,7 +9,7 @@
             @foreach ($data as $slide)
 
             <div class="untitled__slide">
-                <div class="untitled__slideBg" style="background-image: url({{asset('images/slide_covers/'.$slide->slide_cover)}})"></div>
+                <div class="untitled__slideBg" style="background-image: url({{asset('storage/images/slide_covers/'.$slide->slide_cover)}})"></div>
                 <div class="untitled__slideContent">
                     <span>{{$slide->slide_title}}</span>
                     <span>{{$slide->description}}</span>

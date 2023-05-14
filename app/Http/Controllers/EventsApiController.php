@@ -6,6 +6,7 @@ use App\API\ApiResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 
 class EventsApiController extends Controller
@@ -33,13 +34,13 @@ class EventsApiController extends Controller
             $imageName =time().'.'.$image->getClientOriginalExtension();
             $img = Image::make($image);
 
-            $relPath = '\images\events';
-
-            if (!file_exists(public_path($relPath))) {
-                mkdir(public_path($relPath), 777, true);
-            }
-
-            $img->save(public_path().$relPath.'\\'.$imageName,$size);
+            $img = Image::make($image->getRealPath());
+            // $img->resize(120, 120, function ($constraint) {
+            //     $constraint->aspectRatio();
+            // });
+            $img->stream();
+            // $img->save(public_path("images/slide_covers/".$imageName),$size);
+            Storage::disk('local')->put("public/images/events/$imageName",$img , 'public');
 
             $events = DB::table('events')->insert([
                 'image'=> $imageName,

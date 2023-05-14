@@ -141,6 +141,7 @@ Route::post('/dash/slideupdate/{id}',[SlideController::class, 'slideupdate'])->n
 
 Route::get('/dash/deleteslide/{id}',[SlideController::class, 'deleteslide'])->name('deleteslide');
 
+// =====================/// Artists =================
 
 
 // STORE ROUTES

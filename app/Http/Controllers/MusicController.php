@@ -6,6 +6,7 @@ use App\Models\Music;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 
 use function PHPUnit\Framework\isEmpty;
@@ -43,8 +44,17 @@ class MusicController extends Controller
             $size=20;
             $image = $request->file('m_cover');
             $imageName =time().'.'.$image->getClientOriginalExtension();
-            $img = Image::make($image);
-            $img->save(public_path('images/music_covers'.'/'.$imageName),$size);
+            // $img = Image::make($image);
+            // $img->save(public_path('images/music_covers'.'/'.$imageName),$size);
+
+            $img = Image::make($image->getRealPath());
+            // $img->resize(120, 120, function ($constraint) {
+            //     $constraint->aspectRatio();
+            // });
+
+            $img->stream();
+            // $img->save(public_path("images/slide_covers/".$imageName),$size);
+            Storage::disk('local')->put("public/images/music_covers/$imageName",$img , 'public');
 
             $musics = DB::table('musics')->insert([
                 'm_cover'=> $imageName,
@@ -93,8 +103,17 @@ class MusicController extends Controller
                 $size = 20;
                 $image = $request->file('m_cover');
                 $imageName =time().'.'.$image->getClientOriginalExtension();
-                $img = Image::make($image);
-                $img->save(public_path('\images\music_covers'.'\/'.$imageName),$size);
+                // $img = Image::make($image);
+                // $img->save(public_path('images/music_covers'.'/'.$imageName),$size);
+
+                $img = Image::make($image->getRealPath());
+                // $img->resize(120, 120, function ($constraint) {
+                //     $constraint->aspectRatio();
+                // });
+
+                $img->stream();
+                // $img->save(public_path("images/slide_covers/".$imageName),$size);
+                Storage::disk('local')->put("public/images/music_covers/$imageName",$img , 'public');
 
                 $music = DB::table('musics')->where(['id'=>$id])->update([
                     'm_cover'=> $imageName,

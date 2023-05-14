@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 
 use function PHPUnit\Framework\isEmpty;
@@ -53,7 +54,15 @@ class SlideController extends Controller
             $image = $request->file('slide_cover');
             $imageName =time().'.'.$image->getClientOriginalExtension();
             $img = Image::make($image);
-            $img->save(public_path("images/slide_covers/".$imageName),$size);
+
+            $img = Image::make($image->getRealPath());
+            // $img->resize(120, 120, function ($constraint) {
+            //     $constraint->aspectRatio();
+            // });
+
+            $img->stream();
+            // $img->save(public_path("images/slide_covers/".$imageName),$size);
+            Storage::disk('local')->put("public/images/slide_covers/$imageName",$img , 'public');
 
 
             $insert = DB::table('home_slides')->insert([
@@ -64,6 +73,8 @@ class SlideController extends Controller
                 'created_at'=>now(),
                 'updated_at'=>now()
             ]);
+
+            dd();
 
             return back()->with('success', 'Novo Slide adicionado com sucesso.');
 
@@ -108,11 +119,18 @@ class SlideController extends Controller
 
             if($request->hasFile('slide_cover')){
 
-                $size=20;
-                $image = $request->file('slide_cover');
-                $imageName =time().'.'.$image->getClientOriginalExtension();
-                $img = Image::make($image);
-                $img->save(public_path('\images\slide_covers'.'\/'.$imageName),$size);
+            $image = $request->file('slide_cover');
+            $imageName =time().'.'.$image->getClientOriginalExtension();
+            $img = Image::make($image);
+
+            $img = Image::make($image->getRealPath());
+            // $img->resize(120, 120, function ($constraint) {
+            //     $constraint->aspectRatio();
+            // });
+
+            $img->stream();
+            // $img->save(public_path("images/slide_covers/".$imageName),$size);
+            Storage::disk('local')->put("public/images/slide_covers/$imageName",$img , 'public');
 
                 $music =  DB::table('home_slides')->where(['id'=>$id])->update([
                     'slide_title'=> $request->slide_title,
