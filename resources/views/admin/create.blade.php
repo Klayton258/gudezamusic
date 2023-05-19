@@ -41,8 +41,12 @@
                     <form action="{{ route('newUser') }}" method="POST">
                         @csrf
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" name="name" id="floatingText" placeholder="jhondoe" required>
+                            <input type="text" class="form-control" name="name" id="floatingText" placeholder="jhon Doe" required>
                             <label for="floatingText">Name</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" name="username" id="floatingText" placeholder="jhondoe" required>
+                            <label for="floatingText">Username</label>
                         </div>
                         <div class="form-floating mb-3">
                             <input type="email" class="form-control" name="email" id="floatingInput" placeholder="name@example.com" required>

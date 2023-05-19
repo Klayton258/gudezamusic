@@ -12,7 +12,7 @@
         color: white;
     }
 </style>
-<body class="text-light" style="background-color: black">
+<body class="text-light" style="background-color: white;">
     <div class="container" style="height: 100vh; padding: 80px">
         <div class="col-12 d-flex align-items-center mb-5">
             <img src="https://gudezamusic.com/assets/components/brand.png" alt="Logo" width="40px" height="40%">
