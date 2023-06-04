@@ -59,7 +59,7 @@
                         </div>
                         <div class="form-floating mb-4">
                             <input type="text" class="form-control" name="spotify" id="floatingPassword" placeholder="https://">
-                            <label for="floatingPassword">Spotfy</label>
+                            <label for="floatingPassword">Spotify</label>
                         </div>
                         <input type="hidden" name="m_album" value="false">
                         {{-- <div class="d-flex align-items-center justify-content-between mb-4">

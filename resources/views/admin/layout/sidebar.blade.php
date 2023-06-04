@@ -36,6 +36,14 @@
             </div>
 
             <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-music me-2"></i>Videos</a>
+                <div class="dropdown-menu bg-transparent border-0">
+                    <a href="{{ route('videos.list') }}" class="dropdown-item">Todos Videos</a>
+                    <a href="{{ route('video.new') }}" class="dropdown-item">Novo Videos</a>
+                </div>
+            </div>
+
+            <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-music me-2"></i>Produtos</a>
                 <div class="dropdown-menu bg-transparent border-0">
                     <a href="{{ route('store.product.list') }}" class="dropdown-item">Todos Produtos</a>

@@ -6,6 +6,7 @@ use App\Http\Controllers\EventController;
 use App\Http\Controllers\MusicController;
 use App\Http\Controllers\SlideController;
 use App\Http\Controllers\StoreController;
+use App\Http\Controllers\VideoController;
 use App\Http\Controllers\WebController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,7 +30,7 @@ Route::get('/musicas', [WebController::class, 'musicas'])->name('musicas');
 
 Route::get('/moredetails{id}', [WebController::class, 'sogdetails'])->name('moredetails');
 
-Route::get('/videos', [WebController::class, 'videos'])->name('videos');
+Route::get('/videos', [WebController::class, 'videos'])->name('videos.all');
 
 Route::get('/eventos', [EventController::class, 'index'])->name('events');
 
@@ -144,7 +145,7 @@ Route::get('/dash/deleteslide/{id}',[SlideController::class, 'deleteslide'])->na
 // =====================/// Artists =================
 
 
-// STORE ROUTES
+    // STORE ROUTES
 
     Route::get('dash/store/', [StoreController::class, 'list'])->name('store.product.list');
 
@@ -158,7 +159,16 @@ Route::get('/dash/deleteslide/{id}',[SlideController::class, 'deleteslide'])->na
 
     Route::get('dash/store/destroy/product/{id}', [StoreController::class, 'destroy'])->name('store.product.destroy');
 
+    // VIDEOS ROUTES
+    Route::post('/newvideo', [VideoController::class, 'savevideo'])->name('video.store');
 
+    Route::get('/table/videos', [VideoController::class, 'videos'])->name('videos.list');
+
+    Route::get('/video/new', [VideoController::class, 'newVideo'])->name('video.new');
+
+    // Route::get('/updatevideo/{id}', [VideoController::class, 'updateVideo']);
+
+    Route::get('/deletevideo/{id}', [VideoController::class, 'deletevideo'])->name('video.delete');
 
 });
 

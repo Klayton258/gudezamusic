@@ -10,7 +10,7 @@
         <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
             <div class="col-12 col-sm-8 col-md-6 col-lg-6 col-xl-6">
                 <div class="rounded d-flex justify-content-center p-4 p-sm-5 my-4 mx-3">
-                    <img id="blah" src="{{ asset('images/music_covers/'.$music->m_cover) }}" width="250px" height="250px" alt="">
+                    <img id="blah" src="{{ asset('storage/images/music_covers/'.$music->m_cover) }}" width="250px" height="250px" alt="">
                 </div>
 
             @if (session()->get('success'))
@@ -59,7 +59,7 @@
                         </div>
                         <div class="form-floating mb-4">
                             <input type="text" class="form-control" name="spotify" id="floatingPassword" value="{{$music->spotify}}">
-                            <label for="floatingPassword">Spotfy</label>
+                            <label for="floatingPassword">Spotify</label>
                         </div>
                         <input type="hidden" name="m_album" value="false">
                         {{-- <div class="d-flex align-items-center justify-content-between mb-4">

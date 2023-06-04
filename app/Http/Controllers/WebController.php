@@ -26,7 +26,7 @@ class WebController extends Controller
 
             Control::access();
 
-            $data = DB::table('home_slides')->limit(3)->orderByDesc('id')->get();
+            $data = DB::table('home_slides')->limit(4)->orderByDesc('id')->get();
             return view('home', ['data'=>$data]);
         }else{
           return  redirect("https://google.com");

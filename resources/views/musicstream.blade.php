@@ -160,6 +160,18 @@ background-color: black;
     <h2 class="titulo">{{$musica[0]->m_title}}</h2>
     <p class="servico" id="msg">Escolha o serviço de música</p>
 
+    @if ($musica[0]->spotify != null)
+    <div class="col col-lg-4 col-md-4">
+        <div class="row">
+            <img src="{{ asset("assets/components/spotify-2.png") }}" class="btn-youtube">
+            <a class="linka" target="_blank"
+            href="{{$musica[0]->spotify}}">
+            <button type="button" class="btn">TOCAR</button>
+            </a>
+        </div>
+    </div>
+    @endif
+    
     @if ($musica[0]->youtube != null)
     <div class="col col-lg-4 col-md-4">
         <div class="row">
