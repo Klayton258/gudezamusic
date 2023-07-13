@@ -10,6 +10,8 @@ class Music extends Model
 {
     use HasFactory, SoftDeletes;
 
+    protected $table = 'musics';
+
     protected $fillable = [
         'm_cover',
         'm_title',

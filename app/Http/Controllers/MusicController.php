@@ -17,7 +17,7 @@ class MusicController extends Controller
 
         try {
 
-            $songs = DB::table('musics')->orderByDesc('id')->get();
+            $songs = Music::orderByDesc('id')->get();
 
 
             return view('admin.musics.table',['musics'=> $songs, 'user'=>Auth::guard('users')->user()]);

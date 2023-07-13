@@ -98,7 +98,6 @@ class StoreController extends Controller
         ]);
 
 
-        //if($validation->fails())return back()->withErrors($validation);
 
         $relPath = '\loja\products';
 
@@ -106,12 +105,13 @@ class StoreController extends Controller
             mkdir(public_path($relPath), 777, true);
         }
 
-        $size=20;
-        $image = $request->file('cover');
-        $imageName =time().'.'.$image->getClientOriginalExtension();
-        $img = Image::make($image);
-        $img->save(public_path().$relPath.'\\'.$imageName,$size);
-
+        if($request->hasFile('cover')){
+            $size=20;
+            $image = $request->file('cover');
+            $imageName =time().'.'.$image->getClientOriginalExtension();
+            $img = Image::make($image);
+            $img->save(public_path().$relPath.'\\'.$imageName,$size);
+        }
         $product = $this->product->find($request->product);
         $product->name = $request->name;
         $product->description = $request->description;
@@ -119,13 +119,13 @@ class StoreController extends Controller
         $product->price_promotional = $request->price_promotional ?? null;
         $product->state = $request->state;
         $product->stock = $request->stock;
-        $product->cover = $imageName ?? $product->cover;
+        $product->cover = $request->hasFile('cover') ? $imageName : $product->cover;
 
-        $this->product->save();
+        $product->save();
 
-        return back();
+        return redirect(route('store.product.list'));
         } catch (Exception $e) {
-
+            dd($e);
         }
     }
 

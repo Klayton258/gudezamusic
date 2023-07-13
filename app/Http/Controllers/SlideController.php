@@ -26,7 +26,7 @@ class SlideController extends Controller
 
         try {
 
-            $slides = DB::table('home_slides')->orderByDesc('id')->get();
+            $slides = HomeSlide::orderByDesc('id')->get();
 
             return view('admin.slides.table',['slides'=>$slides,'user'=>Auth::guard('users')->user()]);
 
@@ -164,7 +164,9 @@ class SlideController extends Controller
         try {
 
             // $music = DB::table('home_slides')->where(['id'=>$id])->delete();
-            $this->slide->find($id)->delete();
+            $slide = $this->slide->find($id);
+            $slide->deleted_at = now();
+            $slide->save();
 
             return redirect(route('slideindex'))->with('deleted', 'Slide #'.$id.' Apagado com sucesso.');
 

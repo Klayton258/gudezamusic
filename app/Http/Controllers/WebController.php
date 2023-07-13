@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\API\Control;
+use App\Models\HomeSlide;
 use App\Models\Subscribers;
 use App\Notifications\emailSubscription;
 use Egulias\EmailValidator\Result\ValidEmail;
@@ -26,7 +27,7 @@ class WebController extends Controller
 
             Control::access();
 
-            $data = DB::table('home_slides')->limit(4)->orderByDesc('id')->get();
+            $data = HomeSlide::limit(4)->orderByDesc('id')->get();
             return view('home', ['data'=>$data]);
         }else{
           return  redirect("https://google.com");

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\API\ApiResponse;
 use App\Http\Controllers\Controller;
+use App\Models\Video;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -58,7 +59,7 @@ class VideoController extends Controller
 
             $user = Auth::guard('users')->user();
 
-            $videos = DB::table('videos')->get();
+            $videos = Video::all();
 
             return view('admin.videos.table',compact('videos', 'user'));
 

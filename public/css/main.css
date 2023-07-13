@@ -263,13 +263,6 @@
 .untitled__slide:nth-child(3) .untitled__slideBg {
   background-image: url(https://unsplash.it/g/1500/1000?image=1077);
 }
-.untitled__slide:nth-child(4) {
-  -webkit-animation-delay: 15s;
-          animation-delay: 15s;
-}
-.untitled__slide:nth-child(4) .untitled__slideBg {
-  background-image: url(https://unsplash.it/g/1500/1000?image=1077);
-}
 .untitled__slideBg {
   position: relative;
   height: 100%;

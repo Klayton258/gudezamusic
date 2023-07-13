@@ -102,7 +102,7 @@ $('#normalText').click(function () {
 $('#whatsappStoreRedirect').click(function () {
   $('#product').text($(this).data('prod'));
   console.log($(this).data('prod'));
-  var text = "Ol\xE1, tenho interesse neste produto: '".concat($(this).data('prod'), "'");
+  var text = "Ol\xE1, Gostava de adquirir este produto: '".concat($(this).data('prod'), "'");
   $('#buyOnWhatsapp').attr('href', "https://api.whatsapp.com/send?phone=+258821420212&text=".concat(text));
   $('#ModalWhatsapp').modal('show');
 });

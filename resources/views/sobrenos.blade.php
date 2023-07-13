@@ -39,8 +39,10 @@ transform: scale(1.2);
         <div class="col-lg-8 col-sm-12 short-story">
 
             <h1>Quem Somos?</h1>
-            <p class="short-p"><strong>Gudeza, Lda</strong> &eacute; uma empresa de entretenimento de servi&ccedil;o completo,
-                fundada por Carlos Chatuir Jr. A empresa opera como gravadora, produtora e Muito mais.</p>
+            <p class="short-p"><strong>Gudeza Entretenimento, Lda</strong> é uma empresa moçambicana independente de entretenimento
+                que opera como gravadora, gerenciadora, produtora de audiovisual e muito mais… estabilizada por Carlos Chatuir Jr.
+                Com o principal foco na revolução da indústria de música moçambicana.
+            </p>
 
             {{-- <h1>História</h1>
             <p class="short-p">A <strong>Gudeza Music</strong> foi fundada por Carlos <i>"Charles Caló"</i> Chatuir Jr. e

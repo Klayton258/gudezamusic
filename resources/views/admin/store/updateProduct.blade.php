@@ -31,10 +31,11 @@
                         </a>
                         <h3>Nova Musica</h3>
                     </div>
-                    <form action="{{ route('store.product.create') }}" enctype="multipart/form-data" method="POST">
+                    <form action="{{ route('store.product.update') }}" enctype="multipart/form-data" method="POST">
                         @csrf
+                        <input type="hidden" name="product" value="{{$product->id}}">
                         <div class="form-floating mb-3">
-                            <input type="file" class="form-control" name="cover" onchange="readURL(this);" id="floatingText" placeholder="image" accept="image/jpg, image/png, image/jpeg" required>
+                            <input type="file" class="form-control" name="cover" onchange="readURL(this);" id="floatingText" placeholder="image" accept="image/jpg, image/png, image/jpeg">
                             <label for="floatingText">Imagem</label>
                         </div>
                         <div class="form-floating mb-3">

@@ -8,13 +8,13 @@
 
 <link rel="stylesheet" href={{asset('css/detailsProduct.css')}}>
 
-<div class="container-fluid !direction !spacing">
+{{-- <div class="container-fluid !direction !spacing">
     <div class="page-title">
         <img src="{{asset('assets/components/loja.png')}}">
     </div>
-</div>
+</div> --}}
 
-<div class="container">
+<div class="container mt-5">
     <section class="product-item">
         <div class="product-gallery">
           <img src="{{ asset('loja/products/'.$product->cover) }}" alt="" id="slider">
@@ -30,7 +30,7 @@
             <span class="badge rounded-pill bg-secondary text-dark product-firm">{{$product->state}}</span>
           @endif
 
-          <h2 class="product-name">AIR MAX TAVAS SD</h2>
+          <h2 class="product-name">{{ $product->name }}</h2>
           @if ($product->state == 'Promoção')
             <p class="product-price">{{ number_format($product->price_promotional, 2) }}</p>
             <p class="product-promotion">{{ number_format($product->price, 2) }}</p>
