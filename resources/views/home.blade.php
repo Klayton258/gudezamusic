@@ -14,7 +14,7 @@
                     <span>{{$slide->slide_title}}</span>
                     <span>{{$slide->description}}</span>
                     @if ($slide->link_direct != '')
-                    <a class="button" href="{{ $slide->link_direct }}" target="/black">Ver Mais</a>
+                    <a class="button" href="{{ $slide->link_direct }}" target="_blank">Ver Mais</a>
                     @endif
                 </div>
             </div>

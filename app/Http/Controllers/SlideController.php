@@ -74,8 +74,6 @@ class SlideController extends Controller
                 'updated_at'=>now()
             ]);
 
-            dd();
-
             return back()->with('success', 'Novo Slide adicionado com sucesso.');
 
         } catch (\Exception $e) {
