@@ -19,7 +19,7 @@ mix.js('resources/js/app.js', 'public/js')
     mix.postCss('resources/css/musicas.css', 'public/css');
     mix.js('resources/js/main.js', 'public/js');
     mix.js('resources/js/gtag.js', 'public/js');
-    mix.sass('resources/sass/main.scss', 'public/css');
+    mix.postCss('resources/sass/main.css', 'public/css');
     mix.sass('resources/sass/styles.scss', 'public/css');
     mix.sass('resources/sass/signup.scss', 'public/css');
     mix.sass('resources/sass/errors.scss', 'public/css');
