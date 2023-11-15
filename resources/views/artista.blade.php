@@ -8,7 +8,7 @@
 <div class="mt-5">
     <div class="col container row-artist pt-5">
         <div class="row col-4">
-            <img src="{{asset('assets/artists/cc.png')}}" class="cover-artistaa img-fluid">
+            <img src="{{ asset('storage/images/artist_image/'.$artist[0]->artist_image) }}" class="cover-artistaa img-fluid">
         </div>
     </div>
     <div class="container content-atist">
@@ -48,7 +48,7 @@
     <div class="container">
         <div class="collapse col-lg-6 col-sm-12" id="collapseExample">
             <div class="card card-body text-center bio-content">
-                <p>{{$artist[0]->artist_bio}}</p>
+                {!! $artist[0]->artist_bio !!}
             </div>
         </div>
     </div>

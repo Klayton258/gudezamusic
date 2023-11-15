@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ArtistController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\MusicController;
@@ -143,6 +144,15 @@ Route::post('/dash/slideupdate/{id}',[SlideController::class, 'slideupdate'])->n
 Route::get('/dash/deleteslide/{id}',[SlideController::class, 'deleteslide'])->name('deleteslide');
 
 // =====================/// Artists =================
+Route::get('/dash/artists',[ArtistController::class, 'index'])->name('artistindex');
+
+Route::get('/dash/artist/{id}',[ArtistController::class, 'updateindex'])->name('updateindex');
+
+Route::get('/dash/uploadartist',[ArtistController::class, 'uploadartist'])->name('uploadartist');
+
+Route::post('/dash/newartist',[ArtistController::class, 'createartist'])->name('newartist');
+
+Route::post('/dash/updateartist',[ArtistController::class, 'updateartist'])->name('updateartist');
 
 
     // STORE ROUTES
