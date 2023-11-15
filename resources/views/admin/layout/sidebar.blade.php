@@ -55,6 +55,7 @@
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Outras Paginas</a>
                 <div class="dropdown-menu bg-transparent border-0">
                     <a href="{{ route('adminCreate') }}" class="dropdown-item">Registar Usuario</a>
+                    <a href="{{ route('about.update') }}" class="dropdown-item">Sobre Nos</a>
                 </div>
             </div>
         </div>

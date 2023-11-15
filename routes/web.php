@@ -170,6 +170,10 @@ Route::get('/dash/deleteslide/{id}',[SlideController::class, 'deleteslide'])->na
 
     Route::get('/deletevideo/{id}', [VideoController::class, 'deletevideo'])->name('video.delete');
 
+    Route::get('/about', [AdminController::class, 'updateabout'])->name('about.update');
+
+    Route::post('/about/update', [AdminController::class, 'refreshabout'])->name('about.refreh');
+
 });
 
 

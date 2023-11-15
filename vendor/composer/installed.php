@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '4f22553bfba2f43e922bc963e69d8da32cb645f5',
+        'reference' => '023fdc83a072efb354237d09a1c4411b38478e2c',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -424,7 +424,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '4f22553bfba2f43e922bc963e69d8da32cb645f5',
+            'reference' => '023fdc83a072efb354237d09a1c4411b38478e2c',
             'dev_requirement' => false,
         ),
         'laravel/sail' => array(
@@ -802,8 +802,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0|2.0|3.0',
-                1 => '1.0.0 || 2.0.0 || 3.0.0',
+                0 => '1.0.0 || 2.0.0 || 3.0.0',
+                1 => '1.0|2.0|3.0',
             ),
         ),
         'psr/simple-cache' => array(
@@ -1365,6 +1365,15 @@
             'install_path' => __DIR__ . '/../tijsverkoyen/css-to-inline-styles',
             'aliases' => array(),
             'reference' => 'c42125b83a4fa63b187fdf29f9c93cb7733da30c',
+            'dev_requirement' => false,
+        ),
+        'tinymce/tinymce' => array(
+            'pretty_version' => '6.7.2',
+            'version' => '6.7.2.0',
+            'type' => 'component',
+            'install_path' => __DIR__ . '/../tinymce/tinymce',
+            'aliases' => array(),
+            'reference' => 'a4c139bde17a4e8b2e84d225020cd5acc24a728a',
             'dev_requirement' => false,
         ),
         'vlucas/phpdotenv' => array(

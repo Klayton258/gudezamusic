@@ -39,6 +39,7 @@ mix.js('resources/js/app.js', 'public/js')
     mix.js('resources/views/admin/lib/waypoints/waypoints.min.js','public/js');
     mix.js('resources/views/admin/lib/owlcarousel/owl.carousel.min.js','public/js');
     mix.js('resources/views/admin/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js','public/js');
+    mix.copyDirectory('vendor/tinymce/tinymce', 'public/js/tinymce');
 
 
     // STORE CSS

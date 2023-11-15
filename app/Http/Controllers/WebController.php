@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\API\Control;
+use App\Models\About;
 use App\Models\HomeSlide;
 use App\Models\Subscribers;
 use App\Notifications\emailSubscription;
@@ -53,10 +54,11 @@ class WebController extends Controller
         return view('musicas',['albums'=> $albums,'musics'=> $musics]);
     }
 
-    function sobrenos(){
+    function sobrenos()
+    {
+        $about = About::all()->first();
 
-
-        return view('sobrenos');
+        return view('sobrenos', compact('about'));
     }
 
     function videos(){

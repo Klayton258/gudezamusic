@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\About;
 use App\Models\Client;
 use App\Models\Lead;
 use App\Models\Subscribers;
@@ -159,5 +160,42 @@ class AdminController extends Controller
     {
 
         return view('admin.musics.uploadmusic',['user'=>Auth::guard('users')->user()]);
+    }
+
+    function updateabout()
+    {
+        $about = About::all()->first();
+
+        return view('admin.about.about', ['user'=>Auth::guard('users')->user(), 'about'=>$about]);
+    }
+
+    function refreshabout(Request $request)
+    {
+
+       try {
+
+        $about = About::all()->first();
+
+        if($about != null) {
+        $about->title = $request->title;
+        $about->content = $request->content;
+        $about->save();
+        }else{
+        $about = DB::table('abouts')->insert([
+            'title'=> $request->title,
+            'content'=> $request->content,
+            'created_at'=>now(),
+            'updated_at'=>now(),
+
+        ]);
+        }
+
+        return back()->with('success', 'Sobre nos atualizado com sucesso.', compact('about'));
+
+       } catch (Exception $e) {
+
+        return back()->with('erro', 'Erro ao atualizar sobre nos.');
+       }
+
     }
 }
