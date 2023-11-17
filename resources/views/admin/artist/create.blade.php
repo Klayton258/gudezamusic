@@ -64,6 +64,14 @@
                             <input type="text" class="form-control" name="artist_twitter" id="floatingText" placeholder="https://twitter">
                             <label for="floatingText">Twitter</label>
                         </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" name="musics" id="floatingText" placeholder="https://example">
+                            <label for="floatingText">Music Streaming link</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" name="videos" id="floatingText" placeholder="https://example">
+                            <label for="floatingText">Video Streaming link</label>
+                        </div>
                         <label for="myeditorinstance" class="pb-2">Biografia</label>
                         <textarea id="myeditorinstance" name="artist_bio"></textarea>
                         <div class="col-4 pt-2">

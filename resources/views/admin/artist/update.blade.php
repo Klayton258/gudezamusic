@@ -44,7 +44,7 @@
                     {{-- content here --}}
                     <form method="post" enctype="multipart/form-data" action="{{ route('updateartist') }}">
                         @csrf
-                        <input type="hidden" name="id" >
+                        <input type="hidden" name="id" value="{{$artist->id}}">
                         <div class="form-floating mb-3">
                             <input type="file" class="form-control" name="artist_image" onchange="readURL(this);" id="floatingText" placeholder="image" accept="image/jpg, image/png, image/jpeg">
                             <label for="floatingText">Imagem</label>
@@ -64,6 +64,14 @@
                         <div class="form-floating mb-3">
                             <input type="text" class="form-control" name="artist_twitter" id="floatingText" placeholder="https://twitter" value="{{ $artist->artist_twitter }}">
                             <label for="floatingText">Twitter</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" name="musics" id="floatingText" placeholder="https://example">
+                            <label for="floatingText">Music Streaming link</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" name="videos" id="floatingText" placeholder="https://example">
+                            <label for="floatingText">Video Streaming link</label>
                         </div>
                         <label for="myeditorinstance" class="pb-2">Biografia</label>
                         <textarea id="myeditorinstance" name="artist_bio">{{ $artist->artist_bio }}</textarea>

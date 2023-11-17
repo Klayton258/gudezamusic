@@ -14,7 +14,7 @@
         <ul id="list">
             <li><a href="{{ route('home')}}">Novidades</a></li>
             <li><a href="{{ route('artistas')}}">Artistas</a></li>
-            <li><a href="{{ route('musicas')}}">Musicas</a></li>
+            {{-- <li><a href="{{ route('musicas')}}">Musicas</a></li> --}}
             <li><a href="{{ route('videos.all')}}">Videos</a></li>
             <li><a href="{{ route('loja') }}">Loja</a></li>
             <li><a href="{{ route('home') }}">Eventos</a></li>

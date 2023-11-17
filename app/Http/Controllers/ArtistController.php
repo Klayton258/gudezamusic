@@ -77,6 +77,8 @@ class ArtistController extends Controller
                 'artist_facebook'=> !isEmpty($request->artist_facebook) ? "" : $request->artist_facebook,
                 'artist_instagram'=> !isEmpty($request->artist_instagram) ? "" : $request->artist_instagram,
                 'artist_twitter'=> !isEmpty($request->artist_twitter) ? "" : $request->artist_twitter,
+                'musics'=> $request->musics,
+                'videos'=> $request->videos,
                 'created_at'=>now(),
                 'updated_at'=>now()
             ]);
@@ -116,16 +118,19 @@ class ArtistController extends Controller
                     'artist_image'=> $imageName,
                     'artist_instagram'=> isEmpty($request->artist_instagram) ? "" : $request->artist_instagram,
                     'artist_twitter'=> isEmpty($request->artist_twitter) ? "" : $request->artist_twitter,
+                    'musics'=> $request->musics,
+                    'videos'=> $request->videos,
                     'created_at'=>now(),
                     'updated_at'=>now()
                 ]);
             }else{
-
-                $artist = DB::table('artists')->where(['id'=>$id])->update([
+                $artist = DB::table('artists')->where('id',$id)->update([
                     'artist_name'=> $request->artist_name,
                     'artist_facebook'=> isEmpty($request->artist_facebook) ? "" : $request->artist_facebook,
                     'artist_instagram'=> isEmpty($request->artist_instagram) ? "" : $request->artist_instagram,
                     'artist_twitter'=> isEmpty($request->artist_twitter) ? "" : $request->artist_twitter,
+                    'musics'=> $request->musics,
+                    'videos'=> $request->videos,
                     'created_at'=>now(),
                     'updated_at'=>now()
                 ]);
