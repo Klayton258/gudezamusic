@@ -12,6 +12,7 @@
 }
 .cover-artista{
     transform: scale(0.9);
+    max-width: 50% !important;
 }
 .carousel{
     margin-bottom: 80px;
@@ -38,7 +39,6 @@ a{
 
 /* ==========================Artista========================== */
 .cover-artistaa{
-    margin-top: 150px;
     transform: scale(2);
 }
 .icon-smidia{

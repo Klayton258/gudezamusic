@@ -14,7 +14,7 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <div class="container cont-art mb-5 col-12">
-                    <a href="{{ route('artisdetails',['id'=>$artist->id])}}" class="m-link">
+                    <a href="{{ route('artisdetails',['id'=>$artist->id])}}" class="m-link" style="display: flex; justify-content: center;">
                         <img src="{{ asset('storage/images/artist_image/'.$artist->artist_image) }}" class="img-fluid cover-artista ">
                     </a>
                     <div class="col mt-5">
