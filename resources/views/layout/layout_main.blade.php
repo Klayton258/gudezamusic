@@ -38,5 +38,7 @@
     <script src={{asset('js/main.js')}}></script>
     <script src={{asset('js/lightbox-plus-jquery.js')}}></script>
     <script src={{asset('js/lightslider.js')}}></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4007826409142037"
+     crossorigin="anonymous"></script>
 </body>
 </html>
