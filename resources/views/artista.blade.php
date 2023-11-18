@@ -17,18 +17,18 @@
                     {{ $artist[0]->artist_name }}
                 </h1>
                 <div class="row justify-content-center">
-                    @if ($artist[0]->artist_facebook != '')
+                    @if ($artist[0]->artist_facebook != '' && $artist[0]->artist_facebook != "#")
                         <a class="icon-r" target="_blank" href="{{ $artist[0]->artist_facebook }}">
                             <img src="assets/components/facebook-white.png" class="icon-r">
                         </a>
                     @endif
-                    @if ($artist[0]->artist_instagram != '')
+                    @if ($artist[0]->artist_instagram != '' && $artist[0]->artist_instagram != "#")
                         <a class="icon-r" target="_blank" href="{{ $artist[0]->artist_instagram }}">
                             <img src="assets/components/instagram-white.png" class="icon-r">
                         </a>
                     @endif
 
-                    @if ($artist[0]->artist_twitter != '')
+                    @if ($artist[0]->artist_twitter != '' && $artist[0]->artist_twitter != "#")
                         <a class="icon-r" target="_blank" href="{{ $artist[0]->artist_twitter }}">
                             <img src="assets/components/Twitter-white.png" class="icon-r">
                         </a>
