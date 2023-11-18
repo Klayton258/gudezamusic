@@ -109,19 +109,6 @@ $('#whatsappStoreRedirect').click(function () {
 
 /***/ }),
 
-/***/ "./resources/sass/login.scss":
-/*!***********************************!*\
-  !*** ./resources/sass/login.scss ***!
-  \***********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
 /***/ "./resources/sass/profile.scss":
 /*!*************************************!*\
   !*** ./resources/sass/profile.scss ***!
@@ -178,6 +165,19 @@ __webpack_require__.r(__webpack_exports__);
 /*!***********************************!*\
   !*** ./resources/css/musicas.css ***!
   \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./resources/sass/main.css":
+/*!*********************************!*\
+  !*** ./resources/sass/main.css ***!
+  \*********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -265,19 +265,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/sass/main.scss":
-/*!**********************************!*\
-  !*** ./resources/sass/main.scss ***!
-  \**********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
 /***/ "./resources/sass/styles.scss":
 /*!************************************!*\
   !*** ./resources/sass/styles.scss ***!
@@ -321,6 +308,19 @@ __webpack_require__.r(__webpack_exports__);
 /*!************************************!*\
   !*** ./resources/sass/events.scss ***!
   \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./resources/sass/login.scss":
+/*!***********************************!*\
+  !*** ./resources/sass/login.scss ***!
+  \***********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -421,19 +421,19 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 			"css/events": 0,
 /******/ 			"css/errors": 0,
 /******/ 			"css/detailsProduct": 0,
+/******/ 			"css/login": 0,
 /******/ 			"css/signup": 0,
 /******/ 			"css/styles": 0,
-/******/ 			"css/main": 0,
 /******/ 			"css/store": 0,
 /******/ 			"css/style": 0,
 /******/ 			"css/bootstrap.min": 0,
 /******/ 			"css/tempusdominus-bootstrap-4.min": 0,
 /******/ 			"css/owl.carousel.min": 0,
+/******/ 			"css/main": 0,
 /******/ 			"css/musicas": 0,
 /******/ 			"css/artistas": 0,
 /******/ 			"css/posts": 0,
-/******/ 			"css/profile": 0,
-/******/ 			"css/login": 0
+/******/ 			"css/profile": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -483,24 +483,24 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/events","css/errors","css/detailsProduct","css/signup","css/styles","css/main","css/store","css/style","css/bootstrap.min","css/tempusdominus-bootstrap-4.min","css/owl.carousel.min","css/musicas","css/artistas","css/posts","css/profile","css/login"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/events","css/errors","css/detailsProduct","css/signup","css/styles","css/main","css/store","css/style","css/bootstrap.min","css/tempusdominus-bootstrap-4.min","css/owl.carousel.min","css/musicas","css/artistas","css/posts","css/profile","css/login"], () => (__webpack_require__("./resources/sass/main.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/events","css/errors","css/detailsProduct","css/signup","css/styles","css/main","css/store","css/style","css/bootstrap.min","css/tempusdominus-bootstrap-4.min","css/owl.carousel.min","css/musicas","css/artistas","css/posts","css/profile","css/login"], () => (__webpack_require__("./resources/sass/styles.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/events","css/errors","css/detailsProduct","css/signup","css/styles","css/main","css/store","css/style","css/bootstrap.min","css/tempusdominus-bootstrap-4.min","css/owl.carousel.min","css/musicas","css/artistas","css/posts","css/profile","css/login"], () => (__webpack_require__("./resources/sass/signup.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/events","css/errors","css/detailsProduct","css/signup","css/styles","css/main","css/store","css/style","css/bootstrap.min","css/tempusdominus-bootstrap-4.min","css/owl.carousel.min","css/musicas","css/artistas","css/posts","css/profile","css/login"], () => (__webpack_require__("./resources/sass/errors.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/events","css/errors","css/detailsProduct","css/signup","css/styles","css/main","css/store","css/style","css/bootstrap.min","css/tempusdominus-bootstrap-4.min","css/owl.carousel.min","css/musicas","css/artistas","css/posts","css/profile","css/login"], () => (__webpack_require__("./resources/sass/events.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/events","css/errors","css/detailsProduct","css/signup","css/styles","css/main","css/store","css/style","css/bootstrap.min","css/tempusdominus-bootstrap-4.min","css/owl.carousel.min","css/musicas","css/artistas","css/posts","css/profile","css/login"], () => (__webpack_require__("./resources/sass/login.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/events","css/errors","css/detailsProduct","css/signup","css/styles","css/main","css/store","css/style","css/bootstrap.min","css/tempusdominus-bootstrap-4.min","css/owl.carousel.min","css/musicas","css/artistas","css/posts","css/profile","css/login"], () => (__webpack_require__("./resources/sass/profile.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/events","css/errors","css/detailsProduct","css/signup","css/styles","css/main","css/store","css/style","css/bootstrap.min","css/tempusdominus-bootstrap-4.min","css/owl.carousel.min","css/musicas","css/artistas","css/posts","css/profile","css/login"], () => (__webpack_require__("./resources/sass/posts.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/events","css/errors","css/detailsProduct","css/signup","css/styles","css/main","css/store","css/style","css/bootstrap.min","css/tempusdominus-bootstrap-4.min","css/owl.carousel.min","css/musicas","css/artistas","css/posts","css/profile","css/login"], () => (__webpack_require__("./resources/css/app.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/events","css/errors","css/detailsProduct","css/signup","css/styles","css/main","css/store","css/style","css/bootstrap.min","css/tempusdominus-bootstrap-4.min","css/owl.carousel.min","css/musicas","css/artistas","css/posts","css/profile","css/login"], () => (__webpack_require__("./resources/css/artistas.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/events","css/errors","css/detailsProduct","css/signup","css/styles","css/main","css/store","css/style","css/bootstrap.min","css/tempusdominus-bootstrap-4.min","css/owl.carousel.min","css/musicas","css/artistas","css/posts","css/profile","css/login"], () => (__webpack_require__("./resources/css/musicas.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/events","css/errors","css/detailsProduct","css/signup","css/styles","css/main","css/store","css/style","css/bootstrap.min","css/tempusdominus-bootstrap-4.min","css/owl.carousel.min","css/musicas","css/artistas","css/posts","css/profile","css/login"], () => (__webpack_require__("./resources/views/admin/lib/owlcarousel/assets/owl.carousel.min.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/events","css/errors","css/detailsProduct","css/signup","css/styles","css/main","css/store","css/style","css/bootstrap.min","css/tempusdominus-bootstrap-4.min","css/owl.carousel.min","css/musicas","css/artistas","css/posts","css/profile","css/login"], () => (__webpack_require__("./resources/views/admin/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/events","css/errors","css/detailsProduct","css/signup","css/styles","css/main","css/store","css/style","css/bootstrap.min","css/tempusdominus-bootstrap-4.min","css/owl.carousel.min","css/musicas","css/artistas","css/posts","css/profile","css/login"], () => (__webpack_require__("./resources/views/admin/css/bootstrap.min.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/events","css/errors","css/detailsProduct","css/signup","css/styles","css/main","css/store","css/style","css/bootstrap.min","css/tempusdominus-bootstrap-4.min","css/owl.carousel.min","css/musicas","css/artistas","css/posts","css/profile","css/login"], () => (__webpack_require__("./resources/views/admin/css/style.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/events","css/errors","css/detailsProduct","css/signup","css/styles","css/main","css/store","css/style","css/bootstrap.min","css/tempusdominus-bootstrap-4.min","css/owl.carousel.min","css/musicas","css/artistas","css/posts","css/profile","css/login"], () => (__webpack_require__("./resources/css/store.css")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","css/events","css/errors","css/detailsProduct","css/signup","css/styles","css/main","css/store","css/style","css/bootstrap.min","css/tempusdominus-bootstrap-4.min","css/owl.carousel.min","css/musicas","css/artistas","css/posts","css/profile","css/login"], () => (__webpack_require__("./resources/css/detailsProduct.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/events","css/errors","css/detailsProduct","css/login","css/signup","css/styles","css/store","css/style","css/bootstrap.min","css/tempusdominus-bootstrap-4.min","css/owl.carousel.min","css/main","css/musicas","css/artistas","css/posts","css/profile"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/events","css/errors","css/detailsProduct","css/login","css/signup","css/styles","css/store","css/style","css/bootstrap.min","css/tempusdominus-bootstrap-4.min","css/owl.carousel.min","css/main","css/musicas","css/artistas","css/posts","css/profile"], () => (__webpack_require__("./resources/sass/styles.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/events","css/errors","css/detailsProduct","css/login","css/signup","css/styles","css/store","css/style","css/bootstrap.min","css/tempusdominus-bootstrap-4.min","css/owl.carousel.min","css/main","css/musicas","css/artistas","css/posts","css/profile"], () => (__webpack_require__("./resources/sass/signup.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/events","css/errors","css/detailsProduct","css/login","css/signup","css/styles","css/store","css/style","css/bootstrap.min","css/tempusdominus-bootstrap-4.min","css/owl.carousel.min","css/main","css/musicas","css/artistas","css/posts","css/profile"], () => (__webpack_require__("./resources/sass/errors.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/events","css/errors","css/detailsProduct","css/login","css/signup","css/styles","css/store","css/style","css/bootstrap.min","css/tempusdominus-bootstrap-4.min","css/owl.carousel.min","css/main","css/musicas","css/artistas","css/posts","css/profile"], () => (__webpack_require__("./resources/sass/events.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/events","css/errors","css/detailsProduct","css/login","css/signup","css/styles","css/store","css/style","css/bootstrap.min","css/tempusdominus-bootstrap-4.min","css/owl.carousel.min","css/main","css/musicas","css/artistas","css/posts","css/profile"], () => (__webpack_require__("./resources/sass/login.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/events","css/errors","css/detailsProduct","css/login","css/signup","css/styles","css/store","css/style","css/bootstrap.min","css/tempusdominus-bootstrap-4.min","css/owl.carousel.min","css/main","css/musicas","css/artistas","css/posts","css/profile"], () => (__webpack_require__("./resources/sass/profile.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/events","css/errors","css/detailsProduct","css/login","css/signup","css/styles","css/store","css/style","css/bootstrap.min","css/tempusdominus-bootstrap-4.min","css/owl.carousel.min","css/main","css/musicas","css/artistas","css/posts","css/profile"], () => (__webpack_require__("./resources/sass/posts.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/events","css/errors","css/detailsProduct","css/login","css/signup","css/styles","css/store","css/style","css/bootstrap.min","css/tempusdominus-bootstrap-4.min","css/owl.carousel.min","css/main","css/musicas","css/artistas","css/posts","css/profile"], () => (__webpack_require__("./resources/css/app.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/events","css/errors","css/detailsProduct","css/login","css/signup","css/styles","css/store","css/style","css/bootstrap.min","css/tempusdominus-bootstrap-4.min","css/owl.carousel.min","css/main","css/musicas","css/artistas","css/posts","css/profile"], () => (__webpack_require__("./resources/css/artistas.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/events","css/errors","css/detailsProduct","css/login","css/signup","css/styles","css/store","css/style","css/bootstrap.min","css/tempusdominus-bootstrap-4.min","css/owl.carousel.min","css/main","css/musicas","css/artistas","css/posts","css/profile"], () => (__webpack_require__("./resources/css/musicas.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/events","css/errors","css/detailsProduct","css/login","css/signup","css/styles","css/store","css/style","css/bootstrap.min","css/tempusdominus-bootstrap-4.min","css/owl.carousel.min","css/main","css/musicas","css/artistas","css/posts","css/profile"], () => (__webpack_require__("./resources/sass/main.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/events","css/errors","css/detailsProduct","css/login","css/signup","css/styles","css/store","css/style","css/bootstrap.min","css/tempusdominus-bootstrap-4.min","css/owl.carousel.min","css/main","css/musicas","css/artistas","css/posts","css/profile"], () => (__webpack_require__("./resources/views/admin/lib/owlcarousel/assets/owl.carousel.min.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/events","css/errors","css/detailsProduct","css/login","css/signup","css/styles","css/store","css/style","css/bootstrap.min","css/tempusdominus-bootstrap-4.min","css/owl.carousel.min","css/main","css/musicas","css/artistas","css/posts","css/profile"], () => (__webpack_require__("./resources/views/admin/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/events","css/errors","css/detailsProduct","css/login","css/signup","css/styles","css/store","css/style","css/bootstrap.min","css/tempusdominus-bootstrap-4.min","css/owl.carousel.min","css/main","css/musicas","css/artistas","css/posts","css/profile"], () => (__webpack_require__("./resources/views/admin/css/bootstrap.min.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/events","css/errors","css/detailsProduct","css/login","css/signup","css/styles","css/store","css/style","css/bootstrap.min","css/tempusdominus-bootstrap-4.min","css/owl.carousel.min","css/main","css/musicas","css/artistas","css/posts","css/profile"], () => (__webpack_require__("./resources/views/admin/css/style.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/events","css/errors","css/detailsProduct","css/login","css/signup","css/styles","css/store","css/style","css/bootstrap.min","css/tempusdominus-bootstrap-4.min","css/owl.carousel.min","css/main","css/musicas","css/artistas","css/posts","css/profile"], () => (__webpack_require__("./resources/css/store.css")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","css/events","css/errors","css/detailsProduct","css/login","css/signup","css/styles","css/store","css/style","css/bootstrap.min","css/tempusdominus-bootstrap-4.min","css/owl.carousel.min","css/main","css/musicas","css/artistas","css/posts","css/profile"], () => (__webpack_require__("./resources/css/detailsProduct.css")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

@@ -38,17 +38,8 @@ transform: scale(1.2);
     <div class="container-fluid justify-content-center">
         <div class="col-lg-8 col-sm-12 short-story">
 
-            <h1>Quem Somos?</h1>
-            <p class="short-p"><strong>Gudeza Entretenimento, Lda</strong> é uma empresa moçambicana independente de entretenimento
-                que opera como gravadora, gerenciadora, produtora de audiovisual e muito mais… estabilizada por Carlos Chatuir Jr.
-                Com o principal foco na revolução da indústria de música moçambicana.
-            </p>
-
-            {{-- <h1>História</h1>
-            <p class="short-p">A <strong>Gudeza Music</strong> foi fundada por Carlos <i>"Charles Caló"</i> Chatuir Jr. e
-                Moisés Suto em 2017, em Maputo. 3 Anos depois o Co-fundador Moisés Suto
-                deixou a gravadora e deu 50% das suas ações ao seu ex-sócio Carlos Chatuir Jr,
-                tornando-o único proprietário da mesma até agora.</p> --}}
+            <h1>{{ $about->title }}</h1>
+            {!! $about->content !!}
 
         </div>
     </div>
@@ -71,7 +62,7 @@ transform: scale(1.2);
         </div>
         <div class="col-12 d-flex justify-content-center">
             <div class="row">
-                <p class="text-light email contact-us"><i class="fa-solid fa-envelope"></i>info@gudezamusic.com</p>
+                <a href="mailto:info@gudezamusic.com" class="text-light email contact-us"><i class="fa-solid fa-envelope"></i>info@gudezamusic.com</a>
             </div>
         </div>
         <div class="col-12 d-flex justify-content-center">
