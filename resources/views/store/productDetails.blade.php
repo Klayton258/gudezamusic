@@ -17,7 +17,7 @@
 <div class="container mt-5">
     <section class="product-item">
         <div class="product-gallery">
-          <img src="{{ asset('loja/products/'.$product->cover) }}" alt="" id="slider">
+          <img src="{{ asset('storage/images/loja/products/'.$product->cover) }}" alt="" id="slider">
         </div>
         <div class="product-data">
             @if ($product->state == 'Novo')
@@ -43,7 +43,7 @@
           @endif
 
           <!--<p class="product-colors">Black/Pink Pow/Tour Yellow/White</p>-->
-          <p class="product-size">{{$product->stock}}</p>
+          {{-- <p class="product-size">{{$product->stock}}</p> --}}
            <button class="buy-btn" id="whatsappStoreRedirect" data-prod="{{$product->name}}">Encomendar</button>
 
           <div class="product-info">

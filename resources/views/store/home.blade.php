@@ -18,11 +18,11 @@
 
     <ul class="cards">
         @foreach ($products as $product)
-        @if($product->stock != 0)
+        {{-- @if($product->stock != 0) --}}
 
         <li>
           <a href="{{ route('product.details', ['id'=>Crypt::encrypt($product->id)]) }}" class="card" id="whatsappStoreRedirec" data-prod="{{ $product->name }}">
-            <img src="{{ asset('loja/products/'.$product->cover) }}" class="card__image" alt="" />
+            <img src="{{ asset('storage/images/loja/products/'.$product->cover) }}" class="card__image" alt="" />
             <div class="card__overlay">
               <div class="card__header">
                 <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>
@@ -39,7 +39,7 @@
                     <span class="badge rounded-pill bg-secondary text-dark">{{$product->state}}</span>
                   @endif
 
-                  <span class="card__status">{{$product->stock}} Artigos Disponiveis</span>
+                  {{-- <span class="card__status">{{$product->stock}} Artigos Disponiveis</span> --}}
 
                   @if($product->state == 'Promoção')
                     <h1 class="card__title card_price mt-2">{{ number_format($product->price_promotional, 2) }} MZN</h1>
@@ -56,7 +56,7 @@
             </div>
           </a>
         </li>
-        @endif
+        {{-- @endif --}}
         @endforeach
 
       </ul>

@@ -7,6 +7,7 @@ use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Intervention\Image\Facades\Image;
 
@@ -48,19 +49,12 @@ class StoreController extends Controller
         ]);
 
 
-       // if($validation->fails())return back()->withErrors($validation);
-
-
-       $relPath = '\loja\products';
-
-           if (!file_exists(public_path($relPath))) {
-               mkdir(public_path($relPath), 777, true);
-           }
-        $size=20;
         $image = $request->file('cover');
-        $imageName =time().'.'.$image->getClientOriginalExtension();
-        $img = Image::make($image);
-        $img->save(public_path().$relPath.'\\'.$imageName,$size);
+            $imageName =time().'.'.$image->getClientOriginalExtension();
+            $img = Image::make($image);
+            $img = Image::make($image->getRealPath());
+            $img->stream();
+            Storage::disk('local')->put("public/images/loja/products/$imageName",$img , 'public');
 
 
         $product = new $this->product;
@@ -99,18 +93,19 @@ class StoreController extends Controller
 
 
 
-        $relPath = '\loja\products';
+        $relPath = '\images\loja\products';
 
         if (!file_exists(public_path($relPath))) {
             mkdir(public_path($relPath), 777, true);
         }
 
         if($request->hasFile('cover')){
-            $size=20;
             $image = $request->file('cover');
             $imageName =time().'.'.$image->getClientOriginalExtension();
             $img = Image::make($image);
-            $img->save(public_path().$relPath.'\\'.$imageName,$size);
+            $img = Image::make($image->getRealPath());
+            $img->stream();
+            Storage::disk('local')->put("public/images/loja/products/$imageName",$img , 'public');
         }
         $product = $this->product->find($request->product);
         $product->name = $request->name;
