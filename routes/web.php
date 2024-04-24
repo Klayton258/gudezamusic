@@ -65,7 +65,8 @@ Route::get('/KissYouRemix', function(){
 Route::get('/homemmau2', function(){
     return redirect('https://onerpm.link/671314614549');
 });
-Route::get("/Cabeçalho", function(){ redirect('https://onerpm.link/904833883266'); });
+Route::get("/Cabeçalho", function(){ return redirect('https://onerpm.link/904833883266'); });
+Route::get("/NovosDesafios3", function(){ return redirect('https://onerpm.link/887471106066'); });
 //==================================== END EXTERNAL URLS =================================
 
 //=================================== START EVENTOS URLS ================================

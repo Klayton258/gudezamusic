@@ -67,9 +67,9 @@ class SlideController extends Controller
 
             $insert = DB::table('home_slides')->insert([
                 'slide_title'=> $request->slide_title,
-                'description'=> !isEmpty($request->description) ? "" : $request->description,
+                'description'=> $request->description == null ? "" : $request->description,
                 'slide_cover'=> $imageName,
-                'link_direct'=> !isEmpty($request->link_direct) ? "" : $request->link_direct,
+                'link_direct'=> $request->link_direct==null ? "" : $request->link_direct,
                 'created_at'=>now(),
                 'updated_at'=>now()
             ]);
