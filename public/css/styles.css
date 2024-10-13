@@ -1,1 +1,8 @@
-.page-title{display:flex;justify-content:center;width:100%}.page-title img{width:80%}
+.page-title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.page-title img {
+  width: 80%;
+}

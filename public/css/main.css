@@ -1,1 +1,235 @@
-.carousel-item{background:no-repeat 50% scroll;background-size:cover;height:65vh;min-height:350px}svg{left:-4000px;position:absolute;top:-4000px}#gooey-button{background-color:#fff;border:none;color:#0c1016;filter:url(#gooey);font-size:1rem;padding:.8rem;position:relative;-webkit-text-decoration-line:none;text-decoration-line:none}#gooey-button:focus{outline:none}#gooey-button .bubbles{bottom:0;left:0;position:absolute;right:0;top:0}#gooey-button .bubbles .bubble{background-color:#000;border-radius:100%;display:block;left:0;position:absolute;top:0;z-index:-1}#gooey-button .bubbles .bubble:first-child{animation:move-1 3.02s infinite;animation-delay:.2s;height:25px;left:38px;width:25px}#gooey-button .bubbles .bubble:nth-child(2){animation:move-2 3.04s infinite;animation-delay:.4s;height:25px;left:13px;width:25px}#gooey-button .bubbles .bubble:nth-child(3){animation:move-3 3.06s infinite;animation-delay:.6s;height:25px;left:21px;width:25px}#gooey-button .bubbles .bubble:nth-child(4){animation:move-4 3.08s infinite;animation-delay:.8s;height:25px;left:42px;width:25px}#gooey-button .bubbles .bubble:nth-child(5){animation:move-5 3.1s infinite;animation-delay:1s;height:25px;left:42px;width:25px}#gooey-button .bubbles .bubble:nth-child(6){animation:move-6 3.12s infinite;animation-delay:1.2s;height:25px;left:80px;width:25px}#gooey-button .bubbles .bubble:nth-child(7){animation:move-7 3.14s infinite;animation-delay:1.4s;height:25px;left:88px;width:25px}#gooey-button .bubbles .bubble:nth-child(8){animation:move-8 3.16s infinite;animation-delay:1.6s;height:25px;left:84px;width:25px}#gooey-button .bubbles .bubble:nth-child(9){animation:move-9 3.18s infinite;animation-delay:1.8s;height:25px;left:49px;width:25px}#gooey-button .bubbles .bubble:nth-child(10){animation:move-10 3.2s infinite;animation-delay:2s;height:25px;left:58px;width:25px}@keyframes move-1{0%{transform:translate(0)}99%{transform:translateY(-93px)}to{opacity:0;transform:translate(0)}}@keyframes move-2{0%{transform:translate(0)}99%{transform:translateY(-64px)}to{opacity:0;transform:translate(0)}}@keyframes move-3{0%{transform:translate(0)}99%{transform:translateY(-102px)}to{opacity:0;transform:translate(0)}}@keyframes move-4{0%{transform:translate(0)}99%{transform:translateY(-109px)}to{opacity:0;transform:translate(0)}}@keyframes move-5{0%{transform:translate(0)}99%{transform:translateY(-116px)}to{opacity:0;transform:translate(0)}}@keyframes move-6{0%{transform:translate(0)}99%{transform:translateY(-117px)}to{opacity:0;transform:translate(0)}}@keyframes move-7{0%{transform:translate(0)}99%{transform:translateY(-54px)}to{opacity:0;transform:translate(0)}}@keyframes move-8{0%{transform:translate(0)}99%{transform:translateY(-82px)}to{opacity:0;transform:translate(0)}}@keyframes move-9{0%{transform:translate(0)}99%{transform:translateY(-114px)}to{opacity:0;transform:translate(0)}}@keyframes move-10{0%{transform:translate(0)}99%{transform:translateY(-85px)}to{opacity:0;transform:translate(0)}}
+.carousel-item {
+    height: 90vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    background-size: cover;
+}
+
+svg {
+position: absolute;
+top: -4000px;
+left: -4000px;
+}
+
+#gooey-button {
+padding: 0.8rem;
+font-size: 1rem;
+border: none;
+color: #0c1016;
+filter: url("#gooey");
+position: relative;
+background-color: #fff;
+-webkit-text-decoration-line: none;
+        text-decoration-line: none;
+}
+#gooey-button:focus {
+outline: none;
+}
+#gooey-button .bubbles {
+position: absolute;
+top: 0;
+left: 0;
+bottom: 0;
+right: 0;
+}
+#gooey-button .bubbles .bubble {
+background-color: #000;
+border-radius: 100%;
+position: absolute;
+top: 0;
+left: 0;
+display: block;
+z-index: -1;
+}
+#gooey-button .bubbles .bubble:nth-child(1) {
+left: 38px;
+width: 25px;
+height: 25px;
+animation: move-1 3.02s infinite;
+animation-delay: 0.2s;
+}
+#gooey-button .bubbles .bubble:nth-child(2) {
+left: 13px;
+width: 25px;
+height: 25px;
+animation: move-2 3.04s infinite;
+animation-delay: 0.4s;
+}
+#gooey-button .bubbles .bubble:nth-child(3) {
+left: 21px;
+width: 25px;
+height: 25px;
+animation: move-3 3.06s infinite;
+animation-delay: 0.6s;
+}
+#gooey-button .bubbles .bubble:nth-child(4) {
+left: 42px;
+width: 25px;
+height: 25px;
+animation: move-4 3.08s infinite;
+animation-delay: 0.8s;
+}
+#gooey-button .bubbles .bubble:nth-child(5) {
+left: 42px;
+width: 25px;
+height: 25px;
+animation: move-5 3.1s infinite;
+animation-delay: 1s;
+}
+#gooey-button .bubbles .bubble:nth-child(6) {
+left: 80px;
+width: 25px;
+height: 25px;
+animation: move-6 3.12s infinite;
+animation-delay: 1.2s;
+}
+#gooey-button .bubbles .bubble:nth-child(7) {
+left: 88px;
+width: 25px;
+height: 25px;
+animation: move-7 3.14s infinite;
+animation-delay: 1.4s;
+}
+#gooey-button .bubbles .bubble:nth-child(8) {
+left: 84px;
+width: 25px;
+height: 25px;
+animation: move-8 3.16s infinite;
+animation-delay: 1.6s;
+}
+#gooey-button .bubbles .bubble:nth-child(9) {
+left: 49px;
+width: 25px;
+height: 25px;
+animation: move-9 3.18s infinite;
+animation-delay: 1.8s;
+}
+#gooey-button .bubbles .bubble:nth-child(10) {
+left: 58px;
+width: 25px;
+height: 25px;
+animation: move-10 3.2s infinite;
+animation-delay: 2s;
+}
+
+@keyframes move-1 {
+0% {
+transform: translate(0, 0);
+}
+99% {
+transform: translate(0, -93px);
+}
+100% {
+transform: translate(0, 0);
+opacity: 0;
+}
+}
+@keyframes move-2 {
+0% {
+transform: translate(0, 0);
+}
+99% {
+transform: translate(0, -64px);
+}
+100% {
+transform: translate(0, 0);
+opacity: 0;
+}
+}
+@keyframes move-3 {
+0% {
+transform: translate(0, 0);
+}
+99% {
+transform: translate(0, -102px);
+}
+100% {
+transform: translate(0, 0);
+opacity: 0;
+}
+}
+@keyframes move-4 {
+0% {
+transform: translate(0, 0);
+}
+99% {
+transform: translate(0, -109px);
+}
+100% {
+transform: translate(0, 0);
+opacity: 0;
+}
+}
+@keyframes move-5 {
+0% {
+transform: translate(0, 0);
+}
+99% {
+transform: translate(0, -116px);
+}
+100% {
+transform: translate(0, 0);
+opacity: 0;
+}
+}
+@keyframes move-6 {
+0% {
+transform: translate(0, 0);
+}
+99% {
+transform: translate(0, -117px);
+}
+100% {
+transform: translate(0, 0);
+opacity: 0;
+}
+}
+@keyframes move-7 {
+0% {
+transform: translate(0, 0);
+}
+99% {
+transform: translate(0, -54px);
+}
+100% {
+transform: translate(0, 0);
+opacity: 0;
+}
+}
+@keyframes move-8 {
+0% {
+transform: translate(0, 0);
+}
+99% {
+transform: translate(0, -82px);
+}
+100% {
+transform: translate(0, 0);
+opacity: 0;
+}
+}
+@keyframes move-9 {
+0% {
+transform: translate(0, 0);
+}
+99% {
+transform: translate(0, -114px);
+}
+100% {
+transform: translate(0, 0);
+opacity: 0;
+}
+}
+@keyframes move-10 {
+0% {
+transform: translate(0, 0);
+}
+99% {
+transform: translate(0, -85px);
+}
+100% {
+transform: translate(0, 0);
+opacity: 0;
+}
+}
+

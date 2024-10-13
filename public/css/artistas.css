@@ -1,1 +1,249 @@
-.cont-art,.container{display:flex;justify-content:center}.cont-art{align-content:center;align-items:center;flex-direction:column}.cover-artista{max-width:50%!important;transform:scale(.9)}.carousel{margin-bottom:80px}.nome-artista{color:#fff;font-size:50px;margin-top:10px}.nome-artista:hover{text-shadow:rgba(79,79,79,.5) 2px 2px;transform:scale(1.2)}.titulo-ep p{color:gray;text-align:center}a{direction:none;-webkit-text-decoration-line:none;text-decoration-line:none}.cover-artistaa{transform:scale(2)}.icon-smidia{height:40px;width:60px}.row-artist{margin-bottom:200px;margin-top:50px}.content-atist{display:flex;justify-content:center}.text-artist{color:#fff;margin-top:10px;text-align:center}.bio-content{background-color:#000;color:#fff;font-family:Markazi Text,serif;font-size:20px}.icon-r{margin-bottom:20px;margin-right:10px;width:30px}#bio{background-color:#f0f8ff}#bio:hover{background-color:gray}@media (max-width:798.98px){.titulo-art{width:360px}.carousel{margin-bottom:200px}.nome-artista{color:#fff;font-size:30px;margin-top:2px}.cover-artista,.cover-artistaa{margin-top:15px}.row-artist{margin-bottom:90px;margin-top:0}.cover-artistaa{transform:scale(2)}.icon-smidia{height:40px;width:60px}.row-artist{margin-bottom:80px;margin-top:50px}.content-atist{display:flex;justify-content:center}.text-artist{color:#fff;text-align:center}.bio-content{background-color:#000;color:#fff;font-family:Markazi Text,serif;font-size:20px}.icon-r{margin-bottom:20px;margin-right:10px;width:30px}#bio{background-color:#f0f8ff}#bio:hover{background-color:gray}.wrapper-container{align-items:center;flex-direction:column!important;padding:18px}.card-one{height:150px!important;width:300px!important}h1{font-size:30px!important}}.wrapper{display:grid;perspective:40em;position:relative;transform-style:preserve-3d}.card-one{align-items:center;backface-visibility:hidden;background:rgba(249,198,26,.88);box-shadow:0 10px 30px -3px rgba(0,0,0,.1);color:#000;display:flex;grid-area:1/1;height:200px;justify-content:flex-start;padding:30px;text-transform:uppercase;transform:translateX(10px) rotateY(25deg) rotateX(10deg);width:400px}.card-one,h1{font-size:60px;font-weight:900}.card-one .enclosed{background:#000;color:#f9c61a;display:inline-block;line-height:1;padding:0 5px;transform:translate(-1px,1px) scale(.75);transform-origin:right center}.wrapper:before{--bw:9px;backface-visibility:hidden;background:transparent;border:var(--bw) solid #fff;box-sizing:content-box;content:"";grid-area:1/1;height:100%;margin-left:calc(var(--bw)*-1);margin-top:calc(var(--bw)*-1);pointer-events:none;transform:translateX(-60px) rotateY(-30deg) rotateX(15deg) scale(1.03);width:100%}.wrapper:hover:before,.wrapper:hover>div{transform:none}.wrapper:before,.wrapper>div{transition:transform .3s cubic-bezier(.25,.46,.45,1);will-change:transform}.wrapper-container{display:flex;flex-direction:row;gap:50px;justify-content:center;padding-bottom:50px}
+
+.container{
+    display: flex;
+    justify-content: center;
+}
+.cont-art{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+.cover-artista{
+    transform: scale(1);
+    max-width: 100% !important;
+    width: 600px;
+    height: 600px;
+}
+.carousel{
+    margin-bottom: 80px;
+}
+.nome-artista{
+    margin-top: 10px;
+    color: white;
+    font-size: 50px;
+}
+.nome-artista:hover{
+    transform: scale(1.2);
+    text-shadow: rgba(79, 79, 79, 0.5) 2px 2px;
+}
+
+.titulo-ep p{
+    color: gray;
+    text-align: center;
+}
+a{
+    direction: none;
+    -webkit-text-decoration-line: none;
+            text-decoration-line: none;
+}
+
+/* ==========================Artista========================== */
+.cover-artistaa{
+    transform: scale(1);
+}
+.icon-smidia{
+    width: 60px;
+    height: 40px;
+}
+.row-artist{
+    margin-bottom: 200px;
+    margin-top: 50px;
+}
+.content-atist{
+    display: flex;
+    justify-content: center;
+}
+.text-artist{
+    text-align: center;
+    color: white;
+    margin-top: 10px;
+}
+.bio-content{
+    background-color: black;
+    color: white;
+    font-family: 'Markazi Text', serif;
+    font-size: 20px;
+}
+.icon-r{
+    width: 30px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+#bio{
+    background-color: aliceblue;
+}
+#bio:hover{
+    background-color: gray;
+}
+
+
+
+@media (max-width: 798.98px) {
+
+    .titulo-art{
+        width: 360px;
+    }
+    .carousel{
+        margin-bottom: 200px;
+    }
+    .nome-artista{
+        margin-top: 2px;
+        color: white;
+        font-size: 30px;
+    }
+    .icon-smidia{
+        width: 60px;
+        height: 40px;
+    }
+    .cover-artistaa{
+        margin-top: 15px;
+    }
+    .cover-artista{
+            margin-top: 15px;
+        }
+    .row-artist{
+        margin-bottom: 90px;
+        margin-top: 0px;
+    }
+    #bio:hover{
+        background-color: gray;
+
+    }
+
+
+
+
+    /* ==========================Artista========================== */
+.cover-artistaa{
+    transform: scale(2);
+}
+.icon-smidia{
+    width: 60px;
+    height: 40px;
+}
+.row-artist{
+    margin-bottom: 80px;
+    margin-top: 50px;
+}
+.content-atist{
+    display: flex;
+    justify-content: center;
+}
+.text-artist{
+    text-align: center;
+    color: white;
+    /* margin-top: 10px; */
+}
+.bio-content{
+    background-color: black;
+    color: white;
+    font-family: 'Markazi Text', serif;
+    font-size: 20px;
+}
+.icon-r{
+    width: 30px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+#bio{
+    background-color: aliceblue;
+}
+#bio:hover{
+    background-color: gray;
+}
+
+.wrapper-container{
+    flex-direction: column !important;
+    align-items: center;
+    padding: 18px;
+}
+.card-one{
+    width: 300px !important;
+    height: 150px !important;
+}
+h1{
+    font-size: 30px !important;
+}
+
+}
+
+
+.wrapper {
+    position: relative;
+    perspective: 40em;
+    display: grid;
+    transform-style: preserve-3d;
+}
+
+.card-one {
+    grid-area: 1 / 1;
+    height: 200px;
+    width: 400px;
+    transform: translateX(10px) rotateY(25deg) rotateX(10deg);
+    background: rgba(249, 198, 26, 0.88);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 30px;
+    color: #000;
+    text-transform: uppercase;
+    font-size: 60px;
+    font-weight: 900;
+    backface-visibility: hidden;
+    box-shadow: 0 10px 30px -3px rgba(0, 0, 0, .1);
+}
+
+h1 {
+    font-size: 60px;
+    font-weight: 900;
+}
+
+.card-one .enclosed {
+    background: #000;
+    line-height: 1;
+    color: rgba(249, 198, 26, 1);
+    padding: 0 5px;
+    display: inline-block;
+    transform: translate(-1px, 1px) scale(0.75);
+    transform-origin: right center;
+}
+
+.wrapper:before {
+    --bw: 9px;
+    grid-area: 1 / 1;
+    content: '';
+    backface-visibility: hidden;
+    height: 100%;
+    width: 100%;
+    margin-top: calc(-1 * var(--bw));
+    margin-left: calc(-1 * var(--bw));
+    background: transparent;
+    transform: translateX(-60px) rotateY(-30deg) rotateX(15deg) scale(1.03);
+    pointer-events: none;
+    border: var(--bw) solid #ffffff;
+    box-sizing: content-box;
+}
+
+
+.wrapper:hover>div,
+.wrapper:hover:before {
+    transform: none;
+}
+
+
+.wrapper>div,
+.wrapper:before {
+    will-change: transform;
+    transition: .3s transform cubic-bezier(.25, .46, .45, 1);
+}
+
+.wrapper-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 50px;
+    gap: 50px;
+}
+

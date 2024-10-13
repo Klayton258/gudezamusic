@@ -5,7 +5,7 @@
     <link rel="stylesheet" href={{ asset('css/artistas.css') }}>
 
     <div class="mt-5">
-        <div class="col container row-artist pt-5">
+        <div class="col container row-artist pt-5" style="margin-bottom: 10px;">
             <div class="row col-4">
                 <img src="{{ asset('storage/images/artist_image/' . $artist[0]->artist_image) }}"
                     class="cover-artistaa img-fluid">
@@ -55,7 +55,7 @@
 
         <div class="wrapper-container">
             @if($artist[0]->musics != null)
-            <a href="{{ $artist[0]->musics }}">
+            <a href="{{ $artist[0]->musics }}" target="_blank">
                 <div class="wrapper">
                     <div class="card-one">
                         <h1>
@@ -68,7 +68,7 @@
             @endif
 
             @if($artist[0]->videos != null)
-            <a href="{{ $artist[0]->videos }}">
+            <a href="{{ $artist[0]->videos }}" target="_blank">
                 <div class="wrapper">
                     <div class="card-one">
                         <h1>
