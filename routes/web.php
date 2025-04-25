@@ -67,6 +67,7 @@ Route::get('/homemmau2', function(){
 });
 Route::get("/Cabeçalho", function(){ return redirect('https://onerpm.link/904833883266'); });
 Route::get("/NovosDesafios3", function(){ return redirect('https://onerpm.link/887471106066'); });
+Route::get("/LamudjikaRemix", function(){ return redirect('https://open.spotify.com/album/7jNkcZd7UUjugrGa13LPt1?si=27iCXUo7SACbElW3MsIIxQ'); });
 //==================================== END EXTERNAL URLS =================================
 
 //=================================== START EVENTOS URLS ================================
