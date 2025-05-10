@@ -1,9 +1,9 @@
 @extends('admin.layout.admin_layout')
 @section('content')
-
     <div class="container-fluid position-relative d-flex p-0">
         <!-- Spinner Start -->
-        <div id="spinner" class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div id="spinner"
+            class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
             <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
                 <span class="sr-only">Loading...</span>
             </div>
@@ -25,25 +25,26 @@
                             <i class="fa fa-chart-line fa-3x text-primary"></i>
                             <div class="ms-3">
                                 <p class="mb-2">Usuarios</p>
-                                <h6 class="mb-0">{{$data['totalClients']}}</h6>
+                                <h6 class="mb-0">{{ $data['totalClients'] }}</h6>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-6 col-xl-3">
-                        <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
+                        <a href="{{ route('subscriber.list') }}"
+                            class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
                             <i class="fa fa-chart-bar fa-3x text-primary"></i>
                             <div class="ms-3">
                                 <p class="mb-2">Inscritos</p>
-                                <h6 class="mb-0">{{$data['totalSubscribers']}}</h6>
+                                <h6 class="mb-0">{{ $data['totalSubscribers'] }}</h6>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <div class="col-sm-6 col-xl-3">
                         <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
                             <i class="fa fa-chart-area fa-3x text-primary"></i>
                             <div class="ms-3">
                                 <p class="mb-2">Preencimento de Formulario</p>
-                                <h6 class="mb-0">{{$data['totalLeads']}}</h6>
+                                <h6 class="mb-0">{{ $data['totalLeads'] }}</h6>
                             </div>
                         </div>
                     </div>
@@ -113,20 +114,18 @@
                                 @endphp --}}
 
                                 @foreach ($NewClients as $client)
-
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
-                                    <td>{{$client->name}}</td>
-                                    <td>{{$client->birthdate}}</td>
-                                    <td>{{$client->username}}</td>
-                                    <td>{{$client->email}}</td>
-                                    <td>Activo</td>
-                                     {{-- <td><a class="btn btn-sm btn-primary" href="{{$payD->id}}">Detail</a></td> --}}
-                                </tr>
-                                {{-- @if ($count == 10)
+                                    <tr>
+                                        <td><input class="form-check-input" type="checkbox"></td>
+                                        <td>{{ $client->name }}</td>
+                                        <td>{{ $client->birthdate }}</td>
+                                        <td>{{ $client->username }}</td>
+                                        <td>{{ $client->email }}</td>
+                                        <td>Activo</td>
+                                        {{-- <td><a class="btn btn-sm btn-primary" href="{{$payD->id}}">Detail</a></td> --}}
+                                    </tr>
+                                    {{-- @if ($count == 10)
                                     @php break; @endphp
                                 @endif --}}
-
                                 @endforeach
                             </tbody>
                         </table>
@@ -279,6 +278,4 @@
         <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
-
-
 @endsection

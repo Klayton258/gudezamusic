@@ -190,6 +190,9 @@ Route::post('/dash/updateartist',[ArtistController::class, 'updateartist'])->nam
 
     Route::post('/about/update', [AdminController::class, 'refreshabout'])->name('about.refreh');
 
+
+    Route::get('/subscribers', [AdminController::class, 'subscribers'])->name('subscriber.list');
+
 });
 
 

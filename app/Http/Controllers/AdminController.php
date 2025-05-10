@@ -198,4 +198,11 @@ class AdminController extends Controller
        }
 
     }
+
+    function subscribers()
+    {
+        $subscribers = Subscribers::all();
+
+        return view('admin.subscribers.table', compact('subscribers'));
+    }
 }

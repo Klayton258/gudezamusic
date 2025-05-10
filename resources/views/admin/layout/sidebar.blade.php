@@ -65,6 +65,7 @@
                     <a href="{{ route('about.update') }}" class="dropdown-item {{ Route::currentRouteName()=='about.update' ? 'active':"" }}">Sobre Nos</a>
                 </div>
             </div>
+            <a href="{{ route('subscriber.list') }}" class="nav-item nav-link {{ Route::currentRouteName()=='subscriber.list' ? 'active':"" }}"><i class="fa fa-users me-2"></i>Inscritos</a>
         </div>
     </nav>
 </div>
